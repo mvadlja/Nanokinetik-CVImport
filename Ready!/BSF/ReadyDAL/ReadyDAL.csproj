@@ -88,6 +88,7 @@
     <Compile Include="Business\Xevprm_entity_details_mn_PKDAL.cs" />
     <Compile Include="Business\Xevprm_entity_type_PKDAL.cs" />
     <Compile Include="Business\Last_change_PKDAL.cs" />
+    <Compile Include="Business\XlsImportDAL.cs" />
     <Compile Include="Operational\Ad_domain_PKDAL.cs" />
     <Compile Include="Business\Amount_PKDAL.cs" />
     <Compile Include="Business\Approved_substance_PKDAL.cs" />
