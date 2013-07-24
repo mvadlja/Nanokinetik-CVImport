@@ -1,0 +1,97 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+[IncludeUsings]
+
+namespace [PageNamespace]
+{
+    public partial class [EntityName]Form_details : DetailsForm
+    {
+        int _mainTotalItemsCount = 0;
+
+        // Model data managers
+        I[EntityName]Operations _[EntityNameLowercaseFirstLetter]Operations;
+
+		// Form initialization
+		protected override void OnInit(EventArgs e)
+        {
+            base.OnInit(e);
+
+            // Retreiving model data managers from central configuration
+            _[EntityNameLowercaseFirstLetter]Operations = Global.BusinessProviders.Resolve<I[EntityName]Operations>();
+        }
+
+        #region FormOverrides
+
+		// Saves form
+        public override object SaveForm(object id, string arg)
+        {
+            [EntityName] entity = null;
+
+            entity = _[EntityNameLowercaseFirstLetter]Operations.GetEntity(id);
+
+            if (entity == null)
+            {
+                // new [EntityName]
+                entity = new [EntityName]();
+            }
+			[DetailsFormFieldsCSSave]
+
+            entity = _[EntityNameLowercaseFirstLetter]Operations.Save(entity);
+
+            return entity;
+        }
+
+        // Clears form
+        public override void ClearForm(string arg)
+        {
+			ctlID.ControlLabel = String.Empty;
+			[DetailsFormFieldsCSClear]
+        }
+
+		// Fills all form controls with data
+        public override void FillDataDefinitions(string arg)
+        {
+			// 
+        }
+
+        // Binds form
+        public override void BindForm(object id, string arg)
+        {
+            [EntityName] entity = null;
+
+            if (id != null)
+            {
+                entity = _[EntityNameLowercaseFirstLetter]Operations.GetEntity(id);
+
+                if (entity != null)
+                {
+                    ctlID.ControlLabel = "Entity ID: " + entity.[PrimaryKeyPropertyName].ToString() + "<hr/>";
+					[DetailsFormFieldsCSBind]
+                }                                                
+            }
+            else
+            {
+                ctlID.ControlLabel = "New entity<hr/>";
+            }
+        }
+
+        // Validates form
+        public override bool ValidateForm(string arg)
+        {
+            string errorMessage = String.Empty;
+
+            // If errors were found, showing them in modal popup
+            if (!String.IsNullOrEmpty(errorMessage))
+            {
+                FormHolder.MasterPage.MessageModalPopup.ShowModalPopup("Error!", errorMessage);
+                return false;
+            }
+            else return true;
+        }
+
+        #endregion
+    }
+}

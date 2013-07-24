@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87C34004-5C27-4F26-AA51-A89A302A10D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AspNetUIFramework</RootNamespace>
+    <AssemblyName>AspNetUIFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CacheManager.cs" />
+    <Compile Include="Common\JsEffectsController.cs" />
+    <Compile Include="Common\ValidationHelper.cs" />
+    <Compile Include="ContextMenu\ContextMenuEventArgs.cs" />
+    <Compile Include="ContextMenu\ContextMenuEventTypes.cs" />
+    <Compile Include="ContextMenu\ContextMenuItem.cs" />
+    <Compile Include="ContextMenu\IContextMenu.cs" />
+    <Compile Include="ExcelExport\DataTableHTML.cs" />
+    <Compile Include="ExcelExport\ExcelExporter.cs" />
+    <Compile Include="ExcelExport\ExcelRepository.cs" />
+    <Compile Include="FormControls\Binder\BindingManager.cs" />
+    <Compile Include="FormControls\ControlBindingHelpers.cs" />
+    <Compile Include="FormControls\ControlState.cs" />
+    <Compile Include="FormControls\Interfaces\IControlBehavior.cs" />
+    <Compile Include="FormControls\Interfaces\IControlBinder.cs" />
+    <Compile Include="FormControls\Interfaces\IControlCommon.cs" />
+    <Compile Include="FormControls\Interfaces\IControlData.cs" />
+    <Compile Include="FormControls\Interfaces\IControlDesign.cs" />
+    <Compile Include="FormControls\Interfaces\IControlList.cs" />
+    <Compile Include="FormControls\Interfaces\IControlStates.cs" />
+    <Compile Include="FormControls\Interfaces\IControlSpecialDisable.cs" />
+    <Compile Include="FormControls\ValueChangedEventArgs.cs" />
+    <Compile Include="Forms\DetailsForm.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDetailsEventArgs.cs" />
+    <Compile Include="Forms\FormHolder.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\FormListEventArgs.cs" />
+    <Compile Include="Forms\FormModeControler.cs" />
+    <Compile Include="Forms\FormPopupEventArgs.cs" />
+    <Compile Include="Forms\IFormCommon.cs" />
+    <Compile Include="Forms\IFormDetails.cs" />
+    <Compile Include="Forms\IFormList.cs" />
+    <Compile Include="Forms\ListForm.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GridViewPager\IGridViewPager.cs" />
+    <Compile Include="GridViewPager\PageChangedEventArgs.cs" />
+    <Compile Include="MasterOperationalSupport\IMasterPageOperationalSupport.cs" />
+    <Compile Include="ModalPopup\IModalPopup.cs" />
+    <Compile Include="Navigation\Location.cs" />
+    <Compile Include="Navigation\LocationManager.cs" />
+    <Compile Include="Navigation\LocationTarget.cs" />
+    <Compile Include="Navigation\XmlStore\IXmlNavigation.cs" />
+    <Compile Include="Navigation\XmlStore\XmlNavigationManager.cs" />
+    <Compile Include="Navigation\XmlStore\XmlStoreInfo.cs" />
+    <Compile Include="PostbackManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Searcher\ItemSelectedEventArgs.cs" />
+    <Compile Include="Security\CustomReportServerCredentials.cs" />
+    <Compile Include="Security\SecurityEnforcer.cs" />
+    <Compile Include="SessionManager.cs" />
+    <Compile Include="ViewStateController\IViewStateController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonTypes\CommonTypes.csproj">
+      <Project>{22F9D7AE-3587-43FC-AB78-1F391468CE05}</Project>
+      <Name>CommonTypes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Library\Microsoft.ReportViewer.WebForms.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

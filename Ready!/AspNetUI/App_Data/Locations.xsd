@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xs:schema id="Locations" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://locations" xmlns="http://locations" targetNamespace="http://locations" elementFormDefault="qualified">
+  <xs:complexType name="Location">
+    <xs:sequence>
+      <xs:element name="Location" type="Location" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="LogicalUniqueName" type="xs:string" use="required" />
+    <xs:attribute name="RowId" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="Active" type="xs:boolean" use="required" />
+    <xs:attribute name="DisplayName" type="xs:string" use="required" />
+    <xs:attribute name="NameShort" type="xs:string" use="required" />
+    <xs:attribute name="LocationUrl" type="xs:string" use="required" />
+    <xs:attribute name="LocationTarget" type="xs:string" use="required" />
+    <xs:attribute name="Description" type="xs:string" use="required" />
+    <xs:attribute name="Roles" type="xs:string" use="required" />
+    <xs:attribute name="Actions" type="xs:string" use="required" />
+    <xs:attribute name="GenerateInTopMenu" type="xs:boolean" use="optional" />
+    <xs:attribute name="GenerateInTabMenu" type="xs:boolean" use="optional" />
+    <xs:attribute name="OldLocation" type="xs:boolean" use="optional" default="false" />
+  </xs:complexType>
+  <xs:element name="Locations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Location" type="Location">
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

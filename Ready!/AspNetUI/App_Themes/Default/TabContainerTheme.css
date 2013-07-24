@@ -1,0 +1,49 @@
+﻿/* ajax__tab_msngallery-theme theme */
+.ajax__tab_msngallery-theme .ajax__tab_header 
+{
+    background:url(img/msngallery/tab-line.png) repeat-x bottom;
+    font-size:13px;
+    display:block;
+}
+.ajax__tab_msngallery-theme .ajax__tab_header .ajax__tab_outer 
+{
+    border:solid 1px #D7DCE1;
+    padding:1px 1px 0px 1px;
+    border-bottom:solid 2px #E1E1E1;
+    background-color:#E1E1E1;
+}
+.ajax__tab_msngallery-theme .ajax__tab_header .ajax__tab_tab 
+{
+    padding:6px 10px 6px 10px;
+    color:#444444;
+    display:block;
+    cursor: pointer;
+}
+.ajax__tab_msngallery-theme .ajax__tab_header .ajax__tab_tab img
+{
+    height:24px;
+    width:24px;
+}
+.ajax__tab_msngallery-theme .ajax__tab_header .ajax__tab_tab div
+{
+    font-family: Arial, Tahoma;
+    font-weight:bold;
+    white-space:nowrap;
+    line-height:145%;
+    font-size:92%;
+}
+.ajax__tab_msngallery-theme .ajax__tab_active .ajax__tab_outer 
+{
+    padding:0px 0px 0px 0px;
+    border:solid 2px #d3ffd3;
+    border-bottom-color:#d3ffd3;
+    background-color:#d3ffd3;
+}
+.ajax__tab_msngallery-theme .ajax__tab_body 
+{
+    font-family: arial, verdana,tahoma,helvetica;
+    font-size:12px;
+    padding:8px;
+    background: url(../../images/podloga_formulara.jpg) repeat-x top left;
+    border:solid 2px #E1E1E1;
+}

@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>SSIDb</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{b821ff98-393d-419e-8bd1-4e4e6b2e5ae4}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>SSIDb</RootNamespace>
+    <AssemblyName>SSIDb</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_1xCompat_CP850_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <DefaultFileStreamFilegroup>Filegroup_ready_SSI</DefaultFileStreamFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Snapshots" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Storage\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Snapshots\BAK" />
+    <Folder Include="Snapshots\DACPAC" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Snapshots\BAK\ssi-rtm-v5.1.bak" />
+    <None Include="Snapshots\DACPAC\SSIDb_v_5_1_0_2013_07_22_14_11.dacpac" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\VERSION.sql" />
+    <Build Include="dbo\Tables\OFFICIAL_NAME.sql" />
+    <Build Include="dbo\Tables\REFERENCE_SOURCE.sql" />
+    <Build Include="dbo\Tables\ISOTOPE_STRUCTURE_MN.sql" />
+    <Build Include="dbo\Tables\SUBSTANCE_CODE.sql" />
+    <Build Include="dbo\Tables\SN_ON_MN.sql" />
+    <Build Include="dbo\Tables\ISOTOPE.sql" />
+    <Build Include="dbo\Tables\NS_MOIETY_MN.sql" />
+    <Build Include="dbo\Tables\SUBTYPE.sql" />
+    <Build Include="dbo\Tables\NS_PROPERTY_MN.sql" />
+    <Build Include="dbo\Tables\MOIETY.sql" />
+    <Build Include="dbo\Tables\SUBSTANCE.sql" />
+    <Build Include="dbo\Tables\ON_DOMAIN_ON_MN.sql" />
+    <Build Include="dbo\Tables\AMOUNT.sql" />
+    <Build Include="dbo\Tables\ON_ONJ_MN.sql" />
+    <Build Include="dbo\Tables\PROPERTY.sql" />
+    <Build Include="dbo\Tables\RI_GE_MN.sql" />
+    <Build Include="dbo\Tables\OFFICIAL_NAME_JURISDICTION.sql" />
+    <Build Include="dbo\Tables\SUBTYPE_SCLF_MN.sql" />
+    <Build Include="dbo\Tables\RI_GENE_MN.sql" />
+    <Build Include="dbo\Tables\STRUCT_REPRESENTATION_TYPE.sql" />
+    <Build Include="dbo\Tables\OFFICIAL_NAME_DOMAIN.sql" />
+    <Build Include="dbo\Tables\VERSION_SUBSTANCE_MN.sql" />
+    <Build Include="dbo\Tables\RI_SCLF_MN.sql" />
+    <Build Include="dbo\Tables\SUBSTANCE_SUBSTANCE_CODE_MN.sql" />
+    <Build Include="dbo\Tables\RI_TARGET_MN.sql" />
+    <Build Include="dbo\Tables\SUBSTANCE_SUBSTANCE_NAME_MN.sql" />
+    <Build Include="dbo\Tables\NON_STOICHIOMETRIC.sql" />
+    <Build Include="dbo\Tables\STEREOCHEMISTRY.sql" />
+    <Build Include="dbo\Tables\RS_CHEMICAL_MN.sql" />
+    <Build Include="dbo\Tables\GENE_ELEMENT.sql" />
+    <Build Include="dbo\Tables\RS_GE_MN.sql" />
+    <Build Include="dbo\Tables\GENE.sql" />
+    <Build Include="dbo\Tables\RS_GENE_MN.sql" />
+    <Build Include="dbo\Tables\REFERENCE_INFORMATION.sql" />
+    <Build Include="dbo\Tables\RS_SC_MN.sql" />
+    <Build Include="dbo\Tables\SUBSTANCE_CLASSIFICATION.sql" />
+    <Build Include="dbo\Tables\STRUCT_REPRES_ATTACHMENT.sql" />
+    <Build Include="dbo\Tables\RS_SCLF_MN.sql" />
+    <Build Include="dbo\Tables\RS_SN_MN.sql" />
+    <Build Include="dbo\Tables\TARGET.sql" />
+    <Build Include="dbo\Tables\RS_SR_MN.sql" />
+    <Build Include="dbo\Tables\RS_TARGET_MN.sql" />
+    <Build Include="dbo\Tables\SING_STRUCTURE_MN.sql" />
+    <Build Include="dbo\Tables\STRUCTURE.sql" />
+    <Build Include="dbo\Tables\CHEMICAL.sql" />
+    <Build Include="dbo\Tables\SUBSTANCE_RELATIONSHIP.sql" />
+    <Build Include="dbo\Tables\SUBSTANCE_NAME.sql" />
+    <Build Include="dbo\Tables\SR_RI_MN.sql" />
+    <Build Include="dbo\Tables\SSI_CONTROLED_VOCABULARY.sql" />
+    <Build Include="dbo\Tables\SING.sql" />
+    <Build Include="Storage\Filegroup_ready_SSI.sql" />
+    <Build Include="dbo\Stored Procedures\proc_CHEMICAL_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBTYPE_GetSubtypeBySCLFPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_GENE_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_CHEMICAL_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_GE_MN_GetRSBySNPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_GENE_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_CHEMICAL_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SCLF_MN_GetRSBySCLFPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_GENE_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_CHEMICAL_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_AMOUNT_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_GENE_MN_GetRSByGenePK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_GENE_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NS_MOIETY_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_CHEMICAL_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_AMOUNT_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SR_MN_GetRSByRELPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_GENE_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NS_MOIETY_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_CHEMICAL_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_AMOUNT_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SC_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NS_MOIETY_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_GENE_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_AMOUNT_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SC_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NS_MOIETY_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_GENE_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_AMOUNT_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SC_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NS_MOIETY_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_GENE_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_AMOUNT_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SC_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NS_MOIETY_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_GENE_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SC_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NS_PROPERTY_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_GENE_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SC_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NS_PROPERTY_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SSI_CONTROLED_VOCABULARY_GetPrefixes.sql" />
+    <Build Include="dbo\Stored Procedures\proc_GENE_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SCLF_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NS_PROPERTY_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SSI_CONTROLED_VOCABULARY_GetPrefixesSubstanceClass.sql" />
+    <Build Include="dbo\Stored Procedures\proc_GENE_ELEMENT_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SCLF_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NS_PROPERTY_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SSI_CONTROLED_VOCABULARY_GetConcentrationTypes.sql" />
+    <Build Include="dbo\Stored Procedures\proc_GENE_ELEMENT_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SC_MN_GetRSBySCPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SCLF_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NS_PROPERTY_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_GENE_ELEMENT_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ON_DOMAIN_ON_MN_GetEntitiesByONPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SCLF_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NS_PROPERTY_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_GENE_ELEMENT_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ON_ONJ_MN_GetEntitiesByONPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SCLF_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_GENE_ELEMENT_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SCLF_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_GENE_ELEMENT_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SN_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ISOTOPE_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SN_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ISOTOPE_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SN_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ISOTOPE_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SN_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ISOTOPE_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SN_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ISOTOPE_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_REFERENCE_SOURCE_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SN_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ISOTOPE_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SR_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_DOMAIN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SR_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_DOMAIN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SR_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_DOMAIN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SR_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_DOMAIN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SR_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_STATUS_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ISOTOPE_STRUCTURE_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_DOMAIN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SR_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_STATUS_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ISOTOPE_STRUCTURE_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_DOMAIN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_VERSION_SUBSTANCE_MN_GetVERBySubstancePK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_TARGET_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_STATUS_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ISOTOPE_STRUCTURE_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_TARGET_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_STATUS_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ISOTOPE_STRUCTURE_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_TARGET_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_STATUS_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ISOTOPE_STRUCTURE_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_TARGET_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_STATUS_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ISOTOPE_STRUCTURE_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_TARGET_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_TYPE_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_JURISDICTION_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_MOIETY_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_TARGET_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_TYPE_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_JURISDICTION_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_MOIETY_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SING_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_TYPE_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_JURISDICTION_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_MOIETY_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SING_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_TYPE_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_JURISDICTION_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_MOIETY_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SING_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_TYPE_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_JURISDICTION_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_MOIETY_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SING_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_TYPE_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_OFFICIAL_NAME_JURISDICTION_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_MOIETY_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SING_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_NAME_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ON_DOMAIN_ON_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NON_STOICHIOMETRIC_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SING_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_NAME_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ON_DOMAIN_ON_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NON_STOICHIOMETRIC_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SING_STRUCTURE_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_NAME_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ON_DOMAIN_ON_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NON_STOICHIOMETRIC_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SING_STRUCTURE_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_NAME_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ON_DOMAIN_ON_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NON_STOICHIOMETRIC_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_CODE_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SING_STRUCTURE_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_NAME_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ON_DOMAIN_ON_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NON_STOICHIOMETRIC_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_CODE_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SING_STRUCTURE_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_NAME_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ON_DOMAIN_ON_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NON_STOICHIOMETRIC_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_CODE_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SING_STRUCTURE_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ON_ONJ_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_CODE_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SING_STRUCTURE_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ON_ONJ_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_CODE_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SN_ON_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ON_ONJ_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_CODE_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SN_ON_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ON_ONJ_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SN_ON_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ON_ONJ_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SN_ON_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ON_ONJ_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SN_ON_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_PROPERTY_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SN_ON_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_PROPERTY_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_GetSubstancesDataSet.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SR_RI_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_PROPERTY_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SR_RI_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_PROPERTY_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SR_RI_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_PROPERTY_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SR_RI_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_PROPERTY_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SR_RI_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_REFERENCE_INFORMATION_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SR_RI_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_REFERENCE_INFORMATION_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCTURE_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_REFERENCE_INFORMATION_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCTURE_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_REFERENCE_INFORMATION_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCTURE_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_REFERENCE_INFORMATION_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCTURE_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_REFERENCE_INFORMATION_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCTURE_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_REFERENCE_SOURCE_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCTURE_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_REFERENCE_SOURCE_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_REFERENCE_SOURCE_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_REFERENCE_SOURCE_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NS_MOIETY_MN_GetMoietyByNonStoPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_REFERENCE_SOURCE_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_NS_PROPERTY_MN_GetPropertyByNonStoPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ISOTOPE_STRUCTURE_MN_GetISOByStructPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SING_STRUCTURE_MN_GetStructBySingPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_CLASSIFICATION_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_CLASSIFICATION_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_CLASSIFICATION_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_CLASSIFICATION_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_CLASSIFICATION_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_CLASSIFICATION_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_TRG_MN_GetRSByTRG.sql" />
+    <Build Include="dbo\Stored Procedures\proc_VERSION_SUBSTANCE_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCT_REPRESENTATION_TYPE_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_NAME_TYPE_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_VERSION_SUBSTANCE_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCT_REPRESENTATION_TYPE_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_NAME_TYPE_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_VERSION_SUBSTANCE_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCT_REPRESENTATION_TYPE_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_NAME_TYPE_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_VERSION_SUBSTANCE_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCT_REPRESENTATION_TYPE_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_NAME_TYPE_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_VERSION_SUBSTANCE_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCT_REPRESENTATION_TYPE_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_NAME_TYPE_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_RELATIONSHIP_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_VERSION_SUBSTANCE_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCT_REPRESENTATION_TYPE_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_NAME_TYPE_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_RELATIONSHIP_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STEREOCHEMISTRY_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_RELATIONSHIP_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STEREOCHEMISTRY_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_RELATIONSHIP_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STEREOCHEMISTRY_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_RELATIONSHIP_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STEREOCHEMISTRY_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_RELATIONSHIP_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STEREOCHEMISTRY_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STEREOCHEMISTRY_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_GE_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_GE_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_GE_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_GE_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_GE_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_GE_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_SUBSTANCE_NAME_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_GENE_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_SUBSTANCE_NAME_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_GENE_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_SUBSTANCE_NAME_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_GENE_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_SUBSTANCE_NAME_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_GENE_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBTYPE_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_SUBSTANCE_NAME_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_GENE_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBTYPE_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_SUBSTANCE_NAME_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_GENE_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCT_REPRES_ATTACHMENT_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBTYPE_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_SUBSTANCE_CODE_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_SCLF_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCT_REPRES_ATTACHMENT_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBTYPE_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_SUBSTANCE_CODE_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_SCLF_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCT_REPRES_ATTACHMENT_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBTYPE_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_SUBSTANCE_CODE_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_SCLF_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCT_REPRES_ATTACHMENT_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBTYPE_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_SUBSTANCE_CODE_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_SCLF_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCT_REPRES_ATTACHMENT_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBTYPE_SCLF_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_SUBSTANCE_CODE_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_SCLF_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_STRUCT_REPRES_ATTACHMENT_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBTYPE_SCLF_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_SUBSTANCE_CODE_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_SCLF_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBTYPE_SCLF_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_TARGET_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBTYPE_SCLF_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_TARGET_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBTYPE_SCLF_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_TARGET_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBTYPE_SCLF_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_TARGET_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_TARGET_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_TARGET_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_TARGET_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SN_ON_MN_GetONBySNPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RI_TARGET_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_TARGET_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_SN_MN_GetRSBySNPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_CHEMICAL_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_TARGET_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ON_DOMAIN_ON_MN_GetDomainByONPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_CHEMICAL_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_TARGET_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_ON_ONJ_MN_GetJurByONPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_CHEMICAL_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_TARGET_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_SUBSTANCE_NAME_MN_GetSNBySubstancePK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_CHEMICAL_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_VERSION_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_SUBSTANCE_CODE_MN_GetSCBySubstancePK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_CHEMICAL_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SSI_CONTROLED_VOCABULARY_GetEntitiesByListName.sql" />
+    <Build Include="dbo\Stored Procedures\proc_VERSION_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_RELATIONSHIP_GetRELByRIPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_CHEMICAL_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SSI_CONTROLED_VOCABULARY_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_VERSION_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_GENE_GetGeneByRIPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_GE_MN_GetEntity.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SSI_CONTROLED_VOCABULARY_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_VERSION_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_GENE_ELEMENT_GetGEByRIPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_GE_MN_GetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SSI_CONTROLED_VOCABULARY_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_VERSION_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_TARGET_GetTargetByRIPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_GE_MN_GetEntitiesWP.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SSI_CONTROLED_VOCABULARY_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_VERSION_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_GE_MN_GetEntitiesWPS.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SSI_CONTROLED_VOCABULARY_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_GE_MN_Save.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SSI_CONTROLED_VOCABULARY_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\proc_SUBSTANCE_CLASSIFICATION_GetSCLFByRIPK.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_GE_MN_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\STRUCT_REPRES_ATTACHMENT_DeleteNULLByUserID.sql" />
+    <Build Include="dbo\Stored Procedures\proc_RS_GENE_MN_GetEntity.sql" />
+  </ItemGroup>
+</Project>

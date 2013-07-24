@@ -1,0 +1,90 @@
+﻿.ddlPaging
+{
+	font: 10px Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.pagerStyle
+{
+    vertical-align: middle;
+    background-color: #BBB;
+    color: #ffffff;   
+}
+
+.EmptyRowErr
+{
+	font-weight:bold;
+	color:#666666;
+	text-align:center;
+	padding: 2px 3px 2px 3px;
+}
+
+.gridStyle
+{
+    color: #606060;
+    border: 1px solid #BBBBBB;
+    font-family: Arial, Tahoma, Verdana;
+    font-size: 11px;
+}
+
+.gridStyle tr td
+{
+    border: 1px solid #BBBBBB;
+}
+
+.gridHeader
+{
+    text-transform: uppercase;
+    background-color: #7A7A7A;
+	text-align: center;
+    color: #ffffff;
+    height: 22px;
+}
+
+.gridHeader a,
+.gridHeader a:active,
+.gridHeader a:visited,
+.gridHeader a:hover
+{
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+.gridFooter
+{
+    background-color: #666666;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.gridRow
+{
+    background-color: #eeeeee;
+    color: #333333;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.gridAlternateRow
+{
+    background-color: #ffffff;
+    color: #333333;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.gridEditRow
+{
+    background-color: #aaaaaa;   
+}
+
+.gridSelectedRow
+{
+    background-color: #aaaaaa;
+    font-weight: normal;
+    color: #333333;
+}
+
+.leftPanelMargin 
+{
+    padding-left:  165px;    
+}

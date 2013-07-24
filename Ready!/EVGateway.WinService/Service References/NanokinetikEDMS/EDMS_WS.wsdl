@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://www.nanokinetik.com/Schemas/2013/EDMSWS" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="EDMS_WS" targetNamespace="http://www.nanokinetik.com/Schemas/2013/EDMSWS" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://edms.nanokinetik.com:8040/EDMS/EDMSWS?xsd=1" namespace="http://www.nanokinetik.com/Schemas/2013/EDMSWS" />
+    </xsd:schema>
+  </types>
+  <message name="getDocument">
+    <part name="parameters" element="tns:getDocument" />
+  </message>
+  <message name="getDocumentResponse">
+    <part name="parameters" element="tns:getDocumentResponse" />
+  </message>
+  <message name="ServiceException">
+    <part name="fault" element="tns:ServiceException" />
+  </message>
+  <message name="getFolderContent">
+    <part name="parameters" element="tns:getFolderContent" />
+  </message>
+  <message name="getFolderContentResponse">
+    <part name="parameters" element="tns:getFolderContentResponse" />
+  </message>
+  <message name="getFolders">
+    <part name="parameters" element="tns:getFolders" />
+  </message>
+  <message name="getFoldersResponse">
+    <part name="parameters" element="tns:getFoldersResponse" />
+  </message>
+  <portType name="EDMS_WS">
+    <operation name="getDocument">
+      <input wsam:Action="http://www.nanokinetik.com/Schemas/2013/EDMSWS/EDMS_WS/getDocumentRequest" message="tns:getDocument" />
+      <output wsam:Action="http://www.nanokinetik.com/Schemas/2013/EDMSWS/EDMS_WS/getDocumentResponse" message="tns:getDocumentResponse" />
+      <fault wsam:Action="http://www.nanokinetik.com/Schemas/2013/EDMSWS/EDMS_WS/getDocument/Fault/ServiceException" name="ServiceException" message="tns:ServiceException" />
+    </operation>
+    <operation name="getFolderContent">
+      <input wsam:Action="http://www.nanokinetik.com/Schemas/2013/EDMSWS/EDMS_WS/getFolderContentRequest" message="tns:getFolderContent" />
+      <output wsam:Action="http://www.nanokinetik.com/Schemas/2013/EDMSWS/EDMS_WS/getFolderContentResponse" message="tns:getFolderContentResponse" />
+      <fault wsam:Action="http://www.nanokinetik.com/Schemas/2013/EDMSWS/EDMS_WS/getFolderContent/Fault/ServiceException" name="ServiceException" message="tns:ServiceException" />
+    </operation>
+    <operation name="getFolders">
+      <input wsam:Action="http://www.nanokinetik.com/Schemas/2013/EDMSWS/EDMS_WS/getFoldersRequest" message="tns:getFolders" />
+      <output wsam:Action="http://www.nanokinetik.com/Schemas/2013/EDMSWS/EDMS_WS/getFoldersResponse" message="tns:getFoldersResponse" />
+      <fault wsam:Action="http://www.nanokinetik.com/Schemas/2013/EDMSWS/EDMS_WS/getFolders/Fault/ServiceException" name="ServiceException" message="tns:ServiceException" />
+    </operation>
+  </portType>
+  <binding name="EDMS_WSPortBinding" type="tns:EDMS_WS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getDocument">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="ServiceException">
+        <soap:fault use="literal" name="ServiceException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getFolderContent">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="ServiceException">
+        <soap:fault use="literal" name="ServiceException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getFolders">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="ServiceException">
+        <soap:fault use="literal" name="ServiceException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="EDMS_WS">
+    <port name="EDMS_WSPort" binding="tns:EDMS_WSPortBinding">
+      <soap:address location="http://edms.nanokinetik.com:8040/EDMS/EDMSWS" />
+    </port>
+  </service>
+</definitions>

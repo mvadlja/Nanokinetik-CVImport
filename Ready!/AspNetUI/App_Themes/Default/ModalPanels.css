@@ -1,0 +1,106 @@
+﻿.modalOverlayPogress
+{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	background: #000000;
+	opacity: 0.2;
+	-moz-opacity: 0.2;
+	filter: alpha(opacity=20);
+	z-index: 1000;
+}
+
+.modalOverlay
+{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	background: #000000;
+	opacity: 0.2;
+	-moz-opacity: 0.2;
+	filter: alpha(opacity=20);
+	z-index: 110;
+}
+
+.progressPanel
+{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: -40px;
+	margin-left: -40px;
+	width: 80px;
+	height: 80px;
+    z-index: 1001;
+}
+
+.modalPopupPanel
+{
+    position: absolute;
+    margin: auto;
+    padding: 0px;
+    width: 700px;
+    height: 450px;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 111;
+}
+
+.modalPopupPanelSmall
+{
+    position: absolute;
+    margin: auto;
+    padding: 0px;
+    width: 400px;
+    height: 250px;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 111;
+}
+
+.modalPopupContainerContentInner
+{
+    width: 700px;
+    background-color: #ffffff;
+    border: solid 1px #000000;
+}
+
+.modalPopupContainerContentInnerSmall
+{
+    width: 400px;
+    background-color: #ffffff;
+    border: solid 1px #000000;
+}
+
+.modalPopupContainerHeader
+{
+    height: 24px;
+    /* NE RADI RELATIVNI URL!!! */
+    /*background-image: url('../ModalPopupContainer_Resources/bg-menu-main.png');
+    background-repeat: repeat-x;*/
+    background-color: #333333;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 10px;
+    vertical-align: middle;
+}
+
+.modalPopupContainerBody
+{
+	width: 700px;
+	overflow: auto;
+}
+
+.modalPopupContainerBodySmall
+{
+	width: 400px;
+	overflow: auto;
+}

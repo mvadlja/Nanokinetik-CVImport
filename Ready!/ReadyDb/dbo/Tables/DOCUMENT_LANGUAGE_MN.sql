@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[DOCUMENT_LANGUAGE_MN] (
+    [document_language_mn_PK] INT IDENTITY (1, 1) NOT NULL,
+    [document_FK]             INT NULL,
+    [language_FK]             INT NULL,
+    CONSTRAINT [PK_DOCUMENT_LANGUAGE_MN] PRIMARY KEY CLUSTERED ([document_language_mn_PK] ASC),
+    CONSTRAINT [FK_DOCUMENT_LANGUAGE_MN_DOCUMENT] FOREIGN KEY ([document_FK]) REFERENCES [dbo].[DOCUMENT] ([document_PK]) ON DELETE CASCADE,
+    CONSTRAINT [FK_DOCUMENT_LANGUAGE_MN_LANGUAGE_CODE] FOREIGN KEY ([language_FK]) REFERENCES [dbo].[LANGUAGE_CODE] ([languagecode_PK])
+);
+

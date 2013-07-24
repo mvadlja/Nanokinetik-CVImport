@@ -1,0 +1,172 @@
+﻿<%@ Master Language="C#" AutoEventWireup="false" CodeBehind="Default.master.cs" Inherits="AspNetUI.Views.Shared.Template.Default" EnableTheming="false" %>
+
+<%@ Register Src="../UserControl/ContextMenu.ascx" TagName="ContextMenu" TagPrefix="uc" %>
+<%@ Register Src="../UserControl/TopMenu.ascx" TagName="TopMenu" TagPrefix="uc" %>
+<%@ Register Src="../UserControl/TabMenu.ascx" TagName="TabMenu" TagPrefix="uc" %>
+<%@ Register Src="~/Views/Shared/UserControl/ModalPopup.ascx" TagName="ModalPopup" TagPrefix="uc" %>
+<%@ Register Src="~/Views/PartialShared/Operational/AboutModalPopup.ascx" TagName="AboutModalPopup" TagPrefix="operational" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="headDefault" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+    <title>READY!</title>
+    <asp:ContentPlaceHolder ID="cphHeadDefault" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript" language="javascript">
+
+        function uploadComplete() {
+            //Postback is necessary for asyncfileupload
+            __doPostBack('upCommon', '');
+            $(".Save").unbind("click", preventSaveWhileUploading);
+        }
+
+        function uploadStart() {
+            $(".Save").bind("click", preventSaveWhileUploading);
+        }
+
+        function preventSaveWhileUploading(e) {
+            alert("Please wait for upload to finish.");
+            e.preventDefault();
+            return false;
+        }
+
+        function respositionContextMenu() {
+            var container = $("#additionalContextMenuItems");
+            var btnExport = $('input[id*="btnExport"]');
+            var btnSave = $('input[id*="btnSaveLayout"]');
+            var btnLoad = $('input[id*="btnLoadLayout"]');
+            var btnRefresh = $('input[id*="btnRefresh"]');
+
+            if (btnSave) container.append(btnSave);
+            if (btnLoad) {
+                btnLoad.css("margin-right", "34px");
+                container.append(btnLoad);
+            }
+
+            if (btnRefresh) container.append(btnRefresh);
+            if (btnExport) container.append(btnExport);
+        }
+        
+        var DownloadBtn;
+
+        function SaveTheDownloadBtnAttach(MyArgs) {
+            $(window).unbind('beforeunload');
+            var index = MyArgs.indexOf(',');
+            DownloadBtn = MyArgs.substring(0, index);
+
+            window.location.href = "../Business/FileDownload.ashx?attachID=" + MyArgs.substring(index + 1);
+        }
+    </script>
+    <link rel="stylesheet" href="../../../App_Themes/Default/Style/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../App_Themes/Default/Style/Style.css" />
+</head>
+<body>
+    <form id="defaultForm" runat="server">
+        <input id="hasChanges" runat="server" value="false" type="hidden" clientidmode="Static" />
+        <input id="skipPrevent" runat="server" value="false" type="hidden" clientidmode="Static" />
+        <input id="inFormPostBack" runat="server" value="false" type="hidden" clientidmode="Static" />
+        <asp:ScriptManager ID="smMain" runat="server" EnablePartialRendering="true" EnablePageMethods="true" AllowCustomErrorsRedirect="False" ScriptMode="Release">
+            <Scripts>
+                <asp:ScriptReference Path="~/Scripts/jquery-1.7.min.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery-ui-1.10.2.custom.min.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery.centering.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery.event.drag-1.4.js" />
+                <asp:ScriptReference Path="~/Scripts/colResizable-1.3.min.js" />
+                <asp:ScriptReference Path="~/Scripts/dragtable.js" />
+                <asp:ScriptReference Path="~/Scripts/Development/Common/LeavingPage.js" />
+                <asp:ScriptReference Path="~/Scripts/Development/Common/QuickLinks.js" />
+                <asp:ScriptReference Path="~/Scripts/Development/Common/Common.js" />
+                <asp:ScriptReference Path="~/Scripts/file_manager.js" />
+                <%--<asp:ScriptReference Path="~/Scripts/Production/GoogleAnalytics/GoogleAnalytics.js" />--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <asp:Panel ID="pnlQuickLinks" runat="server" Visible="true">
+            <div id="divQuickLinksButtonOpen" runat="server">
+            </div>
+            <div id="divQuickLinksContainer" runat="server">
+            </div>
+        </asp:Panel>
+        <div class="layoutMain">
+            <asp:HyperLink class="layoutHeader" ID="lnkLayoutHeader" runat="server">
+                <a class="layoutHeaderLeft" id="lnkLayoutHeaderLeft" runat="server"></a>
+                <a class="layoutHeaderRight" href="http://www.nanokinetik.com" target="_blank"></a>
+            </asp:HyperLink>
+            <div class="layoutMenuBar">
+                <!-- MENU BAR -->
+                <asp:UpdatePanel ID="upTopMenu" runat="server" UpdateMode="Conditional">
+                    <ContentTemplate>
+                        <uc:TopMenu ID="topMenu" runat="server" />
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+
+                <asp:UpdatePanel ID="upUserSettings" runat="server" UpdateMode="Conditional">
+                    <ContentTemplate>
+                        <div class="loginInfo">
+                            <asp:HyperLink ID="lnkReminders" runat="server" Font-Underline="false" Visible="false"></asp:HyperLink>
+                            <asp:Label ID="lblRemindersSeparator" Text="|" runat="server" Font-Bold="false" Font-Underline="false" Visible="false"></asp:Label>
+                            Logged in as
+                            <asp:HyperLink ID="lblLoginName" runat="server" Font-Bold="true" Font-Underline="false"></asp:HyperLink>.
+                            <asp:LinkButton ID="lbtLogOut" runat="server" CssClass="button LogOut" OnClick="lbtLogOut_Click">Logout</asp:LinkButton>
+                        </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+
+            <asp:UpdatePanel ID="upCommon" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="mainContent">
+                        <!-- CONTENT -->
+                        <div class="content">
+                            <!-- Navigation for level2 forms -->
+                            <uc:TabMenu ID="tabMenu" runat="server" />
+                            <div id="menuSpacer" runat="server" visible="false" style="margin-top: 30px;"></div>
+                            <div class="shadow" id="mainContent">
+                                <uc:ContextMenu ID="contextMenu" runat="server" />
+                                <asp:ContentPlaceHolder ID="cphBodyMain" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
+            <asp:UpdatePanel ID="upModalPopups" runat="server" UpdateMode="Always" class="pltp">
+                <ContentTemplate>
+                    <uc:ModalPopup ID="modalPopup" runat="server" />
+                    <operational:AboutModalPopup ID="aboutModalPopup" runat="server" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
+            <asp:UpdatePanel ID="upFooter" runat="server" UpdateMode="Always" class="pltp">
+                <ContentTemplate>
+                    <!-- FOOTER -->
+                    <div class="layoutFooter">
+                        <asp:LinkButton ID="lbtAbout" runat="server" CssClass="gvLinkTextBold" OnClick="lbtAbout_Click">About</asp:LinkButton>
+                        READY!
+                    <asp:Label ID="lblAppVersion" runat="server"></asp:Label>
+                        <div class="copyright">
+                            &copy; 2013
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="http://www.nanokinetik.com" Target="_blank" Font-Bold="true">Nanokinetik</asp:HyperLink>
+                            - All rights reserved.
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <asp:UpdateProgress runat="server" DisplayAfter="500">
+            <ProgressTemplate>
+                <div class="modalOverlayPogress">
+                </div>
+                <div id="progressPanel" class="progressPanel">
+                    <div style="text-align: center;">
+                        <asp:Image ID="imgProgress" runat="server" Width="80px" Height="80px" ImageUrl="~/Images/loading2.gif" />
+                    </div>
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+    </form>
+</body>
+</html>

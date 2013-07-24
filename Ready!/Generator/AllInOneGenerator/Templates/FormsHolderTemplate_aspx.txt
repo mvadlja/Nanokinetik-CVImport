@@ -1,0 +1,12 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="[MasterPageFilePath]" AutoEventWireup="true" CodeBehind="[FormClassName].aspx.cs" Inherits="[PageNamespace].[FormClassName]" %>
+<%@ Register src="[PathToUCForms]/ListForms/[EntityName]Form_list.ascx" tagname="[EntityName]Form_list" tagprefix="forms" %>
+<%@ Register src="[PathToUCForms]/DetailsForms/[EntityName]Form_details.ascx" tagname="[EntityName]Form_details" tagprefix="forms" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"></asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+
+    <!-- View's forms as partial views -->
+    <forms:[EntityName]Form_list ID="[EntityName]Form_list1" runat="server" />
+    <forms:[EntityName]Form_details ID="[EntityName]Form_details1" runat="server" />
+
+</asp:Content>

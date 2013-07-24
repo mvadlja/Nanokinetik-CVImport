@@ -1,0 +1,2359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6C4B6BE7-76F0-406A-B8E4-601C91B2871E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AspNetUI</RootNamespace>
+    <AssemblyName>AspNetUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\Library\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\Library\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\Library\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Mail, Version=3.0.10257.1855, Culture=neutral, PublicKeyToken=6dc438ab78a525b3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PossGrid">
+      <HintPath>..\Library\PossGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="PromptInstantiator">
+      <HintPath>..\Library\PromptInstantiator.dll</HintPath>
+    </Reference>
+    <Reference Include="Rtf">
+      <HintPath>..\Library\Rtf.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Xml.Schema.Linq, Version=2.0.2.56002, Culture=neutral, PublicKeyToken=47d0c84d0ebb13e5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Xml.Schema.Linq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Locations.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Themes\Default\APTable.css" />
+    <Content Include="App_Themes\Default\ContextMenu.css" />
+    <Content Include="App_Themes\Default\HelpDesk.css" />
+    <Content Include="App_Themes\Default\HtmlOverrides.css" />
+    <Content Include="App_Themes\Default\Images\alarm.png" />
+    <Content Include="App_Themes\Default\Images\alarm_exists.png" />
+    <Content Include="App_Themes\Default\Images\alert.png" />
+    <Content Include="App_Themes\Default\Images\arrows.png" />
+    <Content Include="App_Themes\Default\Images\calc2.jpg" />
+    <Content Include="App_Themes\Default\Images\calendar.png" />
+    <Content Include="App_Themes\Default\Images\clone2_icon.png" />
+    <Content Include="App_Themes\Default\Images\close.gif" />
+    <Content Include="App_Themes\Default\Images\delete.gif" />
+    <Content Include="App_Themes\Default\Images\download_icon.png" />
+    <Content Include="App_Themes\Default\Images\edit.png" />
+    <Content Include="App_Themes\Default\Images\excel.gif" />
+    <Content Include="App_Themes\Default\Images\header_bg.jpg" />
+    <Content Include="App_Themes\Default\Images\header_left.jpg" />
+    <Content Include="App_Themes\Default\Images\header_left.png" />
+    <Content Include="App_Themes\Default\Images\header_middle.jpg" />
+    <Content Include="App_Themes\Default\Images\header_right.jpg" />
+    <Content Include="App_Themes\Default\Images\header_right.png" />
+    <Content Include="App_Themes\Default\Images\header_spacer.jpg" />
+    <Content Include="App_Themes\Default\Images\helpicon.gif" />
+    <Content Include="App_Themes\Default\Images\info.png" />
+    <Content Include="App_Themes\Default\Images\insert_disabled.png" />
+    <Content Include="App_Themes\Default\Images\insert_enabled.png" />
+    <Content Include="App_Themes\Default\Images\key.png" />
+    <Content Include="App_Themes\Default\Images\key_add.png" />
+    <Content Include="App_Themes\Default\Images\key_delete.png" />
+    <Content Include="App_Themes\Default\Images\key_page.png" />
+    <Content Include="App_Themes\Default\Images\loading.gif" />
+    <Content Include="App_Themes\Default\Images\loading2.gif" />
+    <Content Include="App_Themes\Default\Images\lock.png" />
+    <Content Include="App_Themes\Default\Images\login_bg.jpg" />
+    <Content Include="App_Themes\Default\Images\login_image.jpg" />
+    <Content Include="App_Themes\Default\Images\logo_head.png" />
+    <Content Include="App_Themes\Default\Images\logo_possimus.png" />
+    <Content Include="App_Themes\Default\Images\minus.png" />
+    <Content Include="App_Themes\Default\Images\modal.jpg" />
+    <Content Include="App_Themes\Default\Images\NeatUpload\cancel.png" />
+    <Content Include="App_Themes\Default\Images\NeatUpload\refresh2.png" />
+    <Content Include="App_Themes\Default\Images\NeatUpload\stop_refresh.png" />
+    <Content Include="App_Themes\Default\Images\newMail.png" />
+    <Content Include="App_Themes\Default\Images\next_page.png" />
+    <Content Include="App_Themes\Default\Images\oldMail.png" />
+    <Content Include="App_Themes\Default\Images\plus.png" />
+    <Content Include="App_Themes\Default\Images\previous_page.png" />
+    <Content Include="App_Themes\Default\Images\ql_bullet_minus.png" />
+    <Content Include="App_Themes\Default\Images\ql_bullet_plus.png" />
+    <Content Include="App_Themes\Default\Images\ql_inner_bullet.png" />
+    <Content Include="App_Themes\Default\Images\ql_inner_last_bullet.png" />
+    <Content Include="App_Themes\Default\Images\refresh.gif" />
+    <Content Include="App_Themes\Default\Images\report_logo.png" />
+    <Content Include="App_Themes\Default\Images\saved_search_icon.png" />
+    <Content Include="App_Themes\Default\Images\save_download.png" />
+    <Content Include="App_Themes\Default\Images\save_upload.png" />
+    <Content Include="App_Themes\Default\Images\sprite.png" />
+    <Content Include="App_Themes\Default\Images\_header_left.jpg" />
+    <Content Include="App_Themes\Default\Images\_sprite.png" />
+    <Content Include="App_Themes\Default\LeftMenu.css" />
+    <Content Include="App_Themes\Default\ModalPanels.css" />
+    <Content Include="App_Themes\Default\SearcherDisplay.css" />
+    <Content Include="App_Themes\Default\Site.css" />
+    <Content Include="App_Themes\Default\GridView.css" />
+    <Content Include="App_Themes\Default\Style\jquery-ui.css" />
+    <Content Include="App_Themes\Default\Style\layout.css" />
+    <Content Include="App_Themes\Default\Style\print.css" />
+    <Content Include="App_Themes\Default\Style\screen.css" />
+    <Content Include="App_Themes\Default\Style\Style.css" />
+    <Content Include="App_Themes\Default\TabContainerTheme.css" />
+    <Content Include="App_Themes\Default\TabMenu.css" />
+    <Content Include="App_Themes\Default\TopMenu.css" />
+    <Content Include="app_offline.htm.REMOVE" />
+    <Content Include="App_Themes\NewDesign\Images\alarm_exists.png" />
+    <Content Include="App_Themes\NewDesign\Images\arrows.png" />
+    <Content Include="App_Themes\NewDesign\Images\down_arrow.png" />
+    <Content Include="App_Themes\NewDesign\Images\down_arrow_EDMS.png" />
+    <Content Include="App_Themes\NewDesign\Images\dynatree\skin-vista\icons-rtl.gif" />
+    <Content Include="App_Themes\NewDesign\Images\dynatree\skin-vista\icons.gif" />
+    <Content Include="App_Themes\NewDesign\Images\dynatree\skin-vista\loading.gif" />
+    <Content Include="App_Themes\NewDesign\Images\dynatree\skin-vista\ui.dynatree.css" />
+    <Content Include="App_Themes\NewDesign\Images\dynatree\skin\icons-rtl.gif" />
+    <Content Include="App_Themes\NewDesign\Images\dynatree\skin\icons.gif" />
+    <Content Include="App_Themes\NewDesign\Images\dynatree\skin\loading.gif" />
+    <Content Include="App_Themes\NewDesign\Images\dynatree\skin\ui.dynatree.css" />
+    <Content Include="App_Themes\NewDesign\Images\dynatree\skin\vline-rtl.gif" />
+    <Content Include="App_Themes\NewDesign\Images\dynatree\skin\vline.gif" />
+    <Content Include="App_Themes\NewDesign\Images\header_left.png" />
+    <Content Include="App_Themes\NewDesign\Images\header_right.png" />
+    <Content Include="App_Themes\NewDesign\Images\header_spacer.jpg" />
+    <Content Include="App_Themes\NewDesign\Images\insert_disabled.png" />
+    <Content Include="App_Themes\NewDesign\Images\insert_enabled.png" />
+    <Content Include="App_Themes\NewDesign\Images\login-button-bg.png" />
+    <Content Include="App_Themes\NewDesign\Images\login-button-hover-bg.png" />
+    <Content Include="App_Themes\NewDesign\Images\login_image.jpg" />
+    <Content Include="App_Themes\NewDesign\Images\logo_possimus.png" />
+    <Content Include="App_Themes\NewDesign\Images\next_arrow.png" />
+    <Content Include="App_Themes\NewDesign\Images\next_page.png" />
+    <Content Include="App_Themes\NewDesign\Images\previous_arrow.png" />
+    <Content Include="App_Themes\NewDesign\Images\previous_page.png" />
+    <Content Include="App_Themes\NewDesign\Images\prev_page_baloon.png" />
+    <Content Include="App_Themes\NewDesign\Images\ql_bullet_minus.png" />
+    <Content Include="App_Themes\NewDesign\Images\ql_bullet_plus.png" />
+    <Content Include="App_Themes\NewDesign\Images\ql_inner_bullet.png" />
+    <Content Include="App_Themes\NewDesign\Images\ql_inner_last_bullet.png" />
+    <Content Include="App_Themes\NewDesign\Images\READY-Login-BG.jpg" />
+    <Content Include="App_Themes\NewDesign\Images\report_logo.png" />
+    <Content Include="App_Themes\NewDesign\Images\row-collapse.png" />
+    <Content Include="App_Themes\NewDesign\Images\row-expand.png" />
+    <Content Include="App_Themes\NewDesign\Images\saved_search_icon.png" />
+    <Content Include="App_Themes\NewDesign\Images\sprite.png" />
+    <Content Include="App_Themes\NewDesign\Images\sprite_backup.png" />
+    <Content Include="App_Themes\NewDesign\Images\up_arrow.png" />
+    <Content Include="App_Themes\NewDesign\Images\up_arrow_EDMS.png" />
+    <Content Include="App_Themes\NewDesign\Images\_header_left.jpg" />
+    <Content Include="App_Themes\NewDesign\Images\_header_right %282%29.jpg" />
+    <Content Include="App_Themes\NewDesign\Images\_sprite.png" />
+    <Content Include="App_Themes\NewDesign\Style\Grid.css" />
+    <Content Include="App_Themes\NewDesign\Style\splitter.css" />
+    <Content Include="App_Themes\NewDesign\Style\Style.css" />
+    <Content Include="App_Themes\NewDesign\Images\alarm.png" />
+    <Content Include="App_Themes\NewDesign\Images\alert.png" />
+    <Content Include="App_Themes\NewDesign\Images\calc2.jpg" />
+    <Content Include="App_Themes\NewDesign\Images\calendar.png" />
+    <Content Include="App_Themes\NewDesign\Images\clone2_icon.png" />
+    <Content Include="App_Themes\NewDesign\Images\close.gif" />
+    <Content Include="App_Themes\NewDesign\Images\delete.gif" />
+    <Content Include="App_Themes\NewDesign\Images\edit.png" />
+    <Content Include="App_Themes\NewDesign\Images\excel.gif" />
+    <Content Include="App_Themes\NewDesign\Images\header_bg.jpg" />
+    <Content Include="App_Themes\NewDesign\Images\header_right.jpg" />
+    <Content Include="App_Themes\NewDesign\Images\helpicon.gif" />
+    <Content Include="App_Themes\NewDesign\Images\info.png" />
+    <Content Include="App_Themes\NewDesign\Images\loading.gif" />
+    <Content Include="App_Themes\NewDesign\Images\loading2.gif" />
+    <Content Include="App_Themes\NewDesign\Images\login_bg.jpg" />
+    <Content Include="App_Themes\NewDesign\Images\logo_head.png" />
+    <Content Include="App_Themes\NewDesign\Images\modal.jpg" />
+    <Content Include="App_Themes\NewDesign\Images\NeatUpload\cancel.png" />
+    <Content Include="App_Themes\NewDesign\Images\NeatUpload\refresh2.png" />
+    <Content Include="App_Themes\NewDesign\Images\NeatUpload\stop_refresh.png" />
+    <Content Include="App_Themes\NewDesign\Images\newMail.png" />
+    <Content Include="App_Themes\NewDesign\Images\oldMail.png" />
+    <Content Include="App_Themes\NewDesign\Images\refresh.gif" />
+    <Content Include="Arindsoft.dll" />
+    <Content Include="AspNetUI.Publish.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="GetRTFACK.aspx" />
+    <Content Include="GetPDF.aspx" />
+    <Content Include="GetPDFACK.aspx" />
+    <Content Include="GetMessageData.aspx" />
+    <Content Include="GetRTF.aspx" />
+    <Content Include="GetXML.aspx" />
+    <Content Include="Images\alarm.png" />
+    <Content Include="Images\alarm_exists.png" />
+    <Content Include="Images\blank.gif" />
+    <Content Include="Images\clone2_icon.png" />
+    <Content Include="Images\download_icon.png" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\excel.gif" />
+    <Content Include="Images\header_bg.jpg" />
+    <Content Include="Images\header_left.jpg" />
+    <Content Include="Images\header_middle.jpg" />
+    <Content Include="Images\header_right.jpg" />
+    <Content Include="Images\login_bg.jpg" />
+    <Content Include="Images\logo_possimus.png" />
+    <Content Include="Images\minus.png" />
+    <Content Include="Images\minus_icon.gif" />
+    <Content Include="Images\NeatUpload\cancel.png" />
+    <Content Include="Images\NeatUpload\refresh2.png" />
+    <Content Include="Images\NeatUpload\stop_refresh.png" />
+    <Content Include="Images\newMail.png" />
+    <Content Include="Images\oldMail.png" />
+    <Content Include="App_Themes\Default\menuh.css" />
+    <Content Include="Images\plus.png" />
+    <Content Include="Images\plus_icon.png" />
+    <Content Include="Images\preview-icon.png" />
+    <Content Include="Images\report_logo.png" />
+    <Content Include="Images\saved_search_icon.png" />
+    <Content Include="Images\xls.png" />
+    <Content Include="Images\xlsx.png" />
+    <Content Include="LoginActiveDirectory.aspx" />
+    <Content Include="RecoverPassword.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\alert.png" />
+    <Content Include="Images\calc2.jpg" />
+    <Content Include="Images\calendar.png" />
+    <Content Include="Images\close.gif" />
+    <Content Include="Images\delete.gif" />
+    <Content Include="Images\helpicon.gif" />
+    <Content Include="Images\info.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\loading2.gif" />
+    <Content Include="Images\logo_head.png" />
+    <Content Include="Images\modal.jpg" />
+    <Content Include="Images\refresh.gif" />
+    <Content Include="Login.aspx" />
+    <Content Include="MasterMain.Master.js" />
+    <Content Include="NotActive.aspx" />
+    <Content Include="Scripts\colResizable-1.3.min.js" />
+    <Content Include="Scripts\CommonJavascript.js" />
+    <Content Include="Scripts\Development\Common\BrowseEDMS.js" />
+    <Content Include="Scripts\Development\Common\Common.js" />
+    <Content Include="Scripts\Development\Common\ContextMenu.js" />
+    <Content Include="Scripts\Development\Common\dragtable.js" />
+    <Content Include="Scripts\Development\Common\jquery-1.8.3.js" />
+    <Content Include="Scripts\Development\Common\jquery.centering.js" />
+    <Content Include="Scripts\Development\Common\jquery.cookie.js" />
+    <Content Include="Scripts\Development\Common\jquery.dynatree.js" />
+    <Content Include="Scripts\Development\Common\jquery.dynatree.min.js" />
+    <Content Include="Scripts\Development\Common\jquery.extensions.js" />
+    <Content Include="Scripts\Development\Common\LeavingPage.js" />
+    <Content Include="Scripts\Development\Common\QuickLinks.js" />
+    <Content Include="Scripts\Development\Common\splitter.js" />
+    <Content Include="Scripts\Development\Common\splitter2.js" />
+    <Content Include="Scripts\Development\Common\splitter3.js" />
+    <Content Include="Scripts\Development\Common\underscore-min.js" />
+    <Content Include="Scripts\Development\GoogleAnalytics\GoogleAnalytics.js" />
+    <Content Include="Scripts\dragtable.js" />
+    <Content Include="Scripts\file_manager.js" />
+    <Content Include="Scripts\jquery-1.3.2.min-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.3.2.min.js" />
+    <Content Include="Scripts\jquery-1.7.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.2.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="Scripts\jquery.centering.js" />
+    <Content Include="Scripts\jquery.dragtable.js" />
+    <Content Include="Scripts\jquery.event.drag-1.4.js" />
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.mouse.js" />
+    <Content Include="Scripts\jquery.ui.sortable.js" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
+    <Content Include="Scripts\ListBoxAER_CT.js" />
+    <Content Include="Scripts\ModalPopup.js" />
+    <EmbeddedResource Include="Scripts\ucPopup.js" />
+    <Content Include="Scripts\Production\Common\ContextMenu.js" />
+    <Content Include="Scripts\Production\Common\jquery-1.8.3.js" />
+    <Content Include="Scripts\Production\Common\jquery.centering.js" />
+    <Content Include="Scripts\Production\Common\LeavingPage.js" />
+    <Content Include="Scripts\Production\Common\QuickLinks.js" />
+    <Content Include="Scripts\Production\GoogleAnalytics\GoogleAnalytics.js" />
+    <Content Include="Scripts\ucSearcher.js" />
+    <Content Include="Properties\DataSources\Ready.Model.Business.ParentEntity.datasource" />
+    <Content Include="Service References\NanokinetikEDMS\AspNetUI.NanokinetikEDMS.EDMSDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\NanokinetikEDMS\AspNetUI.NanokinetikEDMS.EDMSFolder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\NanokinetikEDMS\configuration91.svcinfo" />
+    <Content Include="Service References\NanokinetikEDMS\configuration.svcinfo" />
+    <Content Include="Service References\NanokinetikEDMS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\ReadyEDMS\EDMSService.disco" />
+    <Content Include="Service References\ReadyEDMS\configuration91.svcinfo" />
+    <Content Include="Service References\ReadyEDMS\configuration.svcinfo" />
+    <Content Include="Service References\ReadyEDMS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="ucControls\PopupControls\ucConfirmAction.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormMEDDR.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormNAME.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormPKPartnerType.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormALSTRN.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormINTCOD.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormON.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormPKManuType.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormPREEVCODE.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormSave.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormSN.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormSUBALS.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormSUBATT.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormSUBTRN.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormQPPV.ascx" />
+    <Content Include="ucControls\PopupControls\ucSearcherATC.ascx" />
+    <Content Include="ucControls\PopupControls\ucSearcherSUBST.ascx" />
+    <Content Include="Views\Account\Form.aspx" />
+    <Content Include="Views\ActivityView\Form.aspx" />
+    <Content Include="Views\ActivityView\List.aspx" />
+    <Content Include="Views\ActivityView\Preview.aspx" />
+    <Content Include="Views\Business\PharmacovigilanceQualityReport.aspx" />
+    <Content Include="Views\TestEDMS.aspx" />
+    <Content Include="Views\AlerterView\Form.aspx" />
+    <Content Include="Views\ApprovedSubstanceView\Form.aspx" />
+    <Content Include="Views\ApprovedSubstanceView\List.aspx" />
+    <Content Include="Views\AtcView\Form.aspx" />
+    <Content Include="Views\AtcView\List.aspx" />
+    <Content Include="Views\AuditTrailView\List.aspx" />
+    <Content Include="Views\AuthorisedProductView\Form.aspx" />
+    <Content Include="Views\AuthorisedProductView\List.aspx" />
+    <Content Include="Views\AuthorisedProductView\Preview.aspx" />
+    <Content Include="Views\AuthorisedProductXevprmView\List.aspx" />
+    <Content Include="Views\Business\ActivityTimeReport.aspx" />
+    <Content Include="Views\Business\AllTimeUnitView.aspx" />
+    <Content Include="Views\AlerterView\List.aspx" />
+    <Content Include="Views\AS2HandlerLogView\List.aspx" />
+    <Content Include="Views\Shared\UserControl\Popup\ColumnsPopup.ascx" />
+    <Content Include="Views\Shared\UserControl\Popup\AlerterUserStatusPopup.ascx" />
+    <Content Include="Views\Shared\UserControl\Popup\BrowseEDMSPopup.ascx" />
+    <Content Include="Views\Shared\UserControl\Popup\DateRangeFilterPopup.ascx" />
+    <Content Include="Views\UserSecurityView\Form.aspx" />
+    <Content Include="Views\UserRoleView\Form.aspx" />
+    <Content Include="Views\UserRoleView\List.aspx" />
+    <Content Include="Views\UserActionView\Form.aspx" />
+    <Content Include="Views\UserActionView\List.aspx" />
+    <Content Include="Views\LocationsImport.aspx" />
+    <Content Include="Views\RestrictedAreaView\ErrorInfo.aspx" />
+    <Content Include="Views\DocumentView\Form.aspx" />
+    <Content Include="Views\DocumentView\Preview.aspx" />
+    <Content Include="Views\OrganizationView\Form.aspx" />
+    <Content Include="Views\PersonView\Form.aspx" />
+    <Content Include="Views\ProjectView\Form.aspx" />
+    <Content Include="Views\ProjectView\Preview.aspx" />
+    <Content Include="Views\Shared\UserControl\Popup\QppvCodesPopup.ascx" />
+    <Content Include="Views\Shared\UserControl\Popup\XevprmValidationErrorPopup.ascx" />
+    <Content Include="Views\Shared\UserControl\UploadPanel.ascx" />
+    <Content Include="Views\Shared\UserControl\TimeBox.ascx" />
+    <Content Include="Views\Shared\UserControl\LabelError.ascx" />
+    <Content Include="Views\SubmissionUnitView\Form.aspx" />
+    <Content Include="Views\SubmissionUnitView\Preview.aspx" />
+    <Content Include="Views\SubstanceView\Form.aspx" />
+    <Content Include="Views\TaskNameView\Form.aspx" />
+    <Content Include="Views\TaskView\Form.aspx" />
+    <Content Include="Views\TaskView\Preview.aspx" />
+    <Content Include="Views\TimeUnitNameView\Form.aspx" />
+    <Content Include="Views\TimeUnitView\Form.aspx" />
+    <Content Include="Views\TimeUnitView\List.aspx" />
+    <Content Include="Views\MAServiceLogView\List.aspx" />
+    <Content Include="Views\Business\Forms\ListForms\TimeUnitForm_list.ascx" />
+    <Content Include="Views\ReceivedMessageView\List.aspx" />
+    <Content Include="Views\TimeUnitView\Preview.aspx" />
+    <Content Include="Views\TypeView\Form.aspx" />
+    <Content Include="Views\XevprmLogView\List.aspx" />
+    <Content Include="Views\SentMessageView\List.aspx" />
+    <Content Include="Views\ServiceLogView\List.aspx" />
+    <Content Include="Views\UserView\List.aspx" />
+    <Content Include="Views\DocumentViewAll\List.aspx" />
+    <Content Include="Views\DocumentView\List.aspx" />
+    <Content Include="Views\Operational\StatisticsChartsView.aspx" />
+    <Content Include="Views\Business\ValidationReport.aspx" />
+    <Content Include="Views\Operational\ASProperties.aspx" />
+    <Content Include="Views\Operational\ASView.aspx" />
+    <Content Include="Views\Business\ATimeUnitView.aspx" />
+    <Content Include="ucControls\ExcelExport.aspx" />
+    <Content Include="ucControls\PopupControls\ucConfirmExcelDataImport.ascx" />
+    <Content Include="ucControls\PopupControls\ucConfirmInput.ascx" />
+    <Content Include="ucControls\PopupControls\ucExporter.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupForm.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormAMOUNT.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormGE.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormGN.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormISO.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormMOIETY.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormPROP.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormREL.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormRS.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormSC.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormSCLF.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormST.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormSTRUCT.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormTRG.ascx" />
+    <Content Include="ucControls\PopupControls\ucPopupFormVER.ascx" />
+    <Content Include="ucControls\PopupControls\ucReminder.ascx" />
+    <Content Include="ucControls\PopupControls\ucSearcher.ascx" />
+    <Content Include="Views\Business\AttachmentMigrationView.aspx" />
+    <Content Include="GetACK.aspx" />
+    <Content Include="Views\Operational\Forms\DetailsForms\ATCCodeForm_details.ascx" />
+    <Content Include="Views\Operational\Forms\ListForms\ASPropertiesForm_list.ascx" />
+    <Content Include="Views\Business\ShowFile.aspx" />
+    <Content Include="Views\Business\RegulatoryActivityReport.aspx" />
+    <Content Include="Views\Business\CustomerTimeReport.aspx" />
+    <Content Include="Views\Operational\Forms\DetailsForms\ASForm_details.ascx" />
+    <Content Include="Views\Business\DownloadFile.aspx" />
+    <Content Include="Views\Business\Forms\DetailsForms\SSIFForm_details.ascx" />
+    <Content Include="Views\Business\Forms\DetailsForms\SSIForm_details.ascx" />
+    <Content Include="Views\Business\Forms\DetailsForms\ATimeUnitForm_details.ascx" />
+    <Content Include="Views\Business\SSIFView.aspx" />
+    <Content Include="Views\Business\SSIView.aspx" />
+    <Content Include="Views\Business\TimeUnitView.aspx" />
+    <Content Include="Views\Operational\Forms\DetailsForms\SubstanceForm_details.ascx" />
+    <Content Include="Views\Operational\Forms\DetailsForms\RoleForm_details.ascx" />
+    <Content Include="Views\Operational\Forms\DetailsForms\UserForm_details.ascx" />
+    <Content Include="Views\Operational\Forms\ListForms\RoleForm_list.ascx" />
+    <Content Include="Views\Operational\RolesView.aspx" />
+    <Content Include="Views\Operational\UsersView.aspx" />
+    <Content Include="Views\Operational\xEVPRMStats.aspx" />
+    <Content Include="Views\OrganizationView\List.aspx" />
+    <Content Include="Views\PartialShared\ControlTemplates\AutoCompleteBox_CT.ascx" />
+    <Content Include="Views\PartialShared\ControlTemplates\CheckBoxList_CT.ascx" />
+    <Content Include="Views\PartialShared\ControlTemplates\ComboBox_CT.ascx" />
+    <Content Include="Views\PartialShared\ControlTemplates\DateBox_CT.ascx" />
+    <Content Include="Views\PartialShared\ControlTemplates\DropDownList_CT.ascx" />
+    <Content Include="Views\PartialShared\ControlTemplates\Empty_CT.ascx" />
+    <Content Include="Views\PartialShared\ControlTemplates\GridView_CT.ascx" />
+    <Content Include="Views\PartialShared\ControlTemplates\Label_CT.ascx" />
+    <Content Include="Views\PartialShared\ControlTemplates\ListBoxAER_CT.ascx" />
+    <Content Include="Views\PartialShared\ControlTemplates\ListBox_CT.ascx" />
+    <Content Include="Views\PartialShared\ControlTemplates\MaskedEditBox_CT.ascx" />
+    <Content Include="Views\PartialShared\ControlTemplates\MoneyBox_CT.ascx" />
+    <Content Include="Views\PartialShared\ControlTemplates\RadioButtonList_CT.ascx" />
+    <Content Include="Views\PartialShared\ControlTemplates\TextArea_CT.ascx" />
+    <Content Include="Views\PartialShared\ControlTemplates\TextBox_CT.ascx" />
+    <Content Include="Views\PartialShared\GridViewPager_Resources\first_page.png" />
+    <Content Include="Views\PartialShared\GridViewPager_Resources\last_page.png" />
+    <Content Include="Views\PartialShared\GridViewPager_Resources\next_page.png" />
+    <Content Include="Views\PartialShared\GridViewPager_Resources\paging_arrow_left.gif" />
+    <Content Include="Views\PartialShared\GridViewPager_Resources\paging_arrow_left_double.gif" />
+    <Content Include="Views\PartialShared\GridViewPager_Resources\paging_arrow_right.gif" />
+    <Content Include="Views\PartialShared\GridViewPager_Resources\paging_arrow_right_double.gif" />
+    <Content Include="Views\PartialShared\GridViewPager_Resources\previous_page.png" />
+    <Content Include="Views\PartialShared\ModalPopupContainer_Resources\close.gif" />
+    <Content Include="Views\PartialShared\Operational\ConfirmModalPopup.ascx" />
+    <Content Include="Views\PartialShared\Operational\ContextMenu.ascx" />
+    <Content Include="Views\PartialShared\Operational\AboutModalPopup.ascx" />
+    <Content Include="Views\PartialShared\Operational\GridViewPager.ascx" />
+    <Content Include="Views\PartialShared\Operational\InboxGridViewPager.ascx" />
+    <Content Include="Views\PartialShared\Operational\GridViewItemsPerPage.ascx" />
+    <Content Include="Views\PartialShared\Operational\LeftMenu.ascx" />
+    <Content Include="Views\PartialShared\Operational\MessageModalPopup.ascx" />
+    <Content Include="Views\PartialShared\Operational\ModalPopupContainer.ascx" />
+    <Content Include="Views\PartialShared\Operational\SearcherDisplay.ascx" />
+    <Content Include="Views\PartialShared\Operational\TabMenu.ascx" />
+    <Content Include="Views\PartialShared\Operational\TopMenu.ascx" />
+    <Content Include="Views\PartialShared\Operational\ViewStateController.ascx" />
+    <None Include="Service References\ReadyEDMS\EDMSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReadyEDMS\EDMSService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReadyEDMS\EDMSService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\ReadyEDMS\ReadyEDMS.wsdl" />
+    <Content Include="Views\Business\FileUpload.ashx" />
+    <Content Include="Views\Business\ShowSequenceFile.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\AUTHORISED_PRODUCTView.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AUTHORISED_PRODUCTView.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\AUTHORISED_PRODUCTView.hr-HR.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AUTHORISED_PRODUCTView.hr-HR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GetRTFACK.aspx.cs">
+      <DependentUpon>GetRTFACK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetRTFACK.aspx.designer.cs">
+      <DependentUpon>GetRTFACK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetACK.aspx.designer.cs">
+      <DependentUpon>GetACK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetPDF.aspx.cs">
+      <DependentUpon>GetPDF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetPDF.aspx.designer.cs">
+      <DependentUpon>GetPDF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetPDFACK.aspx.cs">
+      <DependentUpon>GetPDFACK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetPDFACK.aspx.designer.cs">
+      <DependentUpon>GetPDFACK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetMessageData.aspx.cs">
+      <DependentUpon>GetMessageData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetMessageData.aspx.designer.cs">
+      <DependentUpon>GetMessageData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetRTF.aspx.cs">
+      <DependentUpon>GetRTF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetRTF.aspx.designer.cs">
+      <DependentUpon>GetRTF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetXML.aspx.cs">
+      <DependentUpon>GetXML.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetXML.aspx.designer.cs">
+      <DependentUpon>GetXML.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginActiveDirectory.aspx.cs">
+      <DependentUpon>LoginActiveDirectory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginActiveDirectory.aspx.designer.cs">
+      <DependentUpon>LoginActiveDirectory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NanokinetikEDMS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ReadyEDMS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\EDMS.ashx.cs">
+      <DependentUpon>EDMS.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\IEDMS.cs" />
+    <Compile Include="Services\ucPopup.ashx.cs">
+      <DependentUpon>ucPopup.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Support\AlerterHelper.cs" />
+    <Compile Include="Support\Article57Reporting.cs" />
+    <Compile Include="Support\AttachmentHelper.cs" />
+    <Compile Include="Support\AuditTrailHelper.cs" />
+    <Compile Include="Support\CacheManager.cs" />
+    <Compile Include="Support\CBLoader.cs" />
+    <Compile Include="Support\BindingOperations.cs" />
+    <Compile Include="Support\EDMS.cs" />
+    <Compile Include="Support\EventArgs.cs" />
+    <Compile Include="Support\ExtensionMethods.cs" />
+    <Compile Include="Support\FormTypes.cs" />
+    <Compile Include="Support\Impersonate.cs" />
+    <Compile Include="Support\Indications.cs" />
+    <Compile Include="Support\LastChange.cs" />
+    <Compile Include="Support\LdapAuthentication.cs" />
+    <Compile Include="Support\ListOperations.cs" />
+    <Compile Include="Support\LocationManager.cs" />
+    <Compile Include="Support\ObjectContainer.cs" />
+    <Compile Include="Support\PersonHelper.cs" />
+    <Compile Include="Support\QuickLinks.cs" />
+    <Compile Include="Support\ReadySettings.cs" />
+    <Compile Include="Support\RequestHelper.cs" />
+    <Compile Include="Support\SecurityHelper.cs" />
+    <Compile Include="Support\SecurityOperations.cs" />
+    <Compile Include="Support\SSIRepository.cs" />
+    <Compile Include="Support\SSIForm.cs" />
+    <Compile Include="Support\StringOperations.cs" />
+    <Compile Include="Support\StyleHelper.cs" />
+    <Compile Include="Support\TypePkHelper.cs" />
+    <Compile Include="Support\xEVPRMHelper.cs" />
+    <Compile Include="TimeUnitGrid\Grid.cs" />
+    <Compile Include="TimeUnitGrid\LinkHelper.cs" />
+    <Compile Include="TimeUnitGrid\Pager.cs" />
+    <Compile Include="ucControls\PopupControls\ucConfirmAction.ascx.cs">
+      <DependentUpon>ucConfirmAction.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucConfirmAction.ascx.designer.cs">
+      <DependentUpon>ucConfirmAction.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupForm.ascx.designer.cs">
+      <DependentUpon>ucPopupForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormMEDDR.ascx.cs">
+      <DependentUpon>ucPopupFormMEDDR.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormMEDDR.ascx.designer.cs">
+      <DependentUpon>ucPopupFormMEDDR.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormNAME.ascx.cs">
+      <DependentUpon>ucPopupFormNAME.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormNAME.ascx.designer.cs">
+      <DependentUpon>ucPopupFormNAME.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormPKPartnerType.ascx.cs">
+      <DependentUpon>ucPopupFormPKPartnerType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormPKPartnerType.ascx.designer.cs">
+      <DependentUpon>ucPopupFormPKPartnerType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormALSTRN.ascx.cs">
+      <DependentUpon>ucPopupFormALSTRN.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormALSTRN.ascx.designer.cs">
+      <DependentUpon>ucPopupFormALSTRN.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormAMOUNT.ascx.designer.cs">
+      <DependentUpon>ucPopupFormAMOUNT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormINTCOD.ascx.cs">
+      <DependentUpon>ucPopupFormINTCOD.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormINTCOD.ascx.designer.cs">
+      <DependentUpon>ucPopupFormINTCOD.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormMOIETY.ascx.designer.cs">
+      <DependentUpon>ucPopupFormMOIETY.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormON.ascx.cs">
+      <DependentUpon>ucPopupFormON.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormON.ascx.designer.cs">
+      <DependentUpon>ucPopupFormON.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormPKManuType.ascx.cs">
+      <DependentUpon>ucPopupFormPKManuType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormPKManuType.ascx.designer.cs">
+      <DependentUpon>ucPopupFormPKManuType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormPREEVCODE.ascx.cs">
+      <DependentUpon>ucPopupFormPREEVCODE.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormPREEVCODE.ascx.designer.cs">
+      <DependentUpon>ucPopupFormPREEVCODE.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormPROP.ascx.designer.cs">
+      <DependentUpon>ucPopupFormPROP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormRS.ascx.designer.cs">
+      <DependentUpon>ucPopupFormRS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormSave.ascx.cs">
+      <DependentUpon>ucPopupFormSave.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormSave.ascx.designer.cs">
+      <DependentUpon>ucPopupFormSave.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormSN.ascx.cs">
+      <DependentUpon>ucPopupFormSN.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormSN.ascx.designer.cs">
+      <DependentUpon>ucPopupFormSN.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormSUBALS.ascx.cs">
+      <DependentUpon>ucPopupFormSUBALS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormSUBALS.ascx.designer.cs">
+      <DependentUpon>ucPopupFormSUBALS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormSUBATT.ascx.cs">
+      <DependentUpon>ucPopupFormSUBATT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormSUBATT.ascx.designer.cs">
+      <DependentUpon>ucPopupFormSUBATT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormSUBTRN.ascx.cs">
+      <DependentUpon>ucPopupFormSUBTRN.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormSUBTRN.ascx.designer.cs">
+      <DependentUpon>ucPopupFormSUBTRN.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormQPPV.ascx.cs">
+      <DependentUpon>ucPopupFormQPPV.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormQPPV.ascx.designer.cs">
+      <DependentUpon>ucPopupFormQPPV.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucSearcherATC.ascx.cs">
+      <DependentUpon>ucSearcherATC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucSearcherATC.ascx.designer.cs">
+      <DependentUpon>ucSearcherATC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucSearcherSUBST.ascx.cs">
+      <DependentUpon>ucSearcherSUBST.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucSearcherSUBST.ascx.designer.cs">
+      <DependentUpon>ucSearcherSUBST.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Account\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActivityView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ActivityView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActivityView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ActivityView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActivityView\Preview.aspx.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ActivityView\Preview.aspx.designer.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\PharmacovigilanceQualityReport.aspx.cs">
+      <DependentUpon>PharmacovigilanceQualityReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\PharmacovigilanceQualityReport.aspx.designer.cs">
+      <DependentUpon>PharmacovigilanceQualityReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\FileUpload.ashx.cs">
+      <DependentUpon>FileUpload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\ShowSequenceFile.ashx.cs">
+      <DependentUpon>ShowSequenceFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestEDMS.aspx.cs">
+      <DependentUpon>TestEDMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TestEDMS.aspx.designer.cs">
+      <DependentUpon>TestEDMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AlerterView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AlerterView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ApprovedSubstanceView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ApprovedSubstanceView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ApprovedSubstanceView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ApprovedSubstanceView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AtcView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AtcView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AtcView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AtcView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AuditTrailView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AuditTrailView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AuthorisedProductView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AuthorisedProductView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AuthorisedProductView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AuthorisedProductView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AuthorisedProductView\Preview.aspx.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AuthorisedProductView\Preview.aspx.designer.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AuthorisedProductXevprmView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AuthorisedProductXevprmView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\ActivityTimeReport.aspx.cs">
+      <DependentUpon>ActivityTimeReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\ActivityTimeReport.aspx.designer.cs">
+      <DependentUpon>ActivityTimeReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\AllTimeUnitView.aspx.cs">
+      <DependentUpon>AllTimeUnitView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\AllTimeUnitView.aspx.designer.cs">
+      <DependentUpon>AllTimeUnitView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AlerterView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AlerterView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Interface\IReminderCustomControl.cs" />
+    <Compile Include="Views\Shared\UserControl\Popup\ColumnsPopup.ascx.cs">
+      <DependentUpon>ColumnsPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\ColumnsPopup.ascx.designer.cs">
+      <DependentUpon>ColumnsPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\AlerterUserStatusPopup.ascx.cs">
+      <DependentUpon>AlerterUserStatusPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\AlerterUserStatusPopup.ascx.designer.cs">
+      <DependentUpon>AlerterUserStatusPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\BrowseEDMSPopup.ascx.cs">
+      <DependentUpon>BrowseEDMSPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\BrowseEDMSPopup.ascx.designer.cs">
+      <DependentUpon>BrowseEDMSPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\DateRangeFilterPopup.ascx.cs">
+      <DependentUpon>DateRangeFilterPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\DateRangeFilterPopup.ascx.designer.cs">
+      <DependentUpon>DateRangeFilterPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserSecurityView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UserSecurityView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserRoleView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UserRoleView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserRoleView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UserRoleView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserActionView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UserActionView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserActionView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UserActionView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LocationsImport.aspx.cs">
+      <DependentUpon>LocationsImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\LocationsImport.aspx.designer.cs">
+      <DependentUpon>LocationsImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RestrictedAreaView\ErrorInfo.aspx.cs">
+      <DependentUpon>ErrorInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RestrictedAreaView\ErrorInfo.aspx.designer.cs">
+      <DependentUpon>ErrorInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Template\DefaultPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\DocumentView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\DocumentView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DocumentView\Preview.aspx.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\DocumentView\Preview.aspx.designer.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrganizationView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\OrganizationView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PersonView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PersonView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProjectView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ProjectView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProjectView\Preview.aspx.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ProjectView\Preview.aspx.designer.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Interface\IXevprmValidationError.cs" />
+    <Compile Include="Views\Shared\UserControl\Popup\QppvCodesPopup.ascx.cs">
+      <DependentUpon>QppvCodesPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\QppvCodesPopup.ascx.designer.cs">
+      <DependentUpon>QppvCodesPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\XevprmValidationErrorPopup.ascx.cs">
+      <DependentUpon>XevprmValidationErrorPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\XevprmValidationErrorPopup.ascx.designer.cs">
+      <DependentUpon>XevprmValidationErrorPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\TimeBox.ascx.cs">
+      <DependentUpon>TimeBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\TimeBox.ascx.designer.cs">
+      <DependentUpon>TimeBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\UploadPanel.ascx.cs">
+      <DependentUpon>UploadPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\UploadPanel.ascx.designer.cs">
+      <DependentUpon>UploadPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\LabelError.ascx.cs">
+      <DependentUpon>LabelError.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\LabelError.ascx.designer.cs">
+      <DependentUpon>LabelError.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubmissionUnitView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SubmissionUnitView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubmissionUnitView\Preview.aspx.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SubmissionUnitView\Preview.aspx.designer.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubstanceView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SubstanceView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskNameView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TaskNameView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TaskView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskView\Preview.aspx.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TaskView\Preview.aspx.designer.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimeUnitNameView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TimeUnitNameView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimeUnitView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TimeUnitView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimeUnitView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TimeUnitView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MAServiceLogView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MAServiceLogView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\Forms\ListForms\TimeUnitForm_list.ascx.cs">
+      <DependentUpon>TimeUnitForm_list.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\Forms\ListForms\TimeUnitForm_list.ascx.designer.cs">
+      <DependentUpon>TimeUnitForm_list.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceivedMessageView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ReceivedMessageView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SentMessageView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SentMessageView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServiceLogView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ServiceLogView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimeUnitView\Preview.aspx.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TimeUnitView\Preview.aspx.designer.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TypeView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TypeView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UserView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AS2HandlerLogView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AS2HandlerLogView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\XevprmLogView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\XevprmLogView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DocumentViewAll\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\DocumentViewAll\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DocumentView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\DocumentView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Operational\StatisticsChartsView.aspx.cs">
+      <DependentUpon>StatisticsChartsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Operational\StatisticsChartsView.aspx.designer.cs">
+      <DependentUpon>StatisticsChartsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\ValidationReport.aspx.cs">
+      <DependentUpon>ValidationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\ValidationReport.aspx.designer.cs">
+      <DependentUpon>ValidationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Operational\ASProperties.aspx.cs">
+      <DependentUpon>ASProperties.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Operational\ASProperties.aspx.designer.cs">
+      <DependentUpon>ASProperties.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Operational\ASView.aspx.cs">
+      <DependentUpon>ASView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Operational\ASView.aspx.designer.cs">
+      <DependentUpon>ASView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\ATimeUnitView.aspx.cs">
+      <DependentUpon>ATimeUnitView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucExporter.ascx.cs">
+      <DependentUpon>ucExporter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucExporter.ascx.designer.cs">
+      <DependentUpon>ucExporter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormAMOUNT.ascx.cs">
+      <DependentUpon>ucPopupFormAMOUNT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormGE.ascx.cs">
+      <DependentUpon>ucPopupFormGE.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormGE.ascx.designer.cs">
+      <DependentUpon>ucPopupFormGE.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormGN.ascx.cs">
+      <DependentUpon>ucPopupFormGN.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormGN.ascx.designer.cs">
+      <DependentUpon>ucPopupFormGN.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormISO.ascx.cs">
+      <DependentUpon>ucPopupFormISO.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormISO.ascx.designer.cs">
+      <DependentUpon>ucPopupFormISO.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormMOIETY.ascx.cs">
+      <DependentUpon>ucPopupFormMOIETY.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormPROP.ascx.cs">
+      <DependentUpon>ucPopupFormPROP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormREL.ascx.cs">
+      <DependentUpon>ucPopupFormREL.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormREL.ascx.designer.cs">
+      <DependentUpon>ucPopupFormREL.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormRS.ascx.cs">
+      <DependentUpon>ucPopupFormRS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormSC.ascx.cs">
+      <DependentUpon>ucPopupFormSC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormSC.ascx.designer.cs">
+      <DependentUpon>ucPopupFormSC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormSCLF.ascx.cs">
+      <DependentUpon>ucPopupFormSCLF.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormSCLF.ascx.designer.cs">
+      <DependentUpon>ucPopupFormSCLF.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormST.ascx.cs">
+      <DependentUpon>ucPopupFormST.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormST.ascx.designer.cs">
+      <DependentUpon>ucPopupFormST.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormSTRUCT.ascx.cs">
+      <DependentUpon>ucPopupFormSTRUCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormSTRUCT.ascx.designer.cs">
+      <DependentUpon>ucPopupFormSTRUCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormTRG.ascx.cs">
+      <DependentUpon>ucPopupFormTRG.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormTRG.ascx.designer.cs">
+      <DependentUpon>ucPopupFormTRG.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormVER.ascx.cs">
+      <DependentUpon>ucPopupFormVER.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupFormVER.ascx.designer.cs">
+      <DependentUpon>ucPopupFormVER.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\ATimeUnitView.aspx.designer.cs">
+      <DependentUpon>ATimeUnitView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\AttachmentMigrationView.aspx.cs">
+      <DependentUpon>AttachmentMigrationView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\AttachmentMigrationView.aspx.designer.cs">
+      <DependentUpon>AttachmentMigrationView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetACK.aspx.cs">
+      <DependentUpon>GetACK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\Forms\DetailsForms\ATimeUnitForm_details.ascx.designer.cs">
+      <DependentUpon>ATimeUnitForm_details.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Operational\Forms\DetailsForms\ATCCodeForm_details.ascx.cs">
+      <DependentUpon>ATCCodeForm_details.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Operational\Forms\DetailsForms\ATCCodeForm_details.ascx.designer.cs">
+      <DependentUpon>ATCCodeForm_details.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Operational\Forms\ListForms\ASPropertiesForm_list.ascx.cs">
+      <DependentUpon>ASPropertiesForm_list.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Operational\Forms\ListForms\ASPropertiesForm_list.ascx.designer.cs">
+      <DependentUpon>ASPropertiesForm_list.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\ShowFile.aspx.cs">
+      <DependentUpon>ShowFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\ShowFile.aspx.designer.cs">
+      <DependentUpon>ShowFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\RegulatoryActivityReport.aspx.cs">
+      <DependentUpon>RegulatoryActivityReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\RegulatoryActivityReport.aspx.designer.cs">
+      <DependentUpon>RegulatoryActivityReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\CustomerTimeReport.aspx.cs">
+      <DependentUpon>CustomerTimeReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\CustomerTimeReport.aspx.designer.cs">
+      <DependentUpon>CustomerTimeReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Operational\Forms\DetailsForms\ASForm_details.ascx.cs">
+      <DependentUpon>ASForm_details.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Operational\Forms\DetailsForms\ASForm_details.ascx.designer.cs">
+      <DependentUpon>ASForm_details.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\FileDownload.ashx.cs">
+      <DependentUpon>FileDownload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="RecoverPassword.aspx.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecoverPassword.aspx.designer.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterMain.Master.cs">
+      <DependentUpon>MasterMain.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterMain.Master.designer.cs">
+      <DependentUpon>MasterMain.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NotActive.aspx.cs">
+      <DependentUpon>NotActive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotActive.aspx.designer.cs">
+      <DependentUpon>NotActive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Support\APdata.cs" />
+    <Compile Include="Support\Fake.cs" />
+    <Compile Include="Support\GMailHelper.cs" />
+    <Compile Include="Support\BindingHelper.cs" />
+    <Compile Include="Support\ResponseHelper.cs" />
+    <Compile Include="ucControls\ExcelExport.aspx.cs">
+      <DependentUpon>ExcelExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\ExcelExport.aspx.designer.cs">
+      <DependentUpon>ExcelExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucConfirmExcelDataImport.ascx.cs">
+      <DependentUpon>ucConfirmExcelDataImport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucConfirmExcelDataImport.ascx.designer.cs">
+      <DependentUpon>ucConfirmExcelDataImport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucConfirmInput.ascx.cs">
+      <DependentUpon>ucConfirmInput.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucConfirmInput.ascx.designer.cs">
+      <DependentUpon>ucConfirmInput.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucPopupForm.ascx.cs">
+      <DependentUpon>ucPopupForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucReminder.ascx.cs">
+      <DependentUpon>ucReminder.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucReminder.ascx.designer.cs">
+      <DependentUpon>ucReminder.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucSearcher.ascx.cs">
+      <DependentUpon>ucSearcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucControls\PopupControls\ucSearcher.ascx.designer.cs">
+      <DependentUpon>ucSearcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\DownloadFile.aspx.cs">
+      <DependentUpon>DownloadFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\DownloadFile.aspx.designer.cs">
+      <DependentUpon>DownloadFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\Forms\DetailsForms\SSIFForm_details.ascx.cs">
+      <DependentUpon>SSIFForm_details.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\Forms\DetailsForms\SSIFForm_details.ascx.designer.cs">
+      <DependentUpon>SSIFForm_details.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\Forms\DetailsForms\SSIForm_details.ascx.cs">
+      <DependentUpon>SSIForm_details.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\Forms\DetailsForms\ATimeUnitForm_details.ascx.cs">
+      <DependentUpon>ATimeUnitForm_details.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\Forms\DetailsForms\SSIForm_details.ascx.designer.cs">
+      <DependentUpon>SSIForm_details.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\SSIFView.aspx.cs">
+      <DependentUpon>SSIFView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\SSIFView.aspx.designer.cs">
+      <DependentUpon>SSIFView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\SSIView.aspx.cs">
+      <DependentUpon>SSIView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\SSIView.aspx.designer.cs">
+      <DependentUpon>SSIView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Business\TimeUnitView.aspx.cs">
+      <DependentUpon>TimeUnitView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Business\TimeUnitView.aspx.designer.cs">
+      <DependentUpon>TimeUnitView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Operational\Forms\DetailsForms\SubstanceForm_details.ascx.cs">
+      <DependentUpon>SubstanceForm_details.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Operational\Forms\DetailsForms\SubstanceForm_details.ascx.designer.cs">
+      <DependentUpon>SubstanceForm_details.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Operational\Forms\DetailsForms\RoleForm_details.ascx.cs">
+      <DependentUpon>RoleForm_details.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Operational\Forms\DetailsForms\RoleForm_details.ascx.designer.cs">
+      <DependentUpon>RoleForm_details.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Operational\Forms\DetailsForms\UserForm_details.ascx.cs">
+      <DependentUpon>UserForm_details.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Operational\Forms\DetailsForms\UserForm_details.ascx.designer.cs">
+      <DependentUpon>UserForm_details.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Operational\Forms\ListForms\RoleForm_list.ascx.cs">
+      <DependentUpon>RoleForm_list.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Operational\Forms\ListForms\RoleForm_list.ascx.designer.cs">
+      <DependentUpon>RoleForm_list.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Operational\RolesView.aspx.cs">
+      <DependentUpon>RolesView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Operational\RolesView.aspx.designer.cs">
+      <DependentUpon>RolesView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Operational\UsersView.aspx.cs">
+      <DependentUpon>UsersView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Operational\UsersView.aspx.designer.cs">
+      <DependentUpon>UsersView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Operational\xEVPRMStats.aspx.cs">
+      <DependentUpon>xEVPRMStats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Operational\xEVPRMStats.aspx.designer.cs">
+      <DependentUpon>xEVPRMStats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrganizationView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\OrganizationView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\AutoCompleteBox_CT.ascx.cs">
+      <DependentUpon>AutoCompleteBox_CT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\AutoCompleteBox_CT.ascx.designer.cs">
+      <DependentUpon>AutoCompleteBox_CT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\CheckBoxList_CT.ascx.cs">
+      <DependentUpon>CheckBoxList_CT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\CheckBoxList_CT.ascx.designer.cs">
+      <DependentUpon>CheckBoxList_CT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\ComboBox_CT.ascx.cs">
+      <DependentUpon>ComboBox_CT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\ComboBox_CT.ascx.designer.cs">
+      <DependentUpon>ComboBox_CT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\DateBox_CT.ascx.cs">
+      <DependentUpon>DateBox_CT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\DateBox_CT.ascx.designer.cs">
+      <DependentUpon>DateBox_CT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\DropDownList_CT.ascx.cs">
+      <DependentUpon>DropDownList_CT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\DropDownList_CT.ascx.designer.cs">
+      <DependentUpon>DropDownList_CT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\Empty_CT.ascx.cs">
+      <DependentUpon>Empty_CT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\Empty_CT.ascx.designer.cs">
+      <DependentUpon>Empty_CT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\GridView_CT.ascx.cs">
+      <DependentUpon>GridView_CT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\GridView_CT.ascx.designer.cs">
+      <DependentUpon>GridView_CT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\Label_CT.ascx.cs">
+      <DependentUpon>Label_CT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\Label_CT.ascx.designer.cs">
+      <DependentUpon>Label_CT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\ListBoxAER_CT.ascx.cs">
+      <DependentUpon>ListBoxAER_CT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\ListBoxAER_CT.ascx.designer.cs">
+      <DependentUpon>ListBoxAER_CT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\ListBox_CT.ascx.cs">
+      <DependentUpon>ListBox_CT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\ListBox_CT.ascx.designer.cs">
+      <DependentUpon>ListBox_CT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\MaskedEditBox_CT.ascx.cs">
+      <DependentUpon>MaskedEditBox_CT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\MaskedEditBox_CT.ascx.designer.cs">
+      <DependentUpon>MaskedEditBox_CT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\MoneyBox_CT.ascx.cs">
+      <DependentUpon>MoneyBox_CT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\MoneyBox_CT.ascx.designer.cs">
+      <DependentUpon>MoneyBox_CT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\RadioButtonList_CT.ascx.cs">
+      <DependentUpon>RadioButtonList_CT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\RadioButtonList_CT.ascx.designer.cs">
+      <DependentUpon>RadioButtonList_CT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\TextArea_CT.ascx.cs">
+      <DependentUpon>TextArea_CT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\TextArea_CT.ascx.designer.cs">
+      <DependentUpon>TextArea_CT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\TextBox_CT.ascx.cs">
+      <DependentUpon>TextBox_CT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\ControlTemplates\TextBox_CT.ascx.designer.cs">
+      <DependentUpon>TextBox_CT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\ConfirmModalPopup.ascx.cs">
+      <DependentUpon>ConfirmModalPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\ConfirmModalPopup.ascx.designer.cs">
+      <DependentUpon>ConfirmModalPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\ContextMenu.ascx.cs">
+      <DependentUpon>ContextMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\ContextMenu.ascx.designer.cs">
+      <DependentUpon>ContextMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\AboutModalPopup.ascx.cs">
+      <DependentUpon>AboutModalPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\AboutModalPopup.ascx.designer.cs">
+      <DependentUpon>AboutModalPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\GridViewPager.ascx.cs">
+      <DependentUpon>GridViewPager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\GridViewPager.ascx.designer.cs">
+      <DependentUpon>GridViewPager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\InboxGridViewPager.ascx.cs">
+      <DependentUpon>InboxGridViewPager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\InboxGridViewPager.ascx.designer.cs">
+      <DependentUpon>InboxGridViewPager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\GridViewItemsPerPage.ascx.cs">
+      <DependentUpon>GridViewItemsPerPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\GridViewItemsPerPage.ascx.designer.cs">
+      <DependentUpon>GridViewItemsPerPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\LeftMenu.ascx.cs">
+      <DependentUpon>LeftMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\LeftMenu.ascx.designer.cs">
+      <DependentUpon>LeftMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\MessageModalPopup.ascx.cs">
+      <DependentUpon>MessageModalPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\MessageModalPopup.ascx.designer.cs">
+      <DependentUpon>MessageModalPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\ModalPopupContainer.ascx.cs">
+      <DependentUpon>ModalPopupContainer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\ModalPopupContainer.ascx.designer.cs">
+      <DependentUpon>ModalPopupContainer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\SearcherDisplay.ascx.cs">
+      <DependentUpon>SearcherDisplay.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\SearcherDisplay.ascx.designer.cs">
+      <DependentUpon>SearcherDisplay.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\TabMenu.ascx.cs">
+      <DependentUpon>TabMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\TabMenu.ascx.designer.cs">
+      <DependentUpon>TabMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\TopMenu.ascx.cs">
+      <DependentUpon>TopMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\TopMenu.ascx.designer.cs">
+      <DependentUpon>TopMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\ViewStateController.ascx.cs">
+      <DependentUpon>ViewStateController.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PartialShared\Operational\ViewStateController.ascx.designer.cs">
+      <DependentUpon>ViewStateController.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PersonView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PersonView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PharmaceuticalProductView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PharmaceuticalProductView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PharmaceuticalProductView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PharmaceuticalProductView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PharmaceuticalProductView\Preview.aspx.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PharmaceuticalProductView\Preview.aspx.designer.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ProductView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ProductView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductView\Preview.aspx.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ProductView\Preview.aspx.designer.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductXevprmView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ProductXevprmView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProjectView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ProjectView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Form\PharmaceuticalProductForm.ascx.cs">
+      <DependentUpon>PharmaceuticalProductForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Form\PharmaceuticalProductForm.ascx.designer.cs">
+      <DependentUpon>PharmaceuticalProductForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Interface\IArticle57Relevant.cs" />
+    <Compile Include="Views\Shared\Interface\ICustomEnabled.cs" />
+    <Compile Include="Views\Shared\Interface\IDoubleClick.cs" />
+    <Compile Include="Views\Shared\Interface\ILastChange.cs" />
+    <Compile Include="Views\Shared\Template\Default.Master.cs">
+      <DependentUpon>Default.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Template\Default.Master.designer.cs">
+      <DependentUpon>Default.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Template\FormPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Template\ListPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Template\PreviewPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\CheckBox.ascx.cs">
+      <DependentUpon>CheckBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\CheckBox.ascx.designer.cs">
+      <DependentUpon>CheckBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\ContextMenu.ascx.cs">
+      <DependentUpon>ContextMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\ContextMenu.ascx.designer.cs">
+      <DependentUpon>ContextMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\DateTimeBox.ascx.cs">
+      <DependentUpon>DateTimeBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\DateTimeBox.ascx.designer.cs">
+      <DependentUpon>DateTimeBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\DateTimeRangeBox.ascx.cs">
+      <DependentUpon>DateTimeRangeBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\DateTimeRangeBox.ascx.designer.cs">
+      <DependentUpon>DateTimeRangeBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\DropDownList.ascx.cs">
+      <DependentUpon>DropDownList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\DropDownList.ascx.designer.cs">
+      <DependentUpon>DropDownList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\LabelPreview.ascx.cs">
+      <DependentUpon>LabelPreview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\LabelPreview.ascx.designer.cs">
+      <DependentUpon>LabelPreview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\ListBox.ascx.cs">
+      <DependentUpon>ListBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\ListBox.ascx.designer.cs">
+      <DependentUpon>ListBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\ListBoxAu.ascx.cs">
+      <DependentUpon>ListBoxAu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\ListBoxAu.ascx.designer.cs">
+      <DependentUpon>ListBoxAu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\ListBoxExt.ascx.cs">
+      <DependentUpon>ListBoxExt.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\ListBoxExt.ascx.designer.cs">
+      <DependentUpon>ListBoxExt.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\ListBoxSr.ascx.cs">
+      <DependentUpon>ListBoxSr.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\ListBoxSr.ascx.designer.cs">
+      <DependentUpon>ListBoxSr.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\ModalPopup.ascx.cs">
+      <DependentUpon>ModalPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\ModalPopup.ascx.designer.cs">
+      <DependentUpon>ModalPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\IndicationsPopup.ascx.cs">
+      <DependentUpon>IndicationsPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\IndicationsPopup.ascx.designer.cs">
+      <DependentUpon>IndicationsPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\ManufacturerPopup.ascx.cs">
+      <DependentUpon>ManufacturerPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\ManufacturerPopup.ascx.designer.cs">
+      <DependentUpon>ManufacturerPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\PartnerPopup.ascx.cs">
+      <DependentUpon>PartnerPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\PartnerPopup.ascx.designer.cs">
+      <DependentUpon>PartnerPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\PPSubstancePopup.ascx.cs">
+      <DependentUpon>PPSubstancePopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\PPSubstancePopup.ascx.designer.cs">
+      <DependentUpon>PPSubstancePopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\QuickLinksPopup.ascx.cs">
+      <DependentUpon>QuickLinksPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Popup\QuickLinksPopup.ascx.designer.cs">
+      <DependentUpon>QuickLinksPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\RadioButtonYn.ascx.cs">
+      <DependentUpon>RadioButtonYn.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\RadioButtonYn.ascx.designer.cs">
+      <DependentUpon>RadioButtonYn.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\RadioButtonYnu.ascx.cs">
+      <DependentUpon>RadioButtonYnu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\RadioButtonYnu.ascx.designer.cs">
+      <DependentUpon>RadioButtonYnu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Reminder.ascx.cs">
+      <DependentUpon>Reminder.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Reminder.ascx.designer.cs">
+      <DependentUpon>Reminder.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Searcher.ascx.cs">
+      <DependentUpon>Searcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\Searcher.ascx.designer.cs">
+      <DependentUpon>Searcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\TabMenu.ascx.cs">
+      <DependentUpon>TabMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\TabMenu.ascx.designer.cs">
+      <DependentUpon>TabMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\TextBox.ascx.cs">
+      <DependentUpon>TextBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\TextBox.ascx.designer.cs">
+      <DependentUpon>TextBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\TextBoxSr.ascx.cs">
+      <DependentUpon>TextBoxSr.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\TextBoxSr.ascx.designer.cs">
+      <DependentUpon>TextBoxSr.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\TopMenu.ascx.cs">
+      <DependentUpon>TopMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\TopMenu.ascx.designer.cs">
+      <DependentUpon>TopMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubmissionUnitView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SubmissionUnitView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubstanceView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SubstanceView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskNameView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TaskNameView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TaskView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TemplateView\Form.aspx.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TemplateView\Form.aspx.designer.cs">
+      <DependentUpon>Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TemplateView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TemplateView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TemplateView\Preview.aspx.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TemplateView\Preview.aspx.designer.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimeUnitNameView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TimeUnitNameView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TypeView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TypeView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\XevprmView\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\XevprmView\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterMain.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AttachTmpDir\" />
+    <Folder Include="Documents\" />
+    <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AspNetUIFramework\AspNetUIFramework.csproj">
+      <Project>{87C34004-5C27-4F26-AA51-A89A302A10D8}</Project>
+      <Name>AspNetUIFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BSF\ReadyCommon\ReadyCommon.csproj">
+      <Project>{49B8C784-5A11-4862-8AA0-ECCD4FCDCCCE}</Project>
+      <Name>ReadyCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BSF\ReadyDAL\ReadyDAL.csproj">
+      <Project>{160C3359-6B99-4325-9529-7B7230D9BE49}</Project>
+      <Name>ReadyDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonComponents\CommonComponents.csproj">
+      <Project>{03B752CE-585F-4BFB-8E44-068CF1D984EB}</Project>
+      <Name>CommonComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonTypes\CommonTypes.csproj">
+      <Project>{22F9D7AE-3587-43FC-AB78-1F391468CE05}</Project>
+      <Name>CommonTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EVMessage\EVMessage.csproj">
+      <Project>{A370E783-5A6D-4FF9-B411-64D0A1F3C083}</Project>
+      <Name>EVMessage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GEM2\GEM2Common\GEM2Common.csproj">
+      <Project>{DBC8E41B-7720-47C3-A0B1-978A2325E928}</Project>
+      <Name>GEM2Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Default\GridView.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Locations.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Locations.xsx">
+      <DependentUpon>Locations.xsd</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\AUTHORISED_PRODUCTView.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>AUTHORISED_PRODUCTView.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_GlobalResources\AUTHORISED_PRODUCTView.hr-HR.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>AUTHORISED_PRODUCTView.hr-HR.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PersonView\List.aspx" />
+    <Content Include="Views\PharmaceuticalProductView\Form.aspx" />
+    <Content Include="Views\PharmaceuticalProductView\List.aspx" />
+    <Content Include="Views\PharmaceuticalProductView\Preview.aspx" />
+    <Content Include="Views\ProductView\Form.aspx" />
+    <Content Include="Views\ProductView\List.aspx" />
+    <Content Include="Views\ProductView\Preview.aspx" />
+    <Content Include="Views\ProductXevprmView\List.aspx" />
+    <Content Include="Views\ProjectView\List.aspx" />
+    <Content Include="Views\Shared\Form\PharmaceuticalProductForm.ascx" />
+    <Content Include="Views\Shared\UserControl\CheckBox.ascx" />
+    <Content Include="Views\Shared\UserControl\ContextMenu.ascx" />
+    <Content Include="Views\Shared\UserControl\DateTimeBox.ascx" />
+    <Content Include="Views\Shared\UserControl\DateTimeRangeBox.ascx" />
+    <Content Include="Views\Shared\UserControl\DropDownList.ascx" />
+    <Content Include="Views\Shared\UserControl\LabelPreview.ascx" />
+    <Content Include="Views\Shared\UserControl\ListBox.ascx" />
+    <Content Include="Views\Shared\UserControl\ListBoxAu.ascx" />
+    <Content Include="Views\Shared\UserControl\ListBoxExt.ascx" />
+    <Content Include="Views\Shared\UserControl\ListBoxSr.ascx" />
+    <Content Include="Views\Shared\UserControl\ModalPopup.ascx" />
+    <Content Include="Views\Shared\UserControl\Popup\IndicationsPopup.ascx" />
+    <Content Include="Views\Shared\UserControl\Popup\ManufacturerPopup.ascx" />
+    <Content Include="Views\Shared\UserControl\Popup\PartnerPopup.ascx" />
+    <Content Include="Views\Shared\UserControl\Popup\PPSubstancePopup.ascx" />
+    <Content Include="Views\Shared\UserControl\Popup\QuickLinksPopup.ascx" />
+    <Content Include="Views\Shared\UserControl\RadioButtonYn.ascx" />
+    <Content Include="Views\Shared\UserControl\RadioButtonYnu.ascx" />
+    <Content Include="Views\Shared\UserControl\Reminder.ascx" />
+    <Content Include="Views\Shared\UserControl\Searcher.ascx" />
+    <Content Include="Views\Shared\UserControl\TabMenu.ascx" />
+    <Content Include="Views\Shared\UserControl\TextBox.ascx" />
+    <Content Include="Views\Shared\UserControl\TextBoxSr.ascx" />
+    <Content Include="Views\Shared\UserControl\TopMenu.ascx" />
+    <Content Include="Views\SubmissionUnitView\List.aspx" />
+    <Content Include="Views\SubstanceView\List.aspx" />
+    <Content Include="Views\TaskNameView\List.aspx" />
+    <Content Include="Views\TaskView\List.aspx" />
+    <Content Include="Views\TemplateView\Form.aspx" />
+    <Content Include="Views\TemplateView\List.aspx" />
+    <Content Include="Views\TemplateView\Preview.aspx" />
+    <Content Include="Views\TimeUnitNameView\List.aspx" />
+    <Content Include="Views\TypeView\List.aspx" />
+    <Content Include="Views\XevprmView\List.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Business\FileDownload.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\NewDesign\GridView.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Services\ucPopup.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\arial.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\Local Folder.pubxml" />
+    <None Include="Properties\PublishProfiles\Local IIS.pubxml" />
+    <None Include="Properties\PublishProfiles\Pantera ReadyDev.pubxml" />
+    <None Include="Properties\PublishProfiles\Pantera ReadyProd.pubxml" />
+    <None Include="Properties\PublishProfiles\Pantera ReadyTest.pubxml" />
+    <Content Include="Views\Shared\Template\Default.Master" />
+    <Content Include="Services\EDMS.ashx" />
+    <None Include="Service References\NanokinetikEDMS\EDMSWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\NanokinetikEDMS\EDMS_WS.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\NanokinetikEDMS\" />
+    <WCFMetadataStorage Include="Service References\ReadyEDMS\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>16057</DevelopmentServerPort>
+          <DevelopmentServerVPath>/READY</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Ready</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://zvjer/Ready</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="GEM2Common.GEMOrderBy">
+    <Position X="3.5" Y="3.25" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAQAAAAAAAAAIAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>DataSource\OrderBy\GEMOrderBy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GEM2Common.GEMDataSourceBindingAttribute">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAEAAIAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>DataSource\GEMDataSourceBindingAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GEM2Common.GEMDbParameter">
+    <Position X="3.25" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAACAAAAAAAAAAALAgAAAoAAAAAAA=</HashCode>
+      <FileName>DataSource\GEMDbParameter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GEM2Common.GEMOperationBindingAttribute">
+    <Position X="0.5" Y="3.25" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAgAgAAAAAAAAAAAAAAAAAAAEAAAAAAAACBAAAAAQAA=</HashCode>
+      <FileName>DataSource\GEMOperationBindingAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GEM2Common.GEMPropertyBindingAttribute">
+    <Position X="0.5" Y="5.75" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAMEAAAAABAAACAAAAAAAAAMBCAEJAAAAAACAAAQAA=</HashCode>
+      <FileName>DataSource\GEMPropertyBindingAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GEM2Common.GEMDataAccess&lt;T&gt;">
+    <Position X="6.5" Y="0.5" Width="5.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABICEaAEAIGAAwBEKABDAFAAGiEDAAABAEqCgQAAYUA=</HashCode>
+      <FileName>GEMDataAccess.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="GEM2Common.ICRUDOperations&lt;T&gt;">
+    <Position X="3.25" Y="5.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAEIAAAAAAAQAAAAABAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataSource\ICRUDOperations.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="GEM2Common.GEMOrderByType">
+    <Position X="1.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAABAA=</HashCode>
+      <FileName>DataSource\OrderBy\GEMOrderByType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GEM2Common.GEMOperationType">
+    <Position X="3.75" Y="8" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAMAQAAAAAAAAAAAAAAAAAAEAAAAAAAAAQAEAAAA=</HashCode>
+      <FileName>DataSource\GEMOperationType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

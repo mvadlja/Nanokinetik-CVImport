@@ -1,0 +1,9 @@
+﻿-- Delete
+CREATE PROCEDURE  [dbo].[proc_PRODUCT_PACKAGING_MATERIAL_MN_DeleteByProduct]
+	@ProductPk int = NULL
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	DELETE FROM [dbo].PRODUCT_PACKAGING_MATERIAL_MN WHERE [product_FK] = @ProductPk
+END

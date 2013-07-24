@@ -1,0 +1,28 @@
+﻿.topMenuItem
+{
+	color: #ffffff;
+	text-transform: uppercase;
+    font-weight: bold;
+    white-space: nowrap;
+    border-right: solid 1px #ffffff;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.topMenuItem:hover
+{
+    color: #000000;
+    background-color: #AAAAAA;
+}
+
+.topMenuItemSelected
+{
+    color: #ffffff;
+	text-transform: uppercase;
+    font-weight: bold;
+    white-space: nowrap;
+    border-right: solid 1px #ffffff;
+    padding: 6px;
+    cursor: pointer;
+    background-color: #AAAAAA;
+}

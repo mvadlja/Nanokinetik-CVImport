@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[PRODUCT_ORGANIZATION_MANU_MN] (
+    [product_organization_manu_mn_PK] INT IDENTITY (1, 1) NOT NULL,
+    [organization_FK]                 INT NULL,
+    [product_FK]                      INT NULL,
+    CONSTRAINT [PK_PRODUCT_ORGANIZATION_MANU_MN] PRIMARY KEY CLUSTERED ([product_organization_manu_mn_PK] ASC),
+    CONSTRAINT [FK_PRODUCT_ORGANIZATION_MANU_MN_ORGANIZATION] FOREIGN KEY ([organization_FK]) REFERENCES [dbo].[ORGANIZATION] ([organization_PK]) ON DELETE CASCADE,
+    CONSTRAINT [FK_PRODUCT_ORGANIZATION_MANU_MN_PRODUCT] FOREIGN KEY ([product_FK]) REFERENCES [dbo].[PRODUCT] ([product_PK]) ON DELETE CASCADE
+);
+

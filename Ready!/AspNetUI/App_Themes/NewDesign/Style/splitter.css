@@ -1,0 +1,19 @@
+﻿.splitter-container { width: 1000px; height: 500px; position: absolute; left: 50%; margin-left: -500px; display: none; }
+.left-pane { background-color: White; padding-left: 3px;  padding-top: 10px; padding-right: 10px; padding-bottom: 10px; }
+.right-pane { background-color: White; padding: 0px; }
+.splitter-title { height: 26px; background-color: Black; color: white; font-size:16px; vertical-align: middle; padding-top: 10px; text-align: center; font-weight: bold; }
+.splitter-close-button { float: right; color: white; font-weight: bold; vertical-align: middle; cursor: pointer; padding-right: 10px;margin-top: -3px; }
+
+#overlay { width: 100%; height: 100%; left: 0;/*IE*/ top: 0 ; text-align: center; z-index: 998; position: fixed; background-color: black; opacity: 0.4; filter: alpha(opacity = 40); /* For IE8 and earlier */}
+
+.spliter_panel { position: relative; }
+.spliter_panel .vspliter { background-color: grey; cursor: e-resize; z-index: 900; width: 4px; }
+.spliter_panel .hspliter { background-color: #5F5F5F; cursor: n-resize; z-index: 800; height: 4px; }
+.spliter_panel .vspliter, .spliter_panel .left_panel, .spliter_panel .right_panel,
+.spliter_panel .hspliter, .spliter_panel .top_panel, .spliter_panel .bottom_panel { position: absolute; }
+.spliter_panel .vspliter, .spliter_panel .left_panel, .spliter_panel .right_panel { height: 100%; }
+.spliter_panel .hspliter, .spliter_panel .top_panel, .spliter_panel .bottom_panel { width: 100%; }
+.spliter_panel .top_panel, .spliter_panel .left_panel, .spliter_panel .vspliter { top: 0; }
+.spliter_panel .top_panel, .spliter_panel .bottom_panel, .spliter_panel .left_panel, .spliter_panel .hspliter { left: 0; }
+.spliter_panel .bottom_panel { bottom: 0; }
+.spliter_panel .right_panel { right: 0; }

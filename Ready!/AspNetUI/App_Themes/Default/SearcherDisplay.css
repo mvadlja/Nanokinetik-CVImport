@@ -1,0 +1,29 @@
+﻿.boldText
+{
+    font-weight: bold;
+    color: #000000;
+}
+.boldText:link
+{
+    font-weight: bold;
+	color: #333333;
+    text-decoration: none;
+}
+.boldText:hover
+{
+    font-weight: bold;
+	color: #333333;
+    text-decoration: none;
+}
+.boldText:active
+{
+    font-weight: bold;
+	color: #333333;
+    text-decoration: none;
+}
+.boldText:visited
+{
+    font-weight: bold;
+	color: #333333;
+    text-decoration: none;
+}

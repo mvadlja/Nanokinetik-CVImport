@@ -1,0 +1,134 @@
+﻿.grid tr th { word-wrap:break-word; background-color: #CDDEF0; color: black; padding: 1px 6px; height: 22px; font-weight: normal; border-right: 1px solid #787878; display:table-cell;}
+.grid tr td { background-color: #EBEBEB;  color: #333; vertical-align: top; text-align: left; border-right: 1px solid white; padding: 6px 6px; }
+.grid tr:nth-child(even) td { background-color: White; }
+
+.grid tr.data-row.even td {  background-color:  #EBEBEB; }
+.grid tr.data-row.odd td {  background-color: White;}
+
+.grid tr.emptyRow td { border-right: 0px; background-color: White;}
+
+.grid tr.data-row.even td.sorted { border-right: 0px; background-color:  #DCD7A1; }
+.grid tr.data-row.odd td.sorted { border-right: 0px; background-color: #FFFAC0;}
+.grid tr th:last-child {border-right:none;}
+.grid tr td:last-child {border-right:none;}
+.grid tr th input,
+.grid tr th select { width: 100%; border: 0px; padding: 2px 0; }
+
+.grid tr th a,
+.grid tr th a:hover { border-bottom: 0px; display: block; vertical-align: middle; width: 100%;color: Black; }
+
+.grid tr td.right { text-align: right; }
+
+.grid tr th a.asc { background: url(../Images/up_arrow.png) no-repeat right center; }
+.grid tr th a.desc { background: url(../Images/down_arrow.png) no-repeat right center; }
+
+
+.grid { table-layout:fixed; word-wrap:break-word; word-break:break-all; width:100%;}
+
+#pager { text-align: center; padding: 5px; }
+#pager #pager_info,
+#pager #pages { display: inline; }
+#pager * { font-size: 9pt; font-family: Tahoma; }
+#pager #pages a { margin: 0 4px; border-bottom: 1px dotted black; display: inline-block; text-decoration: none; }
+#pager #pages .current { border-bottom: 0px; font-weight: bold; }
+
+#pager #pages .next,
+#pager #pages .previous { width: 16px; height: 15px; border-bottom: 0; vertical-align: middle; }
+#pager #pages .next { background-image: url(../Images/next_arrow.png) }
+#pager #pages .previous { background-image: url(../Images/previous_arrow.png) }
+
+#pager #pages .inactive { opacity: 0.5; display: inline-block; margin: 0 4px; }
+
+.per_page { margin-bottom: -19px; padding-left: 10px; padding-top: 6px; }
+
+.per_page a { border-bottom: 1px dotted black; display: inline-block; text-decoration: none; }
+.per_page a.current { border-bottom: 0; }
+
+.grid tr td.no_records { padding: 20px; text-align: center; color: Gray; }
+
+.kiketable-colsizable{
+	table-layout: fixed; 
+
+	}
+.kiketable-colsizable td,
+.kiketable-colsizable th{
+	overflow : hidden;
+	}
+.kiketable-th{
+	/* Don't set "position: relative" in IE */
+	white-space: nowrap;   /* Only works for THs in IE */
+	text-align: left;
+	height: 20px;          /* value safe to change */
+	}
+.kiketable-th-text{
+	height: 100%;
+	overflow: hidden;
+	}
+.kiketable-colsizable-handler{
+	float: right;
+	cursor: e-resize;
+	height: 100%;
+	border-left:2px outset white;
+	border-right:2px inset white;
+	}
+html > body .kiketable-colsizable-handler{
+	border-right:1px outset white;
+	}
+.kiketable-colsizable-dragLine{
+	position: absolute;
+	width: 2px;
+	cursor: e-resize;
+	background-color: red;  /* value safe to change */
+	}
+.kiketable-colsizable-dragArea{
+	position: absolute;
+	cursor: e-resize;
+	background-color:red;   /* value safe to change */
+	}
+.kiketable-colsizable-minimized{
+	background-color: #ffd; /* value safe to change */
+	color: #bbb;            /* value safe to change */
+}
+
+.grouppingRow .rowToggleButton {position:relative; float:left; width:9px; height:9px; margin:6px 6px 6px -3px;}
+.grouppingRow .rowToggleButton.expand {background-image:url(../Images/row-expand.png); }
+.grouppingRow .rowToggleButton.collapse {background-image:url(../Images/row-collapse.png); }
+.grouppingRow .grouppingTitle {position:relative; float:left; height:20px; line-height:20px; font-weight:bold;}
+.grouppingRow
+{
+border: none 0;
+vertical-align: middle;
+white-space: nowrap;
+border-bottom: Solid 1px lightGrey;
+padding: 3px 6px 4px 0px;
+height:30px;
+}
+
+.grouppingRow.auto-hide  
+{
+    background-color:#FF0000; display:none; position:absolute;
+    background-color:rgb(222,222,222);
+    border:1px solid #666666;
+    font-weight:bold;
+    height:30px;
+    line-height:30px;
+    padding:0px 5px 0px 5px;
+
+    }
+
+.grid .prev-page-baloon 
+{
+background-image:url(../Images/prev_page_baloon.png)    ;
+width:15px;
+height:15px;
+margin-top:-10px;
+margin-left:5px;
+background-repeat:no-repeat;
+}
+
+.grouppingRow.auto-hide.box-shaddow
+{
+ -webkit-box-shadow: 1px 1px 10px rgba(50, 50, 50, 0.6);
+-moz-box-shadow:    1px 1px 10px rgba(50, 50, 50, 0.6);
+box-shadow:         1px 1px 10px rgba(50, 50, 50, 0.6);
+}

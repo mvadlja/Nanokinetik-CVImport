@@ -1,0 +1,3611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2012 rel. 2 sp1 (x64) (http://www.altova.com) by ema user (European Medicines Agency) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eudravigilance.ema.europa.eu/schema/emaxevmpd" xmlns:ssi="http://eudravigilance.ema.europa.eu/schema/emaxevmpd_ssi" targetNamespace="http://eudravigilance.ema.europa.eu/schema/emaxevmpd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://eudravigilance.ema.europa.eu/schema/emaxevmpd_ssi" schemaLocation="./emaxevmpd_ssi.xsd"/>
+	<xs:element name="evprm" id="M">
+		<xs:annotation>
+			<xs:documentation>The EudraVigilance Medicinal Product Report Message (EVPRM). 
+This version of the Schema reflects version 3.1 of the Chapter 3 Guidance and Business Rules document. 
+This is the root element for the message. 
+Must contain element M.H and at least one of the other child elements of M. 
+Business Rules: M.BR.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ichicsrmessageheader" type="ichicsrmessageheaderType" id="M.H">
+					<xs:annotation>
+						<xs:documentation>The message header section must be completed.  The section contains information related to sender, receiver, the type of information being transmitted and the transmission date.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="organisations" id="M.Os" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Contains the data submitted for new/updated organisations to the EVPRM
+Business Rules: M.Os.BR</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="organisation" type="organisationType" id="O" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>The organisation section contains information about Marketing Authorisation Holders and Sponsors that will be stored directly in the XEVMPD. The sender should use this section to send data on new Organisations and/or send updated information about an Organisation already present in the standard list (e.g. add/edit telephone number or email address).
+Business Rules: O.BR.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="sources" id="M.Ss" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Contains the data submitted for new/updated sources within the EVPRM.
+Business Rules: M.Ss.BR.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="source" type="sourceType" id="S" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>The source section contains information about sources of reference information that will be stored directly in the XEVMPD. The sender should use this section to send data on a new source and/or send updated information about a reference source already present in the standard list (e.g. add to the comment).
+Business Rules: S.BR.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="attachments" id="M.ATTs" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Contains the new attachments required by the EVPRM
+Business Rules: M.ATTs.BR.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="attachment" type="attachmentType" id="ATT" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>The document bundled in support of the product message being sent</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="masterfilelocations" id="M.MFs" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Contains the new/updated PV System Master File Locations within the EVPRM.
+Business Rules: M.MFs.BR.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="masterfilelocation" type="masterfilelocationType" id="MF" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="developmentsubstances" id="M.DSs" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The development substances section.
+Contains the new/updated development substances within the EVPRM.
+Business Rules: M.DSs.BR.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="developmentsubstance" type="developmentsubstanceType" id="DS" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>This repeatable section is applicable to individual substances that are contained in medicinal products which are NOT yet authorised. For development substances specific confidentiality rules apply.
+This section shall be used to provide data on a new development substance /or to update information about a development substance for investigational medicinal products.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="approvedsubstances" id="M.ASs" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The approved substance section: 
+This section is applicable to all substances that are contained in medicinal product that are authorised. 
+Business Rules: M.ASs.BR.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="approvedsubstance" type="approvedsubstanceType" id="AS" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>The approved substance section shall be used to specify the name of a substance, which is already in the public domain.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="standardterminology" id="M.ST" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>This section contains information about the standard terms: ATC Codes,  Pharmaceutical Forms and Administration Routes.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="atcs" id="ST.ATCs" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Business Rules: ST.ATCs.BR.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="atc" type="atcType" id="ST.ATC" minOccurs="1" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>The ATC section contains information about an ATC Code used in a Medicinal Product (Authorised or Development). The ATC container can be used to either; Add a new ATC Code to the XEVMPD, or, to maintain an existing ATC code within the EVMPD</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="pharmaceuticalforms" id="ST.PFs" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Business Rules: ST.PFs.BR</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="pharmaceuticalform" type="pharmaceuticalformType" id="ST.PF" minOccurs="1" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>The Pharmaceutical Form section contains information about a Pharmaceutical Form used in a Medicinal Product (Authorised or Development). The Pharmaceutical Form container can be used to either; Add a new Pharmaceutical Form to the XEVMPD, or, to maintain an existing Pharmaceutical Form within the EVMPD</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="administrationroutes" id="ST.ARs" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Business Rules: ST.ARs.BR.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="administrationroute" type="administrationrouteType" id="ST.AR" minOccurs="1" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>The Administration Route section contains information about an Administration Route used in a Medicinal Product (Authorised or Development). The Administration Route container can be used to either; Add a new Administration Route to the XEVMPD, or, to maintain an existing Administration Route within the EVMPD</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="developmentproducts" id="M.DPs" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The Development Products section contains all the information regarding Development Medicinal Products that are studied in Clinical Trials. Each Development Product section contains all the information regarding a specific Development Medicinal Product studied in Clinical Trials.
+Business Rules: M.DPs.BR</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="developmentproduct" type="developmentproductType" id="DP" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="authorisedproducts" id="M.APs" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The Authorised products section contains all the information regarding Authorised Medicinal Products.
+Business Rules: M.AP.BR. 
+</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="authorisedproduct" type="authorisedproductType" id="M.AP" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>The Authorised product section contains all the information regarding a single Authorised Medicinal Product that is either marketed in one country or throughout the EU following the approval via Central Authorisation Procedures.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ichicsrmessageheaderType">
+		<xs:sequence>
+			<xs:element name="messagetype" id="H.1">
+				<xs:annotation>
+					<xs:documentation>The message type must be specified. It contains information on the type of information being transmitted. 
+When creating a message, the value of this field must be "XEVPRM".</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="16"/>
+						<xs:enumeration value="XEVPRM"/>
+						<xs:enumeration value="xevprm"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="messageformatversion" id="H.2">
+				<xs:annotation>
+					<xs:documentation>Message Format Version: 
+The message format version shall be specified. It refers to the release number of the message format version of the XSD SCHEMA.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="3"/>
+						<xs:enumeration value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="messageformatrelease" id="H.3">
+				<xs:annotation>
+					<xs:documentation>Message Format Release</xs:documentation>
+					<xs:documentation>The message format release contains the release number of the message format release number of the XSD SCHEMA.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="3"/>
+						<xs:enumeration value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="messagenumb" id="H.4">
+				<xs:annotation>
+					<xs:documentation>Message Number</xs:documentation>
+					<xs:documentation>The message number shall be specified. It refers to the unique tracking number assigned to a specific medicinal product report message file transmitted by the sender. 
+The message number is unique to the sender.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="100"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="messagesenderidentifier" id="H.5">
+				<xs:annotation>
+					<xs:documentation>Message Sender Identifier must be specified. It refers to the unique identifier of the sender organisation as assigned during the EudraVigilance registration process.
+Business Rules: H.5.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+						<xs:whiteSpace value="collapse"/>
+						<xs:minLength value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="messagereceiveridentifier" id="H.6">
+				<xs:annotation>
+					<xs:documentation>Message Receiver Identifier
+The message receiver identifier shall be specified. This refers to the unique identifier of the receiving organisation i.e. the European Medicines Agency.
+Business Rules: H.6.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+						<xs:enumeration value="EVTEST"/>
+						<xs:enumeration value="EVHUMAN"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="messagedateformat" id="H.7">
+				<xs:annotation>
+					<xs:documentation>The format of the Message Date.
+The only value accepted is "204" 
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3"/>
+						<xs:enumeration value="204"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="messagedate" id="H.8">
+				<xs:annotation>
+					<xs:documentation>The Message Date must be specified in accordance with the business rules.
+Business Rules: H.8.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="14"/>
+						<xs:whiteSpace value="collapse"/>
+						<xs:pattern value="[0-9]*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="organisationType">
+		<xs:sequence>
+			<xs:element name="type_org" id="O.1">
+				<xs:annotation>
+					<xs:documentation>The type of organisation shall be specified i.e. marketing authorisation holder (MAH). = 1; Sponsor = 2</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="name_org" id="O.2">
+				<xs:annotation>
+					<xs:documentation>The name of the MAH/Sponsor shall be specified.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="100"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="localnumber" id="O.3" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The unique reference for the entity in the message. It's mandatory for Operation Type Insert.
+Business Rules: O.3.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ev_code" id="O.4" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The EVcode of the organisation shall be specified.
+An EVcode is assigned to every new organisation.
+Business Rules: O.4.BR.
+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="organisationsenderid" id="O.5" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The ID of the organisation that corresponds to the same organisation in the registration system shall be provided. 
+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="address" id="O.6" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The address of the organisation shall be specified.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="city" id="O.7">
+				<xs:annotation>
+					<xs:documentation>The city of the organisation shall be specified.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="50"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="state" id="O.8" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The state of the organisation shall be specified, where applicable.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="postcode" id="O.9" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The postcode of the organisation shall be specified.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="countrycode" id="O.10">
+				<xs:annotation>
+					<xs:documentation>The country code of the location of the organisation shall be specified.
+Business Rules: O.10.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="2"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tel_number" id="O.11" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The telephone number of the organisation shall be specified.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tel_extension" id="O.12" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The extension telephone number of the organisation shall be specified, where applicable.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tel_countrycode" id="O.13" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The telephone country code of the organisation shall be specified.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="fax_number" id="O.14" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The fax number of the organisation shall be specified, where applicable.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="fax_extension" id="O.15" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The fax number extension of the organisation shall be specified, where applicable.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="fax_countrycode" id="O.16" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The fax number country code of the organisation shall be specified, where applicable.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="email" id="O.17" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The email address of the organisation shall be specified, where applicable.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" id="O.18" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Further information on the organisation can be supplied in the comments field, if required. 
+When the organisation operation type is nullification, the comment field is mandatory and the reason for nullification shall be provided.
+Business Rules O.18.BR</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="500"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="operationtype" use="required" id="O..1">
+			<xs:annotation>
+				<xs:documentation>The type of the operation for this entity.
+				1 = Insert 2 = Update 4 = Nullify
+Busines Rules: O..1.BR.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="sourceType">
+		<xs:sequence>
+			<xs:element name="localnumber" id="S.1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The unique reference for the entity in the message. This field is mandatory for Operation Type Insert.
+Business Rules: S.1.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ev_code" id="S.2" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The EVcode of the reference source shall be specified.
+An EVcode is assigned to every new reference source.
+This field is mandatory if the operation type is NOT “Insert”.
+Business Rules: S.2.BR.
+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="sourcename" id="S.3">
+				<xs:annotation>
+					<xs:documentation>The name of the reference source shall be provided.
+Business Rules: S.3.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="70"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" id="S.4" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Further information may be supplied in the comment field.
+The comment field is mandatory when the operation type is nullification (S..1 = 4).
+Business Rules S.4.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="500"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="operationtype" use="required" id="S..1">
+			<xs:annotation>
+				<xs:documentation>The type of the operation for this entity. 1 = Insert 2 = Update 4 = Nullify
+Business Rules: S..1.BR.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="masterfilelocationType">
+		<xs:sequence>
+			<xs:element name="localnumber" id="MF.1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The unique reference for the entity in the message. It's mandatory for Operation Type Insert.
+Business Rules: MF.1.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ev_code" id="MF.2" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The EV Code of the entity. Mandatory if the operation type is not insert.
+Business Rules: MF.2.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="mflcompany" id="MF.3" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="100"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="mfldepartment" id="MF.4" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="100"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="mflbuilding" id="MF.5" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="mflstreet" id="MF.6">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="100"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="mflcity" id="MF.7">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="35"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="mflstate" id="MF.8" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="40"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="mflpostcode" id="MF.9">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="40"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="mflcountrycode" id="MF.10">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="2"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" id="MF.11" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Further information may be supplied in the comment field.
+The comment field is mandatory when the operation type is nullification (MF..1 = 4).
+Business Rules MF.11.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="500"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="operationtype" type="xs:int" use="required" id="MF..1">
+			<xs:annotation>
+				<xs:documentation>The type of the operation for this entity. 1 = Insert 2 = Update 4 = Nullify
+Business Rules: MF..1.BR
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="attachmentType">
+		<xs:sequence>
+			<xs:element name="localnumber" id="ATT.1">
+				<xs:annotation>
+					<xs:documentation>The unique reference for the entity in the message. 
+Business Rules: ATT.1.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="60"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="filename" id="ATT.2">
+				<xs:annotation>
+					<xs:documentation>The file name of the attachment with file extension</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="200" fixed="false"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="filetype" id="ATT.3">
+				<xs:annotation>
+					<xs:documentation>The file type of the attachment.  
+Allowed values are as contained within the restriction allowedfiletypes
+</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int" id="allowedfiletypes">
+						<xs:enumeration value="1" id="pdf"/>
+						<xs:enumeration value="2" id="doc"/>
+						<xs:enumeration value="3" id="docx"/>
+						<xs:enumeration value="4" id="xls"/>
+						<xs:enumeration value="5" id="xlsx"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="attachmentname" id="ATT.4">
+				<xs:annotation>
+					<xs:documentation>The name of the attachment given by the sender</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="2000"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="attachmenttype" id="ATT.5">
+				<xs:annotation>
+					<xs:documentation>Type of attachment:
+Printed Product Information (PPI) = 1
+Printed Substance Information (PSI) = 2</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="languagecode" id="ATT.6">
+				<xs:annotation>
+					<xs:documentation>The code of the language as reported in the LANGUAGE published list
+Business Rules: ATT.6.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="2"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="attachmentversion" id="ATT.7">
+				<xs:annotation>
+					<xs:documentation>The version of the PPI attachement</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="5"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="attachmentversiondate" id="ATT.8">
+				<xs:annotation>
+					<xs:documentation>The date of the last update of the PPI document
+Business Rules: ATT.8.BR  </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="8"/>
+						<xs:whiteSpace value="collapse"/>
+						<xs:pattern value="[0-9]*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="versiondateformat" id="ATT.9">
+				<xs:annotation>
+					<xs:documentation>Format of the Version Date. Only accepted value is “102” for "CCYYMMDD”</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="102"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="operationtype" use="required" id="ATT..1">
+			<xs:annotation>
+				<xs:documentation>The type of the operation for this entity. The only value accepted is 1 = Insert
+Business Rules: ATT..1.BR.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+					<xs:enumeration value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="developmentsubstanceType">
+		<xs:sequence>
+			<xs:element name="localnumber" id="DS.1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The unique reference for the entity in the message. It's mandatory for Operation Type Insert.
+Business Rules: DS.1.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ev_code" id="DS.2" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The EVcode of the development substance shall be specified.				An EVcode is assigned to every new development substance.			This field is mandatory if the operation type is NOT “Insert”.
+Business Rules: D.S.2.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="newownerid" id="DS.3" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Owner Identifier This field identifies the Owner of the Development substance. Only for operation type Insert and reserved for EMA use only.
+Business Rules DS.3.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="sponsorcode" id="DS.4">
+				<xs:annotation>
+					<xs:documentation>The code of the sponsor shall be specified.
+The sponsor code shall have an attribute ‘Resolution Mode’:
+				Resolution mode 1 when the code is a Local Number; this is mandatory if the operation type is “Insert”.
+				Resolution mode 2 when the code is an ev_code; this is mandatory if the operation type is NOT “Insert”.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="fk_code">
+							<xs:attribute name="resolutionmode" use="required" id="DS.4..1">
+								<xs:annotation>
+									<xs:documentation>1 = Local Number ; 2 = EV_Code</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:int">
+										<xs:enumeration value="1"/>
+										<xs:enumeration value="2"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="casnumber" id="DS.5" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The Chemical Abstracts Service (CAS) number of the development substance shall be specified, where applicable</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="15"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="molecularformula" id="DS.6" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The empiric molecular formula of the development substance shall be specified, where applicable.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="substanceclass" id="DS.7" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This field indicates the code referring to the substance classification look up list</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:totalDigits value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cbd" id="DS.8" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The Chemical Biological Description (CBD) of the Development Substance (if applicable)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="developmentsubstancenames" id="DS.DSNs">
+				<xs:annotation>
+					<xs:documentation>Development substance names section 
+Business Rules: DS.DSNs.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="developmentsubstancename" id="DSN" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>The development substance name section shall be used to specify the name and/or code of the development substance.
+Business Rules: DS.DSN.BR.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="substancename" id="DS.DSN.1">
+										<xs:annotation>
+											<xs:documentation>The name and/or code of the development substance shall be specified in English.
+Business Rules: DS.DSN.1.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="2000"/>
+												<xs:whiteSpace value="collapse"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="preferred" id="DS.DSN.2">
+										<xs:annotation>
+											<xs:documentation>Used to specify if the development substance name is a preferred name.
+1= Indicates name is the preferred name, 2 Indicates name is not the preferred  name.
+</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:int">
+												<xs:enumeration value="1"/>
+												<xs:enumeration value="2"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="iscode" id="DS.DSN.3" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>It shall be specified if the development substance name specified is a code.
+				The value is 1 if the name or the code specified is a code;
+				The value is 2 if the name or the code specified is NOT a code.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:int">
+												<xs:enumeration value="1"/>
+												<xs:enumeration value="2"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="internationalcodes" id="DS.ICs" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="internationalcode" id="DS.IC" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Any internationally recognised code by which the substance can be identified shall be specified as applicable.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="sourcecode" id="DS.IC.1">
+										<xs:annotation>
+											<xs:documentation>A valid reference source of the substance code shall be specified.
+The Source code must have an attribute ‘Resolution Mode’:
+Business Rules: DS.IC.1.BR</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="fk_code">
+													<xs:attribute name="resolutionmode" use="required" id="DS.IC.1..1">
+														<xs:annotation>
+															<xs:documentation>Resolution mode = 1 -  Local (Local Number present in the XML file in the sources section.)
+Resolution mode = 2 -  Global (EV Code present in the EudraVigilance Lookup Tables)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:int">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="referencetext" id="DS.IC.2">
+										<xs:annotation>
+											<xs:documentation>The identifying name/code for the susbstance within the reference source system provided in DS.IC.1.
+											</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="fk_code_text">
+													<xs:attribute name="resolutionmode" use="optional" id="DS.IC.2..1">
+														<xs:annotation>
+															<xs:documentation>Resolution mode = 1 Local (Local Number present in the XML file) 
+Resolution mode = 2 Global (EV Code present in the EudraVigilance Lookup Tables)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:int">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="substancessis" id="DS.SSIs" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Business Rules: DS.SSIs.BR.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="substancessi" id="DS.SSI" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:annotation>
+									<xs:documentation>
+								Business Rules: DS.SSI.BR.
+								</xs:documentation>
+								</xs:annotation>
+								<xs:sequence>
+									<xs:element ref="ssi:substance"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="substanceattachments" id="DS.ATTs" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>For development substances attachments may be absent.
+Business Rules: DS.ATTs.BR.
+				</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="substanceattachment" id="DS.ATT" minOccurs="1" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>The attachment section is used to reference an attachment.  The referenced attachment may be included as a file in the message or may reference an attachment that is already stored in the EVMPD</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="attachmentcode" id="DS.ATT.1">
+										<xs:annotation>
+											<xs:documentation>This field references the printable substance information attachment for this substance.  This will be the local number reference number if the attachment is included with the current message otherwise it will be EV Code of the attachement.  This element must have an attribute: Resolution Mode.
+Resolution mode = 1 Local (Local Number present in the XML file).
+Resolution mode = 2 Global (ev_code of the attachment present in the EudraVigilance Lookup Tables. 
+The pattern of the ev_code is 'ATT999999' 
+Business Rules: DS.ATT.1.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="fk_code">
+													<xs:attribute name="resolutionmode" use="required" id="DS.ATT.1..1">
+														<xs:annotation>
+															<xs:documentation>The details of the attachment for the approved substance shall be specified. 
+Resolution mode  = 1 when the code is a Local Number.
+Resolution mode 2 when the code is an EV Code.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:int">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="validitydeclaration" id="DS.ATT.2" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>In performing an update of existing medicinal product information where an attachment for an approved substance was already previously loaded and referenced, a confirmation shall be provided that the referenced attachment is the latest version of the documentation.
+The value is 1 if the attachment is the latest version.
+Business Rules: DS.ATT.2.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:int">
+												<xs:enumeration value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="comments" id="DS.9" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Further information on the development substance may be supplied in the comment field.
+					When the development substance shall be nullified, the comment field is mandatory and the reasons for nullification shall be provided.</xs:documentation>
+					<xs:documentation>This element can be used to put some comments in a section. It is mandatory when there is a request of nullification.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="500"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="operationtype" use="required" id="DS..1">
+			<xs:annotation>
+				<xs:documentation>The type of the operation for this entity.
+1 = Insert 2 = Update 4 = Nullify 5 = Change Owner (Reserved for EMA)
+Business Rules: DS..1.BR. </xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="4"/>
+					<xs:enumeration value="5"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="virtual" type="xs:int" use="optional" id="DS..2">
+			<xs:annotation>
+				<xs:documentation>Reserved for EMA Use only
+Business Rules DS..2.BR.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="approvedsubstanceType">
+		<xs:sequence>
+			<xs:element name="localnumber" id="AS.1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The unique reference for the entity in the message. It's mandatory for Operation Type Insert.
+Buisness Rules: AS.1.BR</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ev_code" id="AS.2" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The EVcode of the approved substance shall be specified.
+An EVcode is assigned to every new approved substance.
+This field is mandatory if the operation type is NOT “Insert”.
+Business Rules: AS.2.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="sourcecode" id="AS.3">
+				<xs:annotation>
+					<xs:documentation>A valid reference source of the approved substance name shall be specified
+The Source code must have an attribute ‘Resolution Mode’ (AS.3..1).
+Business Rules: AS.3.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="fk_code">
+							<xs:attribute name="resolutionmode" use="required" id="AS.3..1">
+								<xs:annotation>
+									<xs:documentation>Resolution mode = 1 when the code is a Local Number this indicates that the reference source is included in the current xml message.
+Resolution mode  = 2 when the code is an EV Code this indicates that the reference is already present in the EVMPD source list.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:int">
+										<xs:enumeration value="1"/>
+										<xs:enumeration value="2"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="substancename" id="AS.4">
+				<xs:annotation>
+					<xs:documentation>The name of the approved substance in English shall be provided.
+Business Rules: AS.4.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="2000"/>
+						<xs:minLength value="1"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="casnumber" id="AS.5" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The Chemical Abstracts Service (CAS) number of the approved substance shall be specified, where applicable.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="15"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="molecularformula" id="AS.6" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The empiric molecular formula of the approved substance shall be specified, where applicable. </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="substanceclass" id="AS.7" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This field indicates the code referring to the substance classification look up list.
+A value must be specified from the published list if the operation type is Insert or Update.
+Business Rules: AS.7.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:totalDigits value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cbd" id="AS.8" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The Chemical Biological Description (CBD) of the Approved Substance (if applicable)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="substancetranslations" id="AS.Ts" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The optional substance translations section can be used to supply the names by which the substance is known in languages other than English.
+Business Rules: AS.Ts.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="substancetranslation" id="AS.T" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>The sender should use this section to add or update each individual translation of the substance name.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="languagecode" id="AS.T.1">
+										<xs:annotation>
+											<xs:documentation>The two letter code of the language as detailed in the published LANGUAGE  list
+Business Rules: AS.T.1.BR</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="2"/>
+												<xs:whiteSpace value="collapse"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="term" id="AS.T.2">
+										<xs:annotation>
+											<xs:documentation>The translation of the substance name must be specified.
+Business Rules: AS.T.2.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="2000"/>
+												<xs:whiteSpace value="collapse"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="substancealiases" id="AS.SAs" minOccurs="0">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>The optional substance aliases section can be used to supply known synonyms of the substance name.
+Business Rules: AS.SAs.BR.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="substancealias" id="AS.SA" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Where applicable, one synonym of the substance name shall be provided or updated using this section.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="sourcecode" id="AS.SA.1">
+										<xs:annotation>
+											<xs:documentation>A valid reference source of the approved substance synonym shall be specified.
+The Source code must have an attribute ‘Resolution Mode’ (AS.SA.1..1)
+Business Rules: AS.SA.1.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="fk_code">
+													<xs:attribute name="resolutionmode" use="required" id="AS.SA.1..1">
+														<xs:annotation>
+															<xs:documentation>1 = Local Number; 2 =  EV_Code
+Resolution mode = 1 Local (Local Number present in the XML file) 
+Resolution mode = 2 Global (EV Code present in the EudraVigilance Lookup Tables for Sources)
+Business Rules: AS.SA.1..1.BR.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:int">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="aliasname" id="AS.SA.2">
+										<xs:annotation>
+											<xs:documentation>The synonym of the substance name shall be specified.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="2000"/>
+												<xs:whiteSpace value="collapse"/>
+												<xs:minLength value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="aliastranslations" id="SA.Ts" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>This optional section can be used to add or update translations of aliases of the substance name.
+Business Rules: SA.Ts.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="aliastranslation" id="SA.T" maxOccurs="unbounded">
+													<xs:annotation>
+														<xs:documentation>The sender should use this section to add or update a translation of an alias name (repeatable if more than one translation exists).
+														</xs:documentation>
+													</xs:annotation>
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="languagecode" id="SA.T.1">
+																<xs:annotation>
+																	<xs:documentation>The code of the language as reported in the LANGUAGE published list
+Business Rules: SA.T.1.BR.</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:minLength value="1"/>
+																		<xs:maxLength value="2"/>
+																		<xs:whiteSpace value="collapse"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
+															<xs:element name="term" id="SA.T.2">
+																<xs:annotation>
+																	<xs:documentation>The translation of the substance alias name shall be specified.
+Business Rules: SA.T.2.BR.</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:maxLength value="2000"/>
+																		<xs:whiteSpace value="collapse"/>
+																		<xs:minLength value="1"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="internationalcodes" id="AS.ICs" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="internationalcode" id="AS.IC" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Any internationally recognised code by which the substance can be identified shall be specified as applicable.
+Business Rules: AS.ICs.BR</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="sourcecode" id="AS.IC.1">
+										<xs:annotation>
+											<xs:documentation>A valid reference source of the approved substance name shall be specified. 
+The Source code must have an attribute ‘Resolution Mode’ AS.IC.1..1. 
+Business Rules: AS.IC.1.BR
+Mandatory if the operation type for the substance is "Insert"  or Update.
+Optional for nullifcation operation.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="fk_code">
+													<xs:attribute name="resolutionmode" use="required" id="AS.IC.1..1">
+														<xs:annotation>
+															<xs:documentation>Resolution mode = 1 Local (Local Number present in the XML file) 
+Resolution mode = 2 Global (EV Code present in the EudraVigilance Lookup Tables)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:int">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="referencetext" id="AS.IC.2">
+										<xs:annotation>
+											<xs:documentation>The identifying name/code for the susbstance within the reference source system provided in AS.IC.1.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="fk_code_text">
+													<xs:attribute name="resolutionmode" use="optional" id="AS.IC.2..1">
+														<xs:annotation>
+															<xs:documentation>Resolution mode = 1 Local (Local Number present in the XML file) 
+Resolution mode = 2 Global (EV Code present in the EudraVigilance Lookup Tables)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:int">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="previousevcodes" id="AS.PEVs" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The previous EV Code section 
+This section shall be used when an approved substance shall be linked to the EVcodes of one or more development substances.
+Business Rules: AS.PEVs.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="previousevcode" id="AS.PEV" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>The previous EV Code section 
+This section shall be used when an approved substance shall be linked to the EVcode of a development substance.
+</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="devevcode" id="AS.PEV.1">
+										<xs:annotation>
+											<xs:documentation>This field contains an EV Code of the same substance as it exists as a Development Substance in the EVMPD.
+Business Rules: AS.PEV.1.BR</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="60"/>
+												<xs:whiteSpace value="collapse"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="substancessis" id="AS.SSIs" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Business Rules: AS.SSIs.BR.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="substancessi" id="AS.SSI" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="ssi:substance"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="substanceattachments" id="AS.ATTs" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Business Rules: AS.ATTs.BR.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="substanceattachment" id="AS.ATT" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>The attachment section is used to reference an attachment.  The referenced attachment may be included as a file in the message or may reference an attachment that is already stored in the EVMPD</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="attachmentcode" id="AS.ATT.1">
+										<xs:annotation>
+											<xs:documentation>This field references the attachment for this substance.  
+This element must have an attribute Resolution Mode (AS.ATT.1..1)
+Business Rules: AS.ATT.1.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="fk_code">
+													<xs:attribute name="resolutionmode" use="required" id="AS.ATT.1..1">
+														<xs:annotation>
+															<xs:documentation>Resolution mode = 1 Local (Local Number present in the XML file).
+Resolution mode = 2 Global (EV Code of an attachment already present in the EVMPD). </xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:int">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="validitydeclaration" id="AS.ATT.2" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>In performing an update of existing medicinal product information where an attachment for an approved substance was already previously loaded and referenced, a confirmation shall be provided that the referenced attachment is the latest version of the documentation.
+The value is 1 if the attachment is the latest version.
+Business Rules: AS.ATT.2.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:int">
+												<xs:enumeration value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="comments" id="AS.10" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Further information may be supplied in the comment field. 
+When the operation type is nullification, the comment field is mandatory and the reason of nullification shall be provided.
+Business Rules: AS.10.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="500"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="operationtype" use="required" id="AS..1">
+			<xs:annotation>
+				<xs:documentation>The type of the operation for this entity.</xs:documentation>
+				<xs:documentation>	1 = Insert 2 = Update 4 = Nullify
+Business Rules: AS..1.BR</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="virtual" type="xs:int" use="optional" id="AS..2">
+			<xs:annotation>
+				<xs:documentation>Reserved for EMA Use only
+Business Rules AS..2.BR.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="atcType">
+		<xs:sequence>
+			<xs:element name="type_term" id="ST.ATC.1">
+				<xs:annotation>
+					<xs:documentation>1: Development Term, 2: Proposed Term;3= Standard Term (EMA USE ONLY)
+Business Rules: ATC.1.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="atccode" id="ST.ATC.2">
+				<xs:annotation>
+					<xs:documentation>This is the ATC Code
+Business Rules: ATC.2.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="10"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="newownerid" id="ST.ATC.3" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This field identifies the Owner of the Development Entity. Only for operation type Insert and reserved for EMA use only.
+Business Rules: ATC.3.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="atccode_desc" id="ST.ATC.4" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The English Description of the Term
+Business Rules: ATC.4.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="200"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="versiondateformat" id="ST.ATC.5" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Format of the Version Date. Only accepted value is “102” for "CCYYMMDD”</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="102"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="versiondate" id="ST.ATC.6" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Date of last update of ATC Code</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="14"/>
+						<xs:pattern value="[0-9]*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" id="ST.ATC.7" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This element can be used to put some comments in a section. It is mandatory when there is a request of nullification.
+Business Rules: ATC.7.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="500"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="operationtype" use="required" id="ST.ATC..1">
+			<xs:annotation>
+				<xs:documentation>1=Insert; 2=Update; 4=Nullify
+Business Rules: ST.ATC..1.BR.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="pharmaceuticalformType">
+		<xs:sequence>
+			<xs:element name="type_term" id="ST.PF.1">
+				<xs:annotation>
+					<xs:documentation>1: Development Term, 2: Proposed Term;3= Standard Term (EMA USE ONLY)
+Business Rules: ST.PF.1.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="localnumber" id="ST.PF.2" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The unique reference for the entity in the message. It's mandatory for Operation Type Insert.
+Business Rules: ST.PF.2.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ev_code" id="ST.PF.3" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>EV_CODE of the Pharmaceutical Form. It's mandatory if the operation type is not an insert.
+Business Rules: ST.PF.3.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="newownerid" id="ST.PF.4" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This field identifies the Owner of the Development Entity. Only for operation type Insert and reserved for EMA Use only.
+Business Rules: ST.PF.4.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="name_pharmform" id="ST.PF.5">
+				<xs:annotation>
+					<xs:documentation>The English Description of a Term
+Business Rules: ST.PF.5.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="200"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="versiondateformat" id="ST.PF.6" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Format of the Version Date. Only accepted value is “102” for "CCYYMMDD”</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="102"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="versiondate" id="ST.PF.7" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="14"/>
+						<xs:pattern value="[0-9]*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="previous_ev_code" id="ST.PF.8" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>For Development Term, this field is empty. For Proposed Term this field contains (if exist) the ev_code of the Previous Development Term. For Standard Term this field contains (if exist) the ev_code of the Previous Proposed Term.
+Business Rules: ST.PF.8.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" id="ST.PF.9" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This element can be used to put some comments in a section. It is mandatory when there is a request of nullification.
+Business Rules: ST.PF.9.BR</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="500"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="operationtype" use="required" id="ST.PF..1">
+			<xs:annotation>
+				<xs:documentation>1=Insert; 2=Update; 4=Nullify
+Business Rules: ST.PF..1</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="administrationrouteType">
+		<xs:sequence>
+			<xs:element name="type_term" id="ST.AR.1">
+				<xs:annotation>
+					<xs:documentation>1: Development Term, 2: Proposed Term;3= Standard Term (EMA USE ONLY)
+Business Rules: ST.AR.1.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="localnumber" id="ST.AR.2" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The unique reference for the entity in the message. It's mandatory for Operation Type Insert.
+Business Rules: ST.AR.2.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ev_code" id="ST.AR.3" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>EV_CODE of Administration Route. It's mandatory if the operation type is not an insert.
+Business Rules: ST.AR.3.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="newownerid" id="ST.AR.4" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Owner Identifier: This field identifies the Owner of a Development Entity. Reserved for EMA use only.
+Business Rules: ST.AR.4.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="name_admroute" id="ST.AR.5">
+				<xs:annotation>
+					<xs:documentation>The English Description of a Term
+Business Rules: ST.AR.5.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="200"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="versiondateformat" id="ST.AR.6" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Format of the Version Date. Only accepted value is “102” for "CCYYMMDD”</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="102"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="versiondate" id="ST.AR.7" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Date of last update of Administratiorn Route</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="14"/>
+						<xs:pattern value="[0-9]*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="previous_ev_code" id="ST.AR.8" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>For Development Term, this field is empty. For Proposed Term this field contains (if exist) the ev_code of the Previous Development Term. For Standard Term this field contains (if exist) the ev_code of the Previous Proposed Term 
+Business Rules: ST.AR.8.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" id="ST.AR.9" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This element can be used to put some comments in a section. It is mandatory when there is a request of nullification.
+Business Rules: ST.AR.9.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="500"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="operationtype" use="required" id="ST.AR..1">
+			<xs:annotation>
+				<xs:documentation>1:Insert; 2=Update; 4=Nullify
+Business Rules: ST.AR..1.BR.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="developmentproductType">
+		<xs:sequence>
+			<xs:element name="localnumber" id="DP.1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The unique reference for the entity in the message. It's mandatory for Operation Type Insert.
+Business Rules: DP.1.BR</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ev_code" id="DP.2" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>EV_CODE of Development Product. It's mandatory if the operation type is NOT an insert.
+Business Rules: DP.2.BR</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="newownerid" id="DP.3" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This field identifies the Owner of the Development Entity. Only for operation type Insert and reserved for EMA use only.
+Business Rules: DP.3.BR</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="senderlocalcode" id="DP.4" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Sender Local Code</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="sponsorcode" id="DP.5">
+				<xs:annotation>
+					<xs:documentation>The code of the sponsor shall be specified.
+The sponsor code shall have an attribute ‘Resolution Mode’:
+Resolution mode 1 when the code is a Local Number (organisation is present in the current message)
+Resolution mode 2 when the code is an EV Code where the organisation is already present in the EVMPD
+Business Rules: DP.5.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="fk_code">
+							<xs:attribute name="resolutionmode" use="required" id="DP.5..1">
+								<xs:annotation>
+									<xs:documentation>1 = Local Number ; 2 = EV_Code</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:int">
+										<xs:enumeration value="1"/>
+										<xs:enumeration value="2"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="developmentpresentationname" id="DP.6">
+				<xs:annotation>
+					<xs:documentation>This section contains all the information on the product presentation.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="productcode" id="DP.6.1" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>The code of the development product if available.
+Business Rules: DP.6.1.BR.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="60"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="productname" id="DP.6.2" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>The name of the development product if available.
+Business Rules: DP.6.2.BR.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="2000"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="productothername" id="DP.6.3" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Other descriptive name.
+Business Rules: DP.6.3.BR.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="500"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="productatcs" id="DP.ATCs" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This section contains information on the ATC code(s) for the product.
+Business Rules: DP.ATCs.BR</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="productatc" id="DP.ATC" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>This section contains information on the ATC code(s) for the product.
+			Business Rules: DP.ATCs.BR</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="atccode" id="DP.ATC.1">
+										<xs:annotation>
+											<xs:documentation>The ATC code of the product. The ATC code must have an attribute: Resolution Mode.
+			Business Rules DP.ATC.1.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="fk_code">
+													<xs:attribute name="resolutionmode" use="required" id="DP.ATC..1">
+														<xs:annotation>
+															<xs:documentation>Resolution mode = 1 Local (Foreign key present in the XML file)
+			Resolution mode = 2 Global (EV Code present in the Eudravigilance Lookup Tables)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:int">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="productindications" id="DP.INDs" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This section contains information about the indications of a Medicinal Product, according to different MEDDRA's versions.
+Business Rules: DP.Inds.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="productindication" id="DP.IND" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>This section contains information about the indications of a Medicinal Product, according to different MEDDRA's versions</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="meddraversion" id="DP.IND.1">
+										<xs:annotation>
+											<xs:documentation>The MedDRA's version that the Drug Indication MedDRA code refers to (13.0, 13.1, 14.0 etc).
+Business Rules: DP.Ind.1.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal">
+												<xs:totalDigits value="3"/>
+												<xs:fractionDigits value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="meddralevel" id="DP.IND.2">
+										<xs:annotation>
+											<xs:documentation>This field indicates the level of Drug Indication in the MEDDRA's version.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="5"/>
+												<xs:enumeration value="SOC"/>
+												<xs:enumeration value="HLGT"/>
+												<xs:enumeration value="HLT"/>
+												<xs:enumeration value="PT"/>
+												<xs:enumeration value="LLT"/>
+												<xs:enumeration value="soc"/>
+												<xs:enumeration value="hlgt"/>
+												<xs:enumeration value="hlt"/>
+												<xs:enumeration value="pt"/>
+												<xs:enumeration value="llt"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="meddracode" id="DP.IND.3">
+										<xs:annotation>
+											<xs:documentation>This field indicates the MEDDRA code that specifies the Drug Indication as defined in the referenced MEDDRA version.
+Business Rules: DP.Ind.3_BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:int">
+												<xs:totalDigits value="8"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="pharmaceuticalproducts" id="DP.PPs">
+				<xs:annotation>
+					<xs:documentation>This section contains information about every formulation in a Medicinal Product. (Some Medicinal Products are several formulations in the same presentation).</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="pharmaceuticalproduct" type="pharmaceuticalproductType" id="DP.PP" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>This section contains information about each formulation in a Medicinal Product.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ppiattachments" id="DP.PPIs" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ppiattachment" id="DP.PPI" minOccurs="1" maxOccurs="26">
+							<xs:annotation>
+								<xs:documentation>The Printed Product Information document in a specific language for the product either bundled along with the product message or referring to an existing document within EVMPD. The PPI must contain various annexes relating to the product  </xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="attachmentcode" id="DP.PPI.1">
+										<xs:annotation>
+											<xs:documentation>This field references the attachment for this product.  This will be local reference number relevant to sender organisation if it is an insert operation, otherwise it will be ev code of the attachement.  This element must have an attribute: Resolution Mode.Resolution mode = 1 Local (Local Number present in the XML file) Resolution mode = 2 Global (ev_code of the attachment present in the EudraVigilance Lookup Tables. The pattern of the ev_code is 'ATT999999' )</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="fk_code">
+													<xs:attribute name="resolutionmode" use="required" id="DP.PPI.1..1">
+														<xs:annotation>
+															<xs:documentation>1=Local Number2=EV_Code Issue:  DCM version says;The details of the attachment for the approved substance shall be specified. 
+					
+					•	Resolution mode 1 when the code is a Local Number; this is mandatory if the operation type is NOT “Insert”.
+					
+					•	Resolution mode 2 when the code is an ev_code; this is mandatory if the operation type is NOT “Insert”.   Suggested IT version;  The resolution mode is 1 if a new attachment is included in the message and this is to be used or 2 if the reference is an existing EV_Code
+					</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:int">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="validitydeclaration" fixed="1" id="DP.PPI.2" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>This must be set to 1 if an updated product PPI references a PPI previously loaded in the EVMPD (references a remote look up value).</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:int">
+												<xs:enumeration value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="comments" id="DP.7" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This element can be used to put some comments in a section. It is mandatory when there is a request of nullification
+Business Rules: DP.7.BR</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="500"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="operationtype" use="required" id="DP..1">
+			<xs:annotation>
+				<xs:documentation>The type of the operation for this entity.
+1 = Insert 2 = Update 4 = Nullify 5 = Change Ownership (EMA USE ONLY)
+Business Rules: DP..1.BR
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="4"/>
+					<xs:enumeration value="5"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="authorisedproductType">
+		<xs:sequence>
+			<xs:element name="localnumber" id="AP.1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The unique reference for the entity in the message. It's mandatory for Operation Type Insert.
+Business Rules: AP.1.BR</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ev_code" id="AP.2" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>EV_Code of the Authorised Medicinal Product. It's mandatory if the operation type is NOT an insert.
+Business Rules: AP.2.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="newownerid" id="AP.3" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This field identifies the new Owner of the Authorised Product. The field is reserved for EMA use only
+Business Rules: AP.3.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="mahcode" id="AP.4">
+				<xs:annotation>
+					<xs:documentation>The MAH code of the Marketing Authorisation Holder as reported in the application of the product. This element must have an attribute: Resolution Mode.
+Business Rules: AP.4.BR</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="fk_code">
+							<xs:attribute name="resolutionmode" use="required" id="AP.4..1">
+								<xs:annotation>
+									<xs:documentation>
+Resolution mode = 1 Local (Local Number present in the XML file).
+Resolution mode = 2 Global (ev_code present in the EudraVigilance Lookup Tables)</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:int">
+										<xs:enumeration value="1"/>
+										<xs:enumeration value="2"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="qppvcode" id="AP.5" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The EV Registration System QPPV code assigned to the QPPV detailed in the Pharmacovigilance System Master File in place for the product. Format of this code is whole number maximum 10 digits
+Business Rules: AP.5.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:positiveInteger">
+						<xs:totalDigits value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="mflcode" id="AP.6" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The code of the PharmacoVigilance System Master File Location.  Must have an attribute; resolutionmode.
+Business Rules: AP.6.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="fk_code">
+							<xs:attribute name="resolutionmode" use="required" id="AP.6..1">
+								<xs:annotation>
+									<xs:documentation>Resolution mode = 1 Local (Local Number present in the XML file).
+Resolution mode = 2 Global (ev_code present in the EudraVigilance Lookup Tables) - The format of stored master files location codes is MFLxxxxxx.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:int">
+										<xs:enumeration value="1"/>
+										<xs:enumeration value="2"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="enquiryemail" id="AP.7" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The Pharmacovigilance Enquiry email address shall be specified.
+Business Rules: AP.7.BR</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="enquiryphone" id="AP.8" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The Pharmacovigilance Enquiry telephone number shall be specified.
+Business Rules: AP.8.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="senderlocalcode" id="AP.9" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Sender Local Code</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="infodateformat" id="AP.10" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The format of the Info Date. The only value accepted is "102" corresponding to "CCYYMMDD"
+Business Rules: AP.10.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3"/>
+						<xs:enumeration value="102"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="infodate" id="AP.11" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Date of the most recent update to the Summary Product Characteristics (SPC). The format must conform to "CCYYMMDD"
+Business Rules: AP.11.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="14"/>
+						<xs:pattern value="[0-9]*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="authorisation" id="AP.12">
+				<xs:annotation>
+					<xs:documentation>This section contains all the information on the product authorisation.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="authorisationcountrycode" id="AP.12.1">
+							<xs:annotation>
+								<xs:documentation>Country code of the country in which the product has been authorised
+Business Rules: AP.12.1.BR</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="2"/>
+									<xs:whiteSpace value="collapse"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="authorisationprocedure" id="AP.12.2">
+							<xs:annotation>
+								<xs:documentation>The procedure the product has followed to be authorised. Must be the code specified in the published list
+Business Rules: AP.12.2.BR</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:int"/>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="authorisationstatus" nillable="true" id="AP.12.3" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Marketing authorisation status must be a value from the published list
+Business Rules: AP.12.3.BR.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:int">
+									<xs:totalDigits value="2"/>
+									<xs:fractionDigits value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="authorisationnumber" nillable="true" id="AP.12.4" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Marketing authorisation number
+Business Rules: AP.12.4.BR.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="100"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="authorisationdate" nillable="true" id="AP.12.5" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Marketing authorisation Date
+Business Rules: AP.12.5.BR.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="14"/>
+									<xs:pattern value="[0-9]*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="authorisationdateformat" nillable="true" id="AP.12.6" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Marketing authorisation Date Format must be either "102" corresponding to "CCYYMMDD" or "610" corresponding to "CCYYMM"
+Business Rules: AP.12.6.BR.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="3"/>
+									<xs:enumeration value="102"/>
+									<xs:enumeration value="610"/>
+									<xs:enumeration value=""/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="mrpnumber" id="AP.12.7" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>If the authorisation procedure is "EU mutual recognition procedure" this field must be filled with the Mutual Recognition Procedure Number of the product.
+If the authorisation procedure is "EU decentralised procedure" this field must be filled with the EU Decentralised procedure number of the product.
+Business Rules: AP.12.7.BR</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="50"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="eunumber" id="AP.12.8" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>If the authorisation procedure is one of the EU centralised procedures (CAPs) this field must be filled with the "EU Number of the product"
+Business Rules: AP.12.8.BR.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="50"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="orphandrug" id="AP.12.9" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Value 1 indicates that the product is an orphan drug.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:int">
+									<xs:enumeration value="1"/>
+									<xs:enumeration value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="intensivemonitoring" nillable="true" id="AP.12.10" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Indicates if the product is the subject of Intensive Monitoring.
+A value of 1 indicates that the product is subject to intensive monitoring.
+A value of 2 indicates that the product is NOT subject to intensive monitoring.
+Business Rules: AP.12.10.BR</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:int">
+									<xs:enumeration value="1"/>
+									<xs:enumeration value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="withdrawndateformat" id="AP.12.11" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>The format of the WithdrawnDate.
+The only value accepted is "102" corresponding at "CCYYMMDD"
+Business Rules: AP.12.12.BR</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="3"/>
+									<xs:enumeration value="102"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="withdrawndate" id="AP.12.12" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation> Date from which the Medicinal Product is withdrawn.
+Business Rules: AP.12.12.BR</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="14"/>
+									<xs:pattern value="[0-9]*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="presentationname" id="AP.13">
+				<xs:annotation>
+					<xs:documentation>This section contains all the information on the product presentation.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="productname" id="AP.13.1">
+							<xs:annotation>
+								<xs:documentation>The "Full Presentation Name" of the product as it has been authorised.
+Business Rules: AP.13.1.BR</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="2000"/>
+									<xs:whiteSpace value="collapse"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="productshortname" id="AP.13.2" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>The short name of the product as reported in the "Full Presentation Name".
+Business Rules: AP.13.2.BR.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="250"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="productgenericname" id="AP.13.3" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>The generic name (if present) as part of the "Full Presentation Name".
+Business Rules: AP.13.3.BR.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="1000"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="productcompanyname" id="AP.13.4" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>The  name of company/trademark/manufacturer (if present) as part of the "Full Presentation Name".
+Business Rules: AP.13.4.BR.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="250"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="productstrength" id="AP.13.5" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>The strength and strength unit (if present) as part of the "Full Presentation Name".
+Business Rules: AP.13.5.BR.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="250"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="productform" id="AP.13.6" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>The pharmaceutical form (if present) as part of the "Full Presentation Name".
+Business Rules: AP.13.6.BR.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="500"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="packagedesc" id="AP.13.7" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>This field contains information about the package of the Medicinal Product. It is Mandatory when operation type is NOT a nullification
+Business Rules: AP.13.7.BR</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="2000"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="productatcs" id="AP.ATCs">
+				<xs:annotation>
+					<xs:documentation>This section contains information on the ATC code(s) approved for the product.
+Business Rules: AT.ATCs.BR</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="productatc" id="AP.ATC" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="atccode" id="AP.ATC.1">
+										<xs:annotation>
+											<xs:documentation>The ATC code of the product. The ATC code must have an attribute: Resolution Mode.
+Business Rules: AP.ATC.1.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="fk_code">
+													<xs:attribute name="resolutionmode" use="required" id="AP.ATC..1">
+														<xs:annotation>
+															<xs:documentation>Resolution mode = 1 Local (Foreign key present in the XML file)
+Resolution mode = 2 Global (ev_code present in the Eudravigilance Lookup Tables)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:int">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="productindications" id="AP.INDs" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This section contains information about all of the indications of a Medicinal Product, according to different MEDDRA's versions.
+Business Rules: AP.INDs.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="productindication" id="AP.IND" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>This section contains information about each indication of a Medicinal Product, according to different MEDDRA's versions</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="meddraversion" id="AP.IND.1">
+										<xs:annotation>
+											<xs:documentation>The MedDRA's version that the Drug Indication MedDRA code refers to (e.g. 13.0, 13.1, 14.0 etc)
+Business Rules: AP.IND.1.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal">
+												<xs:totalDigits value="3"/>
+												<xs:fractionDigits value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="meddralevel" id="AP.IND.2">
+										<xs:annotation>
+											<xs:documentation>This field says the level of Drug Indication in the MEDDRA's version.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="5"/>
+												<xs:enumeration value="SOC"/>
+												<xs:enumeration value="HLGT"/>
+												<xs:enumeration value="HLT"/>
+												<xs:enumeration value="PT"/>
+												<xs:enumeration value="LLT"/>
+												<xs:enumeration value="soc"/>
+												<xs:enumeration value="hlgt"/>
+												<xs:enumeration value="hlt"/>
+												<xs:enumeration value="pt"/>
+												<xs:enumeration value="llt"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="meddracode" id="AP.IND.3">
+										<xs:annotation>
+											<xs:documentation>This field details the code of MEDDRA that specifies the Drug Indication in the MEDDRA's version.
+Business Rules: AP.IND.3.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:int">
+												<xs:totalDigits value="8"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="pharmaceuticalproducts" id="AP.PPs">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="pharmaceuticalproduct" type="pharmaceuticalproductType" id="AP.PP" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>This section contains information about every formulation in a Medicinal Product. (Some Medicinal Products are several formulations in the same presentation).</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="previousevcodes" id="AP.PEVs" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This section is used to reference all development products that are the same as the approved product.
+Business Rules: AP.PEVs.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="previousevcode" id="AP.PEV" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="devevcode" id="AP.PEV.1">
+										<xs:annotation>
+											<xs:documentation>This field contains (if exist) the ev_code of the previous development product it refers to.
+Business Rules: AP.PEV.1.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="60"/>
+												<xs:whiteSpace value="collapse"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ppiattachments" id="AP.PPIs" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Container for the Printed Product Information documents for the product.
+Business Rules: AP.PPIs.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ppiattachment" id="AP.PPI" maxOccurs="26">
+							<xs:annotation>
+								<xs:documentation>Contains details for each individual Printed Product Information document in a specific language for the product. Each PPI must contain various annexes relating to the product.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="attachmentcode" id="AP.PPI.1">
+										<xs:annotation>
+											<xs:documentation>This field references the attachment for this product.  This element must have an attribute: Resolution Mode.
+Business Rules: AP.PPI.1.BR</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="fk_code">
+													<xs:attribute name="resolutionmode" use="required" id="AP.PPI.1..1">
+														<xs:annotation>
+															<xs:documentation>
+Resolution mode = 1 Local (Local Number present in the XML file).
+Resolution mode = 2 Global (ev_code of the attachment present in the EudraVigilance Lookup Tables. The pattern of the ev_code is 'ATT999999' )
+								</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:int">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="validitydeclaration" fixed="1" id="AP.PPI.2" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>This must be set to 1 (valid) if an updated product PPI references a PPI previously loaded in the EVMPD (AP.PPI.1..1 = 2).
+Business Rules: AP.PPI.2.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:int">
+												<xs:enumeration value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="comments" id="AP.14" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This element can be used to put some comments in a section.
+Business Rules: AP.14.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="500"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="operationtype" use="required" id="AP..1">
+			<xs:annotation>
+				<xs:documentation>The type of the operation for this entity.
+1 = Insert 2 = Update 3 = Variation 4 = Nullify 5 = Change Ownership (EMA USE ONLY)  6 = Withdrawn
+Business Rules: AP..1.BR</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+					<xs:enumeration value="3"/>
+					<xs:enumeration value="4"/>
+					<xs:enumeration value="5"/>
+					<xs:enumeration value="6"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="pharmaceuticalproductType">
+		<xs:sequence>
+			<xs:element name="pharmformcode" id="PP.1">
+				<xs:annotation>
+					<xs:documentation>The pharmaceutical form of the product. The pharmaceutical form must have an attribute: Resolution Mode.
+Business Rules: AllProducts.PP.1.BR.1
+Business Rules: AuthProducts.PP.1.BR.1</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="fk_code">
+							<xs:attribute name="resolutionmode" use="required" id="PP.1..1">
+								<xs:annotation>
+									<xs:documentation>Resolution mode = 1 Local (Local Number present in the XML file) Resolution mode = 2 Global (ev_code present in the EudraVigilance Lookup Tables)</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:int">
+										<xs:enumeration value="1"/>
+										<xs:enumeration value="2"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="adminroutes" id="PP.ARs">
+				<xs:annotation>
+					<xs:documentation>This section contains information on all of the administration route(s) of the product. 
+Business Rules: AllProducts.PP.ARs.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="adminroute" id="PP.AR" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>This section contains information each administration route of the product.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="adminroutecode" id="PP.AR.1">
+										<xs:annotation>
+											<xs:documentation>The Administration Route form of the product. The administration route must have an attribute: Resolution Mode.
+Business Rules: AllProducts.PP.AR.1.BR.
+			Business Rules: AuthProducts.PP.AR.1.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="fk_code">
+													<xs:attribute name="resolutionmode" use="required" id="PP.AR.1..1">
+														<xs:annotation>
+															<xs:documentation>Resolution mode = 1 Local (Local Number present in the XML file) 
+			Resolution mode = 2 Global (ev_code present in the EudraVigilance Lookup Tables)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:int">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="activeingredients" id="PP.ACTs">
+				<xs:annotation>
+					<xs:documentation>This section contains information about all of the active ingredients present in the product. 
+Business Rules: AllProducts.PP.ACTs.BR.	</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="activeingredient" id="PP.ACT" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>This section contains information about an individual active ingredient present in the product. </xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="substancecode" id="PP.ACT.1">
+										<xs:annotation>
+											<xs:documentation>The reference code of the substance that is present in the product. It identifies unequivocally a substance. This element must have an attribute: Resolution Mode.
+Business Rules: DevProducts.PP.ACT.1.BR.
+Business Rules: AuthProducts.PP.ACT.1.BR</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="fk_code">
+													<xs:attribute name="resolutionmode" use="required" id="PP.ACT.1..1">
+														<xs:annotation>
+															<xs:documentation>Resolution mode = 1 Local (Local Number present in the XML file) 
+Resolution mode = 2 Global (ev_code present in the EudraVigilance Lookup Tables)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:int">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="concentrationtypecode" type="integernullable" id="PP.ACT.2">
+										<xs:annotation>
+											<xs:documentation>The code of the concentration type as in the CONCENTRATIONTYPE from the published list.
+Business Rules: AllProducts.PP.ACT.2.BR.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="lowamountnumervalue" id="PP.ACT.3">
+										<xs:annotation>
+											<xs:documentation>The Low limit numerator value or for non range measurements the numerator value.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal">
+												<xs:totalDigits value="24"/>
+												<xs:fractionDigits value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="lowamountnumerprefix" id="PP.ACT.4">
+										<xs:annotation>
+											<xs:documentation>The Low limit numerator prefix or for non range measurements the numerator prefix. Must be a value from the published list.
+Business Rules: AllProducts.PP.ACT.4.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="12"/>
+												<xs:whiteSpace value="collapse"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="lowamountnumerunit" id="PP.ACT.5">
+										<xs:annotation>
+											<xs:documentation>The Low limit numerator Unit or for non range measurements the numerator Unit. Must be a value from the published list.
+Business Rules: AllProducts.PP.ACT.5.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="70"/>
+												<xs:whiteSpace value="collapse"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="lowamountdenomvalue" id="PP.ACT.6">
+										<xs:annotation>
+											<xs:documentation>The Low limit denominator value or for non range measurements the value specified.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal">
+												<xs:totalDigits value="24"/>
+												<xs:fractionDigits value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="lowamountdenomprefix" id="PP.ACT.7">
+										<xs:annotation>
+											<xs:documentation>The Low limit denominator prefix or for non range measurements the denominator prefix.
+Business Rules: AllProducts.PP.ACT.7.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="12"/>
+												<xs:whiteSpace value="collapse"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="lowamountdenomunit" id="PP.ACT.8">
+										<xs:annotation>
+											<xs:documentation>The Low limit denominator Unit  must be a value from the published list. 
+Business Rules: AllProducts.PP.ACT.8.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="70"/>
+												<xs:whiteSpace value="collapse"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountnumervalue" id="PP.ACT.9" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit numerator value must ONLY be used when specifying a range.
+Business Rules: AllProducts.PP.ACT.9.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal">
+												<xs:totalDigits value="24"/>
+												<xs:fractionDigits value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountnumerprefix" id="PP.ACT.10" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit numerator prefix is used when specifying a range and must be from the published list.
+Business Rules: AllProducts.PP.ACT.10.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountnumerunit" id="PP.ACT.11" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit numerator Unit is used when specifying a range and must be from the published list.
+Business Rules: AllProducts.PP.ACT.11.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="70"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountdenomvalue" id="PP.ACT.12" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit denominator Value is used when specifying a range.
+Business Rules: AllProducts.PP.ACT.12.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal">
+												<xs:totalDigits value="24"/>
+												<xs:fractionDigits value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountdenomprefix" id="PP.ACT.13" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit denominator prefix is used when specifying a range and must be from the published prefix list.
+Business Rules: AllProducts.PP.ACT.13.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountdenomunit" id="PP.ACT.14" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit denominator Unit is used when specifying a range and must be from the published denominator unit list.
+Business Rules: AllProducts.PP.ACT.14.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="70"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="excipients" id="PP.EXCs" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This section contains information about the excipients present in the product. 
+Business Rules: AllProducts.PP.EXCs.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="excipient" id="PP.EXC" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>This section contains information about the excipients present in the product. </xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="substancecode" id="PP.EXC.1">
+										<xs:annotation>
+											<xs:documentation>Code of the substance that is present in the product. It identifies unequivocally a substance that is acting as an excipient in this pharmaceutical product. This element must have an attribute: Resolution Mode.
+Business Rules: DevProducts.PP.EXC.1.BR.
+Business Rules: AuthProducts.PP.EXC.1.BR</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="fk_code">
+													<xs:attribute name="resolutionmode" use="required" id="PP.EXC.1..1">
+														<xs:annotation>
+															<xs:documentation>Resolution mode = 1 Local (Local Number present in the XML file) Resolution mode = 2 Global (ev_code present in the EudraVigilance Lookup Tables)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:int">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="concentrationtypecode" type="integernullable" id="PP.EXC.2" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The code of the concentration type as in the CONCENTRATIONTYPE from the published list.
+Business Rules: AllProducts.PP.EXC.2.BR.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="lowamountnumervalue" id="PP.EXC.3" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The Low limit numerator value or for non range measurements the numerator value. 
+Business Rules: AllProducts.PP.EXC.3.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal">
+												<xs:totalDigits value="24"/>
+												<xs:fractionDigits value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="lowamountnumerprefix" id="PP.EXC.4" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The Low limit numerator prefix or for non range measurements the numerator prefix. 
+Business Rules: AllProducts.PP.EXC.4.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="lowamountnumerunit" id="PP.EXC.5" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The Low limit numerator Unit or for non range measurements the numerator Unit.
+Must be a value from the published list.
+Business Rules: AllProducts.PP.EXC.5.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="70"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="lowamountdenomvalue" id="PP.EXC.6" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The Low limit denominator value or for non range measurements the denominator value.
+Business Rules: AllProducts.PP.EXC.6.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal">
+												<xs:totalDigits value="24"/>
+												<xs:fractionDigits value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="lowamountdenomprefix" id="PP.EXC.7" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The Low limit denominator prefix or for non range measurements the denominator prefix. Must be a value from the published list.
+Business Rules: AllProducts.PP.EXC.7.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="lowamountdenomunit" id="PP.EXC.8" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The Low limit denominator Unit or for non range measurements the denominator Unit.
+Must be a value from the published list. 
+Business Rules: AllProducts.PP.EXC.8.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="70"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountnumervalue" id="PP.EXC.9" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit numerator value must ONLY be used when specifying a range.
+Business Rules: AllProducts.PP.EXC.9.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal">
+												<xs:totalDigits value="24"/>
+												<xs:fractionDigits value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountnumerprefix" id="PP.EXC.10" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit numerator prefix is used when specifying a range and must be from the published list.
+Business Rules: AllProducts.PP.EXC.10.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountnumerunit" id="PP.EXC.11" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit numerator Unit is used when specifying a range and must be from the published list. 
+Business Rules: AllProducts.PP.EXC.11.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="70"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountdenomvalue" id="PP.EXC.12" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit denominator Value is used when specifying a range.
+Business Rules: AllProducts.PP.EXC.12.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal">
+												<xs:totalDigits value="24"/>
+												<xs:fractionDigits value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountdenomprefix" id="PP.EXC.13" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit denominator prefix is used when specifying a range and must be from the published list.
+Business Rules: AllProducts.PP.EXC.13.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountdenomunit" id="PP.EXC.14" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit denominator Unit is used when specifying a range and must be from the published list.
+Business Rules: AllProducts.PP.EXC.14.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="70"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="adjuvants" id="PP.ADJs" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This section contains information about all of the adjuvant ingredients present in the product. 
+Business Rules: AllProducts.PP.ADJs.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="adjuvant" id="PP.ADJ" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>This section contains information about an individual adjuvant present in the product.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="substancecode" id="PP.ADJ.1">
+										<xs:annotation>
+											<xs:documentation>The reference code of the substance that is present in the product. 
+It identifies unequivocally a substance. This element must have an attribute: Resolution Mode.
+Business Rules: DevProducts.PP.ADJ.1.BR.
+Business Rules: AuthProducts.PP.ADJ.1.BR</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="fk_code">
+													<xs:attribute name="resolutionmode" use="required" id="PP.ADJ.1..1">
+														<xs:annotation>
+															<xs:documentation>Resolution mode = 1 Local (Local Number present in the XML file) 
+Resolution mode = 2 Global (ev_code present in the EudraVigilance Lookup Tables)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:int">
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="concentrationtypecode" type="integernullable" id="PP.ADJ.2">
+										<xs:annotation>
+											<xs:documentation>The code of the concentration type as in the CONCENTRATIONTYPE from the published list.
+Business Rules: AllProducts.PP.ADJ.2.BR.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="lowamountnumervalue" id="PP.ADJ.3">
+										<xs:annotation>
+											<xs:documentation>The Low limit numerator value or for non range measurements the numerator value.
+											</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal">
+												<xs:totalDigits value="24"/>
+												<xs:fractionDigits value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="lowamountnumerprefix" id="PP.ADJ.4">
+										<xs:annotation>
+											<xs:documentation>The Low limit numerator prefix or for non range measurements the numerator prefix. Must be a value from the published list.
+Business Rules: AllProducts.PP.ADJ.4.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="12"/>
+												<xs:whiteSpace value="collapse"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="lowamountnumerunit" id="PP.ADJ.5">
+										<xs:annotation>
+											<xs:documentation>The Low limit numerator Unit or for non range measurements the numerator Unit. Must be a value from the published list.
+Business Rules: AllProducts.PP.ADJ.5.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="70"/>
+												<xs:whiteSpace value="collapse"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="lowamountdenomvalue" id="PP.ADJ.6">
+										<xs:annotation>
+											<xs:documentation>The Low limit denominator value or for non range measurements the value specified.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal">
+												<xs:totalDigits value="24"/>
+												<xs:fractionDigits value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="lowamountdenomprefix" id="PP.ADJ.7">
+										<xs:annotation>
+											<xs:documentation>The Low limit denominator prefix or for non range measurements the denominator prefix.
+Business Rules: AllProducts.PP.ADJ.7.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="12"/>
+												<xs:whiteSpace value="collapse"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="lowamountdenomunit" id="PP.ADJ.8">
+										<xs:annotation>
+											<xs:documentation>The Low limit denominator Unit  must be a value from the published list. 
+Business Rules: AllProducts.PP.ADJ.8.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="70"/>
+												<xs:whiteSpace value="collapse"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountnumervalue" id="PP.ADJ.9" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit numerator value must ONLY be used when specifying a range.
+Business Rules: AllProducts.PP.ACT.9.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal">
+												<xs:totalDigits value="24"/>
+												<xs:fractionDigits value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountnumerprefix" id="PP.ADJ.10" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit numerator prefix is used when specifying a range and must be from the published list.
+Business Rules: AllProducts.PP.ADJ.10.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountnumerunit" id="PP.ADJ.11" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit numerator Unit is used when specifying a range and must be from the published list.
+Business Rules: AllProducts.PP.ADJ.11.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="70"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountdenomvalue" id="PP.ADJ.12" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit denominator Value is used when specifying a range.
+Business Rules: AllProducts.PP.ADJ.12.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal">
+												<xs:totalDigits value="24"/>
+												<xs:fractionDigits value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountdenomprefix" id="PP.ADJ.13" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit denominator prefix is used when specifying a range and must be from the published prefix list.
+Business Rules: AllProducts.PP.ADJ.13.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="12"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="highamountdenomunit" id="PP.Adj.14" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The High limit denominator Unit is used when specifying a range and must be from the published denominator unit list.
+Business Rules: AllProducts.PP.ADJ.14.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="70"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="medicaldevices" id="PP.MDs" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This section contains information about all of the medical devices present in the product. 
+Business Rules: AllProducts.PP.MDs.BR.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="medicaldevice" id="PP.MD" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="medicaldevicecode" id="PP.MD.1">
+										<xs:annotation>
+											<xs:documentation>This section contains the code of each medical device present in the product. 
+Business Rules: AllProducts.PP.MD.1.BR.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:int">
+												<xs:minInclusive value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="null_value">
+		<xs:annotation>
+			<xs:documentation>This XML type is used to indicate, by an empty string, the null value </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value=""/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="integernullable">
+		<xs:annotation>
+			<xs:documentation>This XML type is used for specify a non mandatory integer field</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="xs:integer null_value"/>
+	</xs:simpleType>
+	<xs:simpleType name="doublenullable">
+		<xs:annotation>
+			<xs:documentation>This XML type is used for specify a non mandatory double field</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="xs:double null_value"/>
+	</xs:simpleType>
+	<xs:simpleType name="fk_code">
+		<xs:annotation>
+			<xs:documentation>The foreign key type: A string of max 60 character. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="60"/>
+			<xs:whiteSpace value="collapse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="fk_code_text">
+		<xs:annotation>
+			<xs:documentation>The foreign key / text type: A string of max 2000 character which can be a foreign key or a text.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="2000"/>
+			<xs:whiteSpace value="collapse"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[PRODUCT_PI_MN] (
+    [product_pi_mn_PK]       INT IDENTITY (1, 1) NOT NULL,
+    [product_indications_FK] INT NULL,
+    [product_FK]             INT NULL,
+    CONSTRAINT [PK_PRODUCT_PI_MN] PRIMARY KEY CLUSTERED ([product_pi_mn_PK] ASC),
+    CONSTRAINT [FK_AP_PRODUCT_INDICATION_MN_AP_GRUPA] FOREIGN KEY ([product_FK]) REFERENCES [dbo].[PRODUCT] ([product_PK]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AP_PRODUCT_INDICATION_MN_PRODUCT_INDICATION] FOREIGN KEY ([product_indications_FK]) REFERENCES [dbo].[PRODUCT_INDICATION] ([product_indications_PK]) ON DELETE CASCADE
+);
+

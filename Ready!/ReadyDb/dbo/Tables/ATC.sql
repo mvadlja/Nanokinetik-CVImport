@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[ATC] (
+    [atc_PK]            INT            IDENTITY (1, 1) NOT NULL,
+    [operationtype]     INT            NULL,
+    [type_term]         INT            NULL,
+    [atccode]           NVARCHAR (50)  NULL,
+    [newownerid]        NVARCHAR (60)  NULL,
+    [atccode_desc]      NVARCHAR (200) NULL,
+    [versiondateformat] INT            NULL,
+    [versiondate]       NVARCHAR (50)  NULL,
+    [comments]          NVARCHAR (MAX) NULL,
+    [pom_code]          NVARCHAR (250) NULL,
+    [pom_subcode]       NVARCHAR (150) NULL,
+    [pom_ddd]           NVARCHAR (50)  NULL,
+    [pom_u]             NVARCHAR (50)  NULL,
+    [pom_ar]            NVARCHAR (50)  NULL,
+    [pom_note]          NVARCHAR (250) NULL,
+    [name]              NVARCHAR (250) NULL,
+    [name_archive]      NVARCHAR (250) NULL,
+    [search_by]         NVARCHAR (550) NULL,
+    [is_group]          BIT            NULL,
+    [evpmd_code]        NVARCHAR (50)  NULL,
+    [value]             NVARCHAR (50)  NULL,
+    [is_maunal_entry]   BIT            NULL,
+    CONSTRAINT [PK_ATC] PRIMARY KEY CLUSTERED ([atc_PK] ASC)
+);
+

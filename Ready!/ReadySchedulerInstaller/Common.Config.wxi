@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <!-- Auto-generate ProductCode for each build, release and upgrade -->
+  <?define ProductCode = "*" ?>
+
+  <!-- Note that 4th version (Revision) is ignored by Windows Installer -->
+  <?define ProductVersion = "1.0.0.0" ?>
+  
+  <!-- Platform specific variables -->
+  <?if $(var.Platform) = x64 ?>
+    <?define Win64 = "yes" ?>
+    <?define PlatformProgramFilesFolder = "ProgramFiles64Folder" ?>
+  <?else ?>
+    <?define Win64 = "no" ?>
+    <?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
+  <?endif ?>
+  
+  <!-- Decimal Language ID (LCID) for the Product. Used for localization. -->
+  <?define ProductLanguage = "1033" ?>  <!-- 1033 = English - United States-->
+
+  <!-- Product specifics -->
+  <?define ProductManufacturerName = "Nanokinetik"?>
+  <?define ProductInstallFolder = "Nanokinetik"?>
+  <?define ProductUpgradeCode = "26B66289-C5F5-4297-AC5E-4DA5D4FAB1AF"?>
+</Include>

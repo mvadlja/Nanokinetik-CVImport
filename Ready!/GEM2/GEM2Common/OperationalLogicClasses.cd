@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="GEM2Common.GEMAuditingAttribute">
+    <Position X="0.5" Y="2" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAgAAAAAAQAAAEAAAAAQgAAAQAAAAQAA=</HashCode>
+      <FileName>OperationalLogic\GEMAuditingAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GEM2Common.GEMConcurrencyCheckingAttribute">
+    <Position X="3.5" Y="4.75" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAAAQAAAAQAA=</HashCode>
+      <FileName>OperationalLogic\GEMConcurrencyCheckingAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GEM2Common.GEMOperationsLoggingAttribute">
+    <Position X="0.5" Y="4.75" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAAAQAAAAQAA=</HashCode>
+      <FileName>OperationalLogic\GEMOperationsLoggingAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GEM2Common.InstanceManager">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\InstanceManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GEM2Common.GEMConfiguration">
+    <Position X="0.5" Y="7.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>QQAAAQAAAAAAAAAAAAAAAAACAAAAAAYAAEAEAABAAAA=</HashCode>
+      <FileName>OperationalLogic\Configuration\GEMConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GEM2Common.GEMConfigurationHelper">
+    <Position X="8" Y="2" Width="4.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>RQAAgQAAAAAQAAAQAAAACAAAAAERBgYAAAAEAAAAAAA=</HashCode>
+      <FileName>OperationalLogic\Configuration\GEMConfigurationHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GEM2Common.GEMAuditingProvider" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="2" Width="5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAECAAQAAAACAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>OperationalLogic\DefaultProviders\GEMAuditingProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GEM2Common.GEMOperationLoggingProvider" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="9" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OperationalLogic\DefaultProviders\GEMOperationLoggingProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GEM2Common.GEMConcurrencyCheckingProvider" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="5.5" Width="5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAQAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OperationalLogic\DefaultProviders\GEMConcurrencyCheckingProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GEM2Common.GEMExceptionLoggingProvider" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="7.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OperationalLogic\DefaultProviders\GEMExceptionLoggingProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="GEM2Common.IGEMOperationLogging">
+    <Position X="5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OperationalLogic\IGEMOperationLogging.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GEM2Common.IGEMAuditing">
+    <Position X="2.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OperationalLogic\IGEMAuditing.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GEM2Common.IGEMConcurrencyChecking">
+    <Position X="7.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OperationalLogic\IGEMConcurrencyChecking.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GEM2Common.IGEMExceptionLogging">
+    <Position X="9.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OperationalLogic\IGEMExceptionLogging.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

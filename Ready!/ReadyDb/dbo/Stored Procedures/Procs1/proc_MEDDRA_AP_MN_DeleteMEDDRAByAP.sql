@@ -1,0 +1,9 @@
+﻿
+CREATE PROCEDURE  [dbo].[proc_MEDDRA_AP_MN_DeleteMEDDRAByAP]
+	@ap_FK int = NULL
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	DELETE FROM dbo.MEDDRA_AP_MN WHERE ap_FK = @ap_FK;
+END

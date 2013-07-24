@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.nanokinetik.com/Schemas/2013/EDMSWS" targetNamespace="http://www.nanokinetik.com/Schemas/2013/EDMSWS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ServiceException" type="tns:ServiceException" />
+  <xs:element name="getDocument" type="tns:getDocument" />
+  <xs:element name="getDocumentResponse" type="tns:getDocumentResponse" />
+  <xs:element name="getFolderContent" type="tns:getFolderContent" />
+  <xs:element name="getFolderContentResponse" type="tns:getFolderContentResponse" />
+  <xs:element name="getFolders" type="tns:getFolders" />
+  <xs:element name="getFoldersResponse" type="tns:getFoldersResponse" />
+  <xs:complexType name="getFolderContent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FolderID" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFolderContentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" form="qualified" name="Documents" type="tns:EDMSDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EDMSDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="documentID" type="xs:string" />
+      <xs:element minOccurs="0" name="documentName" type="xs:string" />
+      <xs:element minOccurs="0" name="versionLabel" type="xs:string" />
+      <xs:element minOccurs="0" name="versionNumber" type="xs:string" />
+      <xs:element minOccurs="0" name="modifyDate" type="xs:dateTime" />
+      <xs:element name="currentVersion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="format" type="xs:string" />
+      <xs:element minOccurs="0" name="mimeType" type="xs:string" />
+      <xs:element minOccurs="0" name="dosExtension" type="xs:string" />
+      <xs:element name="contentSize" type="xs:long" />
+      <xs:element minOccurs="0" name="content" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ServiceException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" type="xs:string" />
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+      <xs:element minOccurs="0" name="technicalDescription" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFolders">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FolderID" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFoldersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" form="qualified" name="Folders" type="tns:EDMSFolder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EDMSFolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="folderID" type="xs:string" />
+      <xs:element minOccurs="0" name="folderName" type="xs:string" />
+      <xs:element name="hasSubFolders" type="xs:boolean" />
+      <xs:element minOccurs="0" name="modifyDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentID" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" type="xs:string" />
+      <xs:element minOccurs="0" name="BindingRule" type="xs:string" />
+      <xs:element minOccurs="0" name="Format" type="tns:formatType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDocumentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" form="qualified" name="Document" type="tns:EDMSDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="formatType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ORIGINAL" />
+      <xs:enumeration value="PDF" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

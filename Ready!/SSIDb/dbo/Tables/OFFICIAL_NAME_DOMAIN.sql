@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[OFFICIAL_NAME_DOMAIN] (
+    [on_domain_PK] INT           IDENTITY (1, 1) NOT NULL,
+    [name_domain]  VARCHAR (250) NOT NULL,
+    CONSTRAINT [PK_SSI_OFFICIAL_NAME_DOMAIN] PRIMARY KEY CLUSTERED ([on_domain_PK] ASC)
+);
+

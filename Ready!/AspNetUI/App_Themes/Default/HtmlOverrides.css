@@ -1,0 +1,105 @@
+﻿html
+{
+	overflow-y: scroll;
+}
+
+html, body
+{
+	top: 0px;
+	left: 0px;
+	margin: 0px;
+	top: 0px;
+	left: 0px;
+	padding: 0px;
+	color: #000000;
+	background-color: #ffffff;
+	font: 12px Arial, Verdana, Tahoma, sans-serif; 
+	height: 100%;
+}
+
+hr
+{
+	color: #000000;
+	background-color: #cccccc;
+	border: none;
+	height: 1px;
+	width: 100%;
+}
+
+img
+{
+    border: none;
+}
+
+a, a:visited
+{
+    color: #333333;
+    text-decoration: underline;
+}
+a:hover, a:active
+{
+    text-decoration: underline;
+}
+
+fieldset
+{
+    border: 1px solid #ccc;
+}
+
+fieldset legend
+{
+    color: #505050;
+    font-weight: bold;
+}
+
+
+input[type=text],
+textarea,
+select,
+input[type=password]{ vertical-align: middle; border: 1px solid #aaaaaa; padding: 2px; font: 12px Arial, Verdana, Tahoma, sans-serif; }
+input[type=text]:hover,
+textarea:hover,
+select:hover,
+input[type=text]:focus,
+textarea:focus,
+select:focus,
+input[type=password]:hover,
+input[type=password]:focus{ padding: 1px; border: 2px solid #aaaaaa; background-color: #FFFFDD; }
+
+input[type=button]
+{
+    padding: 3px;
+	color: #FFFFFF;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-width: 1px;
+	background-color: #333333;
+    border: 1px solid white;
+	font-family: Arial, Verdana, Tahoma, sans-serif;
+}
+
+input[type=submit]
+{
+    padding: 3px;
+    color: #FFFFFF;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-width: 1px;
+	background-color: #333333;
+	border: 1px solid white;
+	font-family: Arial, Verdana, Tahoma, sans-serif;
+}
+
+input[type=reset]
+{
+    padding: 3px;
+    color: #FFFFFF;
+	font-size: 11px;
+	letter-spacing: 1pt;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-width: 1px;
+	background-color: #333333;
+}

@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[PP_ACTIVE_INGREDIENT] (
+    [activeingredient_PK]   INT             IDENTITY (1, 1) NOT NULL,
+    [substancecode_FK]      INT             NULL,
+    [resolutionmode]        INT             NULL,
+    [concentrationtypecode] INT             NULL,
+    [lowamountnumervalue]   DECIMAL (18, 5) NULL,
+    [lowamountnumerprefix]  NVARCHAR (50)   NULL,
+    [lowamountnumerunit]    NVARCHAR (70)   NULL,
+    [lowamountdenomvalue]   DECIMAL (18, 5) NULL,
+    [lowamountdenomprefix]  NVARCHAR (50)   NULL,
+    [lowamountdenomunit]    NVARCHAR (70)   NULL,
+    [highamountnumervalue]  DECIMAL (18, 5) NULL,
+    [highamountnumerprefix] NVARCHAR (50)   NULL,
+    [highamountnumerunit]   NVARCHAR (70)   NULL,
+    [highamountdenomvalue]  DECIMAL (18, 5) NULL,
+    [highamountdenomprefix] NVARCHAR (50)   NULL,
+    [highamountdenomunit]   NVARCHAR (70)   NULL,
+    [pp_FK]                 INT             NULL,
+    [userID]                INT             NULL,
+    [strength_value]        INT             NULL,
+    [strength_unit]         NVARCHAR (100)  NULL,
+    [ExpressedBy_FK]        INT             NULL,
+    [concise]               NVARCHAR (150)  NULL,
+    CONSTRAINT [PK_PP_ACTIVE_INGREDIENT] PRIMARY KEY CLUSTERED ([activeingredient_PK] ASC),
+    CONSTRAINT [FK_PP_ACTIVE_INGREDIENT_PHARMACEUTICAL_PRODUCT] FOREIGN KEY ([pp_FK]) REFERENCES [dbo].[PHARMACEUTICAL_PRODUCT] ([pharmaceutical_product_PK]) ON DELETE CASCADE,
+    CONSTRAINT [FK_PP_ACTIVE_INGREDIENT_SUBSTANCES] FOREIGN KEY ([substancecode_FK]) REFERENCES [dbo].[SUBSTANCES] ([substance_PK])
+);
+

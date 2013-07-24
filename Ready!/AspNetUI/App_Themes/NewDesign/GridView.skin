@@ -1,0 +1,50 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/Images/image1.jpg" />
+--%>
+
+<asp:GridView runat="server"
+ AutoGenerateColumns="False"
+ CssClass="gridStyle"
+ HeaderStyle-CssClass="gridHeader"
+ RowStyle-CssClass="gridRow"
+ AlternatingRowStyle-CssClass="gridAlternateRow"
+ SelectedRowStyle-CssClass="gridSelectedRow" 
+ EditRowStyle-CssClass="gridEditRow" 
+ FooterStyle-CssClass="gridFooter" 
+ EmptyDataText="No results" 
+ EmptyDataRowStyle-CssClass="EmptyRowErr" 
+ Width="100%" 
+ CellPadding="3" 
+ GridLines="None">
+</asp:GridView>
+
+<asp:GridView 
+ SkinID="ExcelDataImportValidator"
+ runat="server"
+ AutoGenerateColumns="True"
+ CssClass="gridStyle"
+ HeaderStyle-CssClass="gridHeader"
+ RowStyle-CssClass="gridRow"
+ AlternatingRowStyle-CssClass="gridAlternateRow"
+ SelectedRowStyle-CssClass="gridSelectedRow" 
+ EditRowStyle-CssClass="gridEditRow" 
+ FooterStyle-CssClass="gridFooter"  
+ EmptyDataText="No data for import" 
+ EmptyDataRowStyle-CssClass="EmptyRowErr" 
+ Width="100%"
+ AllowSorting="False" 
+ CellPadding="3" 
+ GridLines="None">
+</asp:GridView>

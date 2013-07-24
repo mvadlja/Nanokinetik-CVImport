@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?include $(sys.CURRENTDIR)\Common.Config.wxi?>
+<?include $(sys.CURRENTDIR)\Test.Config.wxi?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="$(var.ProductCode)" Name="$(var.ProductName)" Language="$(var.ProductLanguage)" Version="$(var.ProductVersion)" Manufacturer="$(var.ProductManufacturerName)" UpgradeCode="$(var.ProductUpgradeCode)">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Manufacturer="$(var.ProductManufacturerName)" />
+		<MajorUpgrade DowngradeErrorMessage="A newer version of $(var.ProductName) is already installed." />
+    <Media Id="1" Cabinet="$(var.ProductName).cab" EmbedCab="yes" />
+		<Feature Id="ProductFeature" Title="$(var.ProductName)">
+			<ComponentGroupRef Id="CMPG_ApplicationExes" />
+      <ComponentGroupRef Id="CMPG_ApplicationFilesDLLs" />
+      <ComponentGroupRef Id="CMPG_ApplicationConfigs" />
+		</Feature>
+    <UIRef Id="WixUI_Minimal" />
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="$(var.PlatformProgramFilesFolder)">
+        <Directory Id="$(var.ProductInstallFolder)" Name="$(var.ProductInstallFolder)">
+				  <Directory Id="INSTALLFOLDER" Name="$(var.ProductName)" />
+			  </Directory>
+      </Directory>
+		</Directory>
+	</Fragment>
+  
+	<Fragment>
+    <ComponentGroup Id="CMPG_ApplicationFilesDLLs" Directory="INSTALLFOLDER">
+      <Component Id="CMP_GEM2Common_dll" DiskId="1" >
+        <File Id="F_GEM2Common_dll" Name="GEM2Common.dll" Source="..\ReadyScheduler\bin\Debug\GEM2Common.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="CMP_ReadyCommon_dll" DiskId="1" >
+        <File Id="F_ReadyCommon_dll" Name="ReadyCommon.dll" Source="..\ReadyScheduler\bin\Debug\ReadyCommon.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="CMP_ReadyDAL_dll" DiskId="1" >
+        <File Id="F_ReadyDAL_dll" Name="ReadyDAL.dll" Source="..\ReadyScheduler\bin\Debug\ReadyDAL.dll" KeyPath="yes" />
+      </Component>
+    </ComponentGroup> 
+    
+    <ComponentGroup Id="CMPG_ApplicationConfigs" Directory="INSTALLFOLDER">
+      <Component Id="CMP_ReadyScheduler_config" DiskId="1" >
+        <File Id="F_ReadyScheduler_config" Name="ReadyScheduler.exe.config" Source="..\ReadyScheduler\App.config" KeyPath="yes" />
+      </Component>
+    </ComponentGroup>  
+    
+    <ComponentGroup Id="CMPG_ApplicationExes" Directory="INSTALLFOLDER">
+      <Component Id="CMP_ReadyScheduler_exe" DiskId="1">
+        <File Id="F_ReadyScheduler_exe" Name="ReadyScheduler.exe" Source="..\ReadyScheduler\bin\Debug\ReadyScheduler.exe" KeyPath="yes" />
+        <ServiceInstall Id="$(var.ProductName)" Type="ownProcess" Name="$(var.ProductName)"  DisplayName="$(var.ProductName)" Start="auto" Account="[SERVICEACCOUNT]"  Password="[SERVICEPASSWORD]" ErrorControl="normal" Vital="yes" Interactive="yes" />
+        <ServiceControl Id="$(var.ProductName)" Name="$(var.ProductName)" Remove="uninstall" Stop="uninstall" />
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

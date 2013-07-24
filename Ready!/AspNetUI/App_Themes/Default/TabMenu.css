@@ -1,0 +1,61 @@
+﻿.mnuTabItem
+{
+	padding: 5px;
+	border-top: solid 1px #aaaaaa;
+	border-right: solid 1px #aaaaaa;
+	border-left: solid 1px #aaaaaa;
+	cursor: pointer;
+	background-color: #CCCCCC;
+}
+
+.mnuTabItem:link
+{
+	padding: 5px;
+	border: solid 1px #aaaaaa;
+	cursor: pointer;
+	background-color: #CCCCCC;
+}
+
+.mnuTabItem:hover
+{
+	padding: 5px;
+	border-top: solid 1px #aaaaaa;
+	border-right: solid 1px #aaaaaa;
+	border-left: solid 1px #aaaaaa;
+	cursor: pointer;
+	background-color: #FFFFDD;
+}
+
+.mnuTabItem:active
+{
+	padding: 5px;
+	border-top: solid 1px #aaaaaa;
+	border-right: solid 1px #aaaaaa;
+	border-left: solid 1px #aaaaaa;
+	cursor: pointer;
+	background-color: #FFFFDD;
+}
+
+.mnuTabItem:visited
+{
+	padding: 5px;
+	border-top: solid 1px #aaaaaa;
+	border-right: solid 1px #aaaaaa;
+	border-left: solid 1px #aaaaaa;
+	cursor: pointer;
+	background-color: #CCCCCC;
+}
+
+.mnuTabItemSelected
+{
+	padding: 4px 5px 5px 5px;
+	border-top: solid 1px #aaaaaa;
+	border-right: solid 1px #aaaaaa;
+	border-left: solid 1px #aaaaaa;
+	cursor: pointer;
+	background-color: #f0f0f0;
+
+	float: left;
+	position: relative;
+	top: 2px;
+}

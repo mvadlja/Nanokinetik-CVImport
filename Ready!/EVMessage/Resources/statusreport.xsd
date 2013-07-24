@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="EVMessage.StatusReport.Schema" elementFormDefault="qualified" targetNamespace="EVMessage.StatusReport.Schema">
+	<xs:element name="statusreport" id="A">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="reportheader"/>
+				<xs:element ref="report"/>
+        <xs:element ref="optional1" minOccurs="0" maxOccurs="1" />
+        <xs:element ref="optional2" minOccurs="0" maxOccurs="1" />
+        <xs:element ref="optional3" minOccurs="0" maxOccurs="1" />
+        <xs:element ref="optional4" minOccurs="0" maxOccurs="1" />
+        <xs:element ref="optional5" minOccurs="0" maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reportheader" id="B">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">The report header section contains the relevant information on the type of information being transmitted and the transmission date.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="reportformatversion" id="B.1">
+					<xs:annotation>
+						<xs:documentation>Report Format Version</xs:documentation>
+						<xs:documentation xml:lang="en">The report format version contains the version number of the SCHEMA.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="3"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="reportformatrelease" id="B.2">
+					<xs:annotation>
+						<xs:documentation>Report Format Release</xs:documentation>
+						<xs:documentation xml:lang="en">
+							The report format release contains the release number of the report
+							format version number of the SCHEMA.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="3"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="reportdateformat" id="B.3">
+					<xs:annotation>
+						<xs:documentation>The Report Date Format</xs:documentation>
+						<xs:documentation>The unique value admitted is "204" corresponding at "CCYYMMDDHHMMSS"</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="3"/>
+							<xs:enumeration value="204"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="reportdate" id="B.4">
+					<xs:annotation>
+						<xs:documentation>Report Date</xs:documentation>
+						<xs:documentation xml:lang="en">The report date is the date on which the report was initiated.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="14"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="report">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="messageacknowledgment" id="E"/>
+				<xs:element ref="reportacknowledgment" id="G"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="messageacknowledgment">
+		<xs:annotation>
+			<xs:documentation>This section describes the data about the message</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="registrationnumber" id="E.1">
+					<xs:annotation>
+						<xs:documentation>The Registration Number of the message</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="30"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="registrationid" id="E.2">
+					<xs:annotation>
+						<xs:documentation>The Registration Identifier of the message</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:totalDigits value="10"/>
+              <xs:minInclusive value="0" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="messagedateformat" id="E.3">
+					<xs:annotation>
+						<xs:documentation>The format of the Marketing Authorisation Message Date.</xs:documentation>
+						<xs:documentation>The unique value admitted is "204" corresponding at "CCYYMMDDHHMMSS"</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="3"/>
+							<xs:enumeration value="204"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="messagedate" id="E.4">
+					<xs:annotation>
+						<xs:documentation>The Marketing Authorisation Message Date.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="14"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="readymessageid" id="E.5" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The Ready Message Identifier of the message</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="60"/>
+              <xs:minLength value ="1" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+        <xs:element name="messagefilename" id="E.5.2">
+          <xs:annotation>
+            <xs:documentation>Name of the original MA file.</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="1000"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+				<xs:element name="ev_acktype" id="E.6" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>01 = Successful (All Reports loaded into database) 02 = Errors (EVPR Error, not all reports loaded into the database) 03 = Failed (SGML parsing error, no data extracted)</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="2"/>
+							<xs:enumeration value="01"/>
+							<xs:enumeration value="02"/>
+							<xs:enumeration value="03"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ev_attachment" id="E.7" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Sent xEVPRM xml to EMA or received ACK xml from EMA unique file name</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="2000"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ev_entities" id="E.8" minOccurs="0" >
+					<xs:annotation>
+						<xs:documentation>This section contains information about the ev message entities</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ev_entity" id="E.8.1" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>This section contains information about the ev message entity</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="entitytype" id="E.8.1.1">
+											<xs:annotation>
+												<xs:documentation>This field says the ev message entity type</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="60"/>
+													<xs:enumeration value="ATTACHMENT"/>
+													<xs:enumeration value="AUTHORISEDPRODUCT"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="localnumber" id="E.8.1.2" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>This field is the number assigned by the sender to identify report in the position of XML file. May be Null for no Inserts, and it's mandatory for Inserts.</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ev_code" id="E.8.1.3" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>This field is the number assigned by the EVMPD in case of an INSERT or by the sender, in all other cases, to identify the report in the EVMPD. May be Null for the insucessfull Inserts (see operationresult)</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="60"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="operationtype" id="E.8.1.4">
+											<xs:annotation>
+												<xs:documentation>This field says which operation type wanted to do in each section (1=Insert, 2=Update, 3=Variation, 4=Nullify, 5=Change Ownership, 6=Withdrawn).</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+													<xs:maxInclusive value="8"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="operationresult" id="E.8.1.5">
+											<xs:annotation>
+												<xs:documentation>This field says the operation result of a particular section</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+													<xs:maxExclusive value="101"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="operationresultdesc" id="E.8.1.6">
+											<xs:annotation>
+												<xs:documentation>This field says the description operation result of a particular section</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reportacknowledgment">
+		<xs:annotation>
+			<xs:documentation>This section contains report informations.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="reportname" id="G.1">
+					<xs:annotation>
+						<xs:documentation>Report Name</xs:documentation>
+						<xs:documentation xml:lang="en">
+							The report name is a unique tracking name assigned to a specific
+							marketing authorisation message file transmitted by the sender.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="100"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="reporttype" id="G.2">
+					<xs:annotation>
+						<xs:documentation>
+							The report type contains information on the type of information being
+							transmitted. 01 = Message status 02 = Errors
+						</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="2"/>
+							<xs:enumeration value="01"/>
+							<xs:enumeration value="02"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="reportstatuscode" id="G.3">
+					<xs:annotation>
+						<xs:documentation>01 = MA received 02 = MA received errors 03 = MA validation successful 04 = MA validation failed 05 = MA sent to EMA 06 = ACK received from EMA</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="2"/>
+							<xs:enumeration value="01"/>
+							<xs:enumeration value="02"/>
+							<xs:enumeration value="03"/>
+							<xs:enumeration value="04"/>
+							<xs:enumeration value="05"/>
+							<xs:enumeration value="06"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="reportstatusmessage" id="G.4">
+					<xs:annotation>
+						<xs:documentation>This field contains a detailed explanation of the report status</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="reportcomments" id="G.5" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The section reportcomments contains the list of detected errors and warnings</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="reportcomment" id="G.5.1" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Report comment element will be added for each warning or error</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="severity" id="G.5.1.1">
+											<xs:annotation>
+												<xs:documentation>The severity flag describes if the report comment is an 1 = error, 2 = warning or 3 = message</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:int" id="allowedseveritytypes">
+													<xs:enumeration value="1" id="error"/>
+													<xs:enumeration value="2" id="warning"/>
+                          <xs:enumeration value="3" id="message"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="commenttext" id="G.5.1.2">
+											<xs:annotation>
+												<xs:documentation>This field contains a detailed explanation of the error, warning or message</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+  <xs:element name="optional1" id="O.1">
+    <xs:annotation>
+      <xs:documentation>Optional filed 1</xs:documentation>
+      <xs:documentation xml:lang="en">
+        Optional field for future use.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:maxLength value="255"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="optional2" id="O.2" >
+    <xs:annotation>
+      <xs:documentation>Optional filed 2</xs:documentation>
+      <xs:documentation xml:lang="en">
+        Optional field for future use.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:maxLength value="255"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="optional3" id="O.3" >
+    <xs:annotation>
+      <xs:documentation>Optional filed 3</xs:documentation>
+      <xs:documentation xml:lang="en">
+        Optional field for future use.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:maxLength value="255"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="optional4" id="O.4">
+    <xs:annotation>
+      <xs:documentation>Optional filed 4</xs:documentation>
+      <xs:documentation xml:lang="en">
+        Optional field for future use.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:maxLength value="255"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="optional5" id="O.5">
+    <xs:annotation>
+      <xs:documentation>Optional filed 5</xs:documentation>
+      <xs:documentation xml:lang="en">
+        Optional field for future use.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:maxLength value="255"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>

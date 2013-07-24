@@ -1,0 +1,53 @@
+﻿.menuLink
+{
+	color: #000000;
+	font-weight: bold;
+}
+a.menuLink:link
+{
+	color: #eeeeee;
+    text-decoration: none;
+}
+a.menuLink:visited
+{
+	color: #eeeeee;
+	text-decoration: none;
+}
+a.menuLink:hover
+{
+	color: #eeeeee;
+	text-decoration: none;
+}
+.rootElement
+{
+    font-size: 10px;
+    font-weight: bold;
+	background-color: #dddddd;
+}
+.childElement:hover
+{
+	background-color: #aaaaaa;
+}
+.leftMenuItem
+{
+    width: 100%;
+	color: #aaaaaa;
+	background-color: #333333;
+    white-space: nowrap;
+    padding: 6px;
+    cursor: pointer;
+}
+.leftMenuItem:hover
+{
+    color: #333333;
+    background-color: #aaaaaa;
+}
+.leftMenuItemSelected
+{
+    width: 100%;
+    white-space: nowrap;
+    padding: 6px;
+    cursor: pointer;
+    color: #333333;
+    background-color: #eeeeee;
+}

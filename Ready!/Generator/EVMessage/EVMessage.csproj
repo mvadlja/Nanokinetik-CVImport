@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A370E783-5A6D-4FF9-B411-64D0A1F3C083}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EVMessage</RootNamespace>
+    <AssemblyName>EVMessage</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\Library\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xml.Schema.Linq">
+      <HintPath>..\Library\Xml.Schema.Linq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acknowledgement\AckMessage.cs" />
+    <Compile Include="Acknowledgement\evprmack.cs" />
+    <Compile Include="AS2\AS2CryptoUtilities.cs" />
+    <Compile Include="AS2\AS2Encryption.cs" />
+    <Compile Include="AS2\AS2MIMEUtilities.cs" />
+    <Compile Include="AS2\AS2Send.cs" />
+    <Compile Include="AS2\EnvelopedSignedCms.cs" />
+    <Compile Include="ConsoleTest.cs" />
+    <Compile Include="Entities\ACKMessage.cs" />
+    <Compile Include="Entities\ack_xEVMPD.generated.cs" />
+    <Compile Include="Entities\emaxevmpd.cs" />
+    <Compile Include="Entities\EVMessageBase.cs" />
+    <Compile Include="Entities\evprmack.cs" />
+    <Compile Include="Entities\xEVMPD.generated.cs" />
+    <Compile Include="Entities\xEVPRMessage.cs" />
+    <Compile Include="MarketingAuthorisation\ControlledVocabulary.cs" />
+    <Compile Include="MarketingAuthorisation\MADataExporter.cs" />
+    <Compile Include="MarketingAuthorisation\MADataExporter.MAReadyStruct.cs" />
+    <Compile Include="MarketingAuthorisation\ValidationException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="StatusReport\statusreport.cs" />
+    <Compile Include="MarketingAuthorisation\marketingauthorisation.cs" />
+    <Compile Include="StatusReport\StatusReportEnums.cs" />
+    <Compile Include="StatusReport\StatusReportMessage.cs" />
+    <Compile Include="Xevprm\ExtensionMethods.cs" />
+    <Compile Include="Xevprm\OperationResult.cs" />
+    <Compile Include="Xevprm\Xevprm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Xevprm\XevprmValidationTree.cs" />
+    <Compile Include="Xevprm\XevprmValidationTreeNode.cs" />
+    <Compile Include="Xevprm\XevprmXml.Attachment.cs" />
+    <Compile Include="Xevprm\Enums.cs" />
+    <Compile Include="Xevprm\ValidationResult.cs" />
+    <Compile Include="Xevprm\XevprmValidationRules.cs" />
+    <Compile Include="Xevprm\XevprmHelper.cs" />
+    <Compile Include="Xevprm\XevprmXml.ActiveIngredient.cs" />
+    <Compile Include="Xevprm\XevprmXml.Adjuvant.cs" />
+    <Compile Include="Xevprm\XevprmXml.Authorisation.cs" />
+    <Compile Include="Xevprm\XevprmXml.AuthorisedProduct.cs" />
+    <Compile Include="Xevprm\XevprmXml.cs" />
+    <Compile Include="Xevprm\XevprmValidationException.cs" />
+    <Compile Include="Xevprm\XevprmXml.Excipient.cs" />
+    <Compile Include="Xevprm\XevprmXml.PharmaceuticalProduct.cs" />
+    <Compile Include="Xevprm\XevprmXml.PpiAttachment.cs" />
+    <Compile Include="Xevprm\XevprmXml.PresentationName.cs" />
+    <Compile Include="Xevprm\XevprmXml.ProductAtc.cs" />
+    <Compile Include="Xevprm\XevprmXml.ProductIndication.cs" />
+    <Compile Include="XmlValidator\XmlValidator.cs" />
+    <Compile Include="XmlValidator\XmlValidatorException.cs" />
+    <Compile Include="XMLValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AspNetUIFramework\AspNetUIFramework.csproj">
+      <Project>{87C34004-5C27-4F26-AA51-A89A302A10D8}</Project>
+      <Name>AspNetUIFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BSF\ReadyCommon\ReadyCommon.csproj">
+      <Project>{49B8C784-5A11-4862-8AA0-ECCD4FCDCCCE}</Project>
+      <Name>ReadyCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BSF\ReadyDAL\ReadyDAL.csproj">
+      <Project>{160C3359-6B99-4325-9529-7B7230D9BE49}</Project>
+      <Name>ReadyDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonComponents\CommonComponents.csproj">
+      <Project>{03b752ce-585f-4bfb-8e44-068cf1d984eb}</Project>
+      <Name>CommonComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GEM2\GEM2Common\GEM2Common.csproj">
+      <Project>{dbc8e41b-7720-47c3-a0b1-978a2325e928}</Project>
+      <Name>GEM2Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\ACKXEVMPD.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\emaxevmpd.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\marketingauthorisation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\statusreport.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

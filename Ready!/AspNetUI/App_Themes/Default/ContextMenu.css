@@ -1,0 +1,46 @@
+﻿.contextMenuBackgroundStyle
+{
+    width: 100%;
+    background-color: #dddddd;
+    vertical-align: middle;
+}
+.contextMenuStyle tr td
+{
+    vertical-align: middle;
+}
+.contextMenuStyle tr td:hover
+{
+    background-color: #aaaaaa;
+}
+.gvButtonTextBold div
+{
+	padding: 5px;
+    vertical-align: middle;
+}
+
+img
+{
+    vertical-align: middle;
+}
+
+.gvButtonTextBold
+{
+    color: #333333;
+	font-weight: bold;
+    vertical-align: middle;
+}
+a.gvButtonTextBold:link
+{
+	color: #333333;
+    text-decoration: none;
+}
+a.gvButtonTextBold:visited
+{
+	color: #333333;
+	text-decoration: none;
+}
+a.gvButtonTextBold:hover
+{
+	color: #333333;
+	text-decoration: none;
+}

@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{49B8C784-5A11-4862-8AA0-ECCD4FCDCCCE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ready.Model</RootNamespace>
+    <AssemblyName>ReadyCommon</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\Activeingredient_PK.cs" />
+    <Compile Include="Business\Activity_country_PK.cs" />
+    <Compile Include="Business\Activity_document_PK.cs" />
+    <Compile Include="Business\Activity_organization_applicant_PK.cs" />
+    <Compile Include="Business\Activity_PK.cs" />
+    <Compile Include="Business\Activity_product_PK.cs" />
+    <Compile Include="Business\Activity_project_PK.cs" />
+    <Compile Include="Business\Activity_saved_search_PK.cs" />
+    <Compile Include="Business\Activity_type_PK.cs" />
+    <Compile Include="Business\Adjuvant_PK.cs" />
+    <Compile Include="Business\Adminroute_PK.cs" />
+    <Compile Include="Business\Alert_saved_search_PK.cs" />
+    <Compile Include="Business\As2_handler_log_PK.cs" />
+    <Compile Include="Business\As2_handler_log_PKTest.cs" />
+    <Compile Include="Business\Location_PK.cs" />
+    <Compile Include="Business\ParentEntity.cs" />
+    <Compile Include="Business\Product_packaging_material_mn_PK.cs" />
+    <Compile Include="Business\Reminder_date_PK.cs" />
+    <Compile Include="Business\Email_notification_PK.cs" />
+    <Compile Include="Business\Ema_received_file_PK.cs" />
+    <Compile Include="Business\Ema_sent_file_PK.cs" />
+    <Compile Include="Business\Marketing_authorisation_PK.cs" />
+    <Compile Include="Business\Last_change_PK.cs" />
+    <Compile Include="Business\Ma_attachment_PK.cs" />
+    <Compile Include="Business\Ma_event_type_PK.cs" />
+    <Compile Include="Business\Ma_file_PK.cs" />
+    <Compile Include="Business\Ma_ma_entity_mn_PK.cs" />
+    <Compile Include="Business\Ma_message_header_PK.cs" />
+    <Compile Include="Business\Ma_service_log_PK.cs" />
+    <Compile Include="Business\Notification_type_PK.cs" />
+    <Compile Include="Business\PharmaceuticalProductSubstance.cs" />
+    <Compile Include="Business\QuickLink.cs" />
+    <Compile Include="Business\Reminder_repeating_mode_PK.cs" />
+    <Compile Include="Business\Reminder_status_PK.cs" />
+    <Compile Include="Business\Reminder_user_status_PK.cs" />
+    <Compile Include="Business\Role_PK.cs" />
+    <Compile Include="Business\User_action_PK.cs" />
+    <Compile Include="Business\User_role_action_PK.cs" />
+    <Compile Include="Business\Xevprm_ap_details_PK.cs" />
+    <Compile Include="Business\Xevprm_attachment_details_PK.cs" />
+    <Compile Include="Business\Xevprm_entity_details_mn_PK.cs" />
+    <Compile Include="Business\Xevprm_entity_type_PK.cs" />
+    <Compile Include="Business\Location_user_action_mn_PK.cs" />
+    <Compile Include="Operational\Org_in_type_for_manufacturer.cs" />
+    <Compile Include="Operational\Org_in_type_for_partner.cs" />
+    <Compile Include="Operational\Qppv_code_PK.cs" />
+    <Compile Include="Business\Recieved_message_PKTest.cs" />
+    <Compile Include="Business\Reminder_email_recipient_PK.cs" />
+    <Compile Include="Business\Reminder_PK.cs" />
+    <Compile Include="Operational\Ad_domain_PK.cs" />
+    <Compile Include="Business\Amount_PK.cs" />
+    <Compile Include="Business\Approved_substance_PK.cs" />
+    <Compile Include="Business\Approved_substance_subst_alias_PK.cs" />
+    <Compile Include="Business\Approved_subst_inter_code_PK.cs" />
+    <Compile Include="Business\Approved_subst_prev_ev_code_PK.cs" />
+    <Compile Include="Business\Approved_subst_substancessi_PK.cs" />
+    <Compile Include="Business\Approved_subst_subst_att_PK.cs" />
+    <Compile Include="Business\Approved_subst_subst_trans_PK.cs" />
+    <Compile Include="Business\Approved_subst_sub_alias_trans_PK.cs" />
+    <Compile Include="Business\Ap_document_mn_PK.cs" />
+    <Compile Include="Business\Ap_organizatation_dist_mn_PK.cs" />
+    <Compile Include="Business\Ap_saved_search_PK.cs" />
+    <Compile Include="Business\As_previous_ev_code_PK.cs" />
+    <Compile Include="Business\Atc_PK.cs" />
+    <Compile Include="Business\Attachment_PK.cs" />
+    <Compile Include="Business\AuthorisedProduct.cs" />
+    <Compile Include="Business\Chemical_PK.cs" />
+    <Compile Include="Business\Meddra_ap_mn_PK.cs" />
+    <Compile Include="Business\Meddra_PK.cs" />
+    <Compile Include="Business\Pp_document_PK.cs" />
+    <Compile Include="Business\Recieved_message_PK.cs" />
+    <Compile Include="Business\Sent_message_PK.cs" />
+    <Compile Include="Business\Service_log_PK.cs" />
+    <Compile Include="Business\Document_saved_search_PK.cs" />
+    <Compile Include="Business\Pharmaceutical_product_s_PK.cs" />
+    <Compile Include="Business\Product_organization_partner_mn_PK.cs" />
+    <Compile Include="Business\Product_saved_search_PK.cs" />
+    <Compile Include="Business\Project_saved_search_PK.cs" />
+    <Compile Include="Business\Submission_unit_saved_search_PK.cs" />
+    <Compile Include="Business\Task_saved_search_PK.cs" />
+    <Compile Include="Business\Time_unit_saved_search_PK.cs" />
+    <Compile Include="Business\Xevprm_log_PK.cs" />
+    <Compile Include="Operational\Xml_report_mapping_PK.cs" />
+    <Compile Include="Operational\User_grid_settings_PK.cs" />
+    <Compile Include="Business\Xevprm_message_PK.cs" />
+    <Compile Include="Business\Country_PK.cs" />
+    <Compile Include="Business\Document_PK.cs" />
+    <Compile Include="Business\Domain_PK.cs" />
+    <Compile Include="Business\Excipient_PK.cs" />
+    <Compile Include="Business\Gene_element_PK.cs" />
+    <Compile Include="Business\Gene_PK.cs" />
+    <Compile Include="Business\Intense_monitoring_PK.cs" />
+    <Compile Include="Business\International_code_PK.cs" />
+    <Compile Include="Business\Isotope_PK.cs" />
+    <Compile Include="Business\Isotope_structure_mn_PK.cs" />
+    <Compile Include="Business\Jurisdiction_PK.cs" />
+    <Compile Include="Business\Languagecode_PK.cs" />
+    <Compile Include="Business\Master_file_location_PK.cs" />
+    <Compile Include="Business\Medicaldevice_PK.cs" />
+    <Compile Include="Business\Moiety_PK.cs" />
+    <Compile Include="Business\Non_stoichiometric_PK.cs" />
+    <Compile Include="Business\Ns_moiety_mn_PK.cs" />
+    <Compile Include="Business\Ns_property_mn_PK.cs" />
+    <Compile Include="Business\Official_name_PK.cs" />
+    <Compile Include="Business\On_domain_on_mn_PK.cs" />
+    <Compile Include="Business\On_domain_PK.cs" />
+    <Compile Include="Business\On_onj_mn_PK.cs" />
+    <Compile Include="Business\Pharmaceutical_form_PK.cs" />
+    <Compile Include="Business\Pharmaceutical_product_PK.cs" />
+    <Compile Include="Business\Pp_adjuvant_mn_PK.cs" />
+    <Compile Include="Business\Pp_ar_mn_PK.cs" />
+    <Compile Include="Business\Pp_md_mn_PK.cs" />
+    <Compile Include="Business\Product_atc_mn_PK.cs" />
+    <Compile Include="Business\Product_country_mn_PK.cs" />
+    <Compile Include="Business\Product_document_mn_PK.cs" />
+    <Compile Include="Business\Product_domain_mn_PK.cs" />
+    <Compile Include="Business\Product_indications_PK.cs" />
+    <Compile Include="Business\Product_mn_PK.cs" />
+    <Compile Include="Business\Product_organization_manu_mn_PK.cs" />
+    <Compile Include="Business\Product_pi_mn_PK.cs" />
+    <Compile Include="Business\Product_submission_unit_PK.cs" />
+    <Compile Include="Business\Project_country_PK.cs" />
+    <Compile Include="Business\Project_document_PK.cs" />
+    <Compile Include="Business\Project_PK.cs" />
+    <Compile Include="Business\Property_PK.cs" />
+    <Compile Include="Business\Reference_info_PK.cs" />
+    <Compile Include="Business\Reference_source_PK.cs" />
+    <Compile Include="Business\Ri_gene_mn_PK.cs" />
+    <Compile Include="Business\Ri_ge_mn_PK.cs" />
+    <Compile Include="Business\Ri_sclf_mn_PK.cs" />
+    <Compile Include="Business\Ri_target_mn_PK.cs" />
+    <Compile Include="Business\Rs_chemical_mn_PK.cs" />
+    <Compile Include="Business\Rs_gene_mn_PK.cs" />
+    <Compile Include="Business\Rs_ge_mn_PK.cs" />
+    <Compile Include="Business\Rs_sclf_mn_PK.cs" />
+    <Compile Include="Business\Rs_sc_mn_PK.cs" />
+    <Compile Include="Business\Rs_sn_mn_PK.cs" />
+    <Compile Include="Business\Rs_sr_mn_PK.cs" />
+    <Compile Include="Business\Rs_target_mn_PK.cs" />
+    <Compile Include="Business\Sing_PK.cs" />
+    <Compile Include="Business\Sing_structure_mn_PK.cs" />
+    <Compile Include="Business\Sn_on_mn_PK.cs" />
+    <Compile Include="Business\Sr_ri_mn_PK.cs" />
+    <Compile Include="Business\Ssi__cont_voc_PK.cs" />
+    <Compile Include="Business\Stereochemistry_PK.cs" />
+    <Compile Include="Business\Structure_PK.cs" />
+    <Compile Include="Business\Struct_repres_attach_PK.cs" />
+    <Compile Include="Business\Struct_repres_type_PK.cs" />
+    <Compile Include="Business\Subbmission_unit_PK.cs" />
+    <Compile Include="Business\Substancessis_PK.cs" />
+    <Compile Include="Business\Substance_alias_PK.cs" />
+    <Compile Include="Business\Substance_alias_translation_PK.cs" />
+    <Compile Include="Business\Substance_attachment_PK.cs" />
+    <Compile Include="Business\Substance_code_PK.cs" />
+    <Compile Include="Business\Substance_name_PK.cs" />
+    <Compile Include="Business\Substance_PK.cs" />
+    <Compile Include="Business\Substance_relationship_PK.cs" />
+    <Compile Include="Business\Substance_substance_code_mn_PK.cs" />
+    <Compile Include="Business\Substance_substance_name_mn_PK.cs" />
+    <Compile Include="Business\Substance_s_PK.cs" />
+    <Compile Include="Business\Substance_translations_PK.cs" />
+    <Compile Include="Business\Subst_clf_PK.cs" />
+    <Compile Include="Business\Subtype_PK.cs" />
+    <Compile Include="Business\Subtype_sclf_mn_PK.cs" />
+    <Compile Include="Business\Sub_alias_sub_alias_tran_PK.cs" />
+    <Compile Include="Business\Su_agency_mn_PK.cs" />
+    <Compile Include="Business\Target_PK.cs" />
+    <Compile Include="Business\Task_country_PK.cs" />
+    <Compile Include="Business\Task_document_PK.cs" />
+    <Compile Include="Business\Task_name_PK.cs" />
+    <Compile Include="Business\Task_PK.cs" />
+    <Compile Include="Business\Time_unit_name_PK.cs" />
+    <Compile Include="Business\Time_unit_PK.cs" />
+    <Compile Include="Business\Version_PK.cs" />
+    <Compile Include="Business\Version_substance_mn_PK.cs" />
+    <Compile Include="Operational\AuditingDetail.cs" />
+    <Compile Include="Operational\AuditingMaster.cs" />
+    <Compile Include="Operational\Document_language_mn_PK.cs" />
+    <Compile Include="Operational\Organization_in_role_.cs" />
+    <Compile Include="Operational\Organization_PK.cs" />
+    <Compile Include="Operational\Org_in_type_for_manufacturer_.cs" />
+    <Compile Include="Operational\Org_in_type_for_manufacturer_PK.cs" />
+    <Compile Include="Operational\Org_in_type_for_partner_.cs" />
+    <Compile Include="Operational\Org_type_for_partner_PK.cs" />
+    <Compile Include="Operational\Role_org_PK.cs" />
+    <Compile Include="Operational\Type_PK.cs" />
+    <Compile Include="Business\Product_PK.cs" />
+    <Compile Include="Operational\Downtime.cs" />
+    <Compile Include="Operational\Person_in_role_PK.cs" />
+    <Compile Include="Operational\Person_PK.cs" />
+    <Compile Include="Operational\Person_role_PK.cs" />
+    <Compile Include="Operational\USER_ROLE.cs" />
+    <Compile Include="Operational\LoggedException.cs" />
+    <Compile Include="Operational\USER.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Operational\USER_IN_ROLE.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CommonTypes\CommonTypes.csproj">
+      <Project>{22F9D7AE-3587-43FC-AB78-1F391468CE05}</Project>
+      <Name>CommonTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GEM2\GEM2Common\GEM2Common.csproj">
+      <Project>{DBC8E41B-7720-47C3-A0B1-978A2325E928}</Project>
+      <Name>GEM2Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

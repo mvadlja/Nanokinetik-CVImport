@@ -1,0 +1,281 @@
+﻿.layoutMain
+{
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	text-align: left;
+	background-color: #ffffff;
+}
+
+.layoutHeader
+{
+	width: 100%;
+	height: 100px;
+	vertical-align: middle;
+	text-align: center;
+	background-color: #ffffff;
+}
+
+.layoutHeaderTopRow
+{
+	background: #dddddd;
+}
+.layoutHeaderTopRow td div
+{
+	padding: 2px;
+}
+
+.layoutHeaderLeftRightCells
+{
+	width: 361px;
+	vertical-align: middle;
+	height: 58px;
+}
+
+.layoutHeaderMiddleCell
+{
+    width: 100%;
+	height: 58px;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 24px;
+	background-image: url(../../Images/header_bg.jpg);
+	background-repeat: repeat-x;
+}
+
+.layoutMenuBar
+{
+	width: 100%;
+	height: 24px;
+	background-color: #dddddd;
+	text-align: left;
+	border-bottom: solid 1px #aaaaaa;
+}
+
+.layoutLeftMenu
+{
+	background-color: #333333;
+	vertical-align: top;
+	text-align: left;
+	padding: 0px;
+}
+
+.layoutContent
+{
+	background-color: #f0f0f0;
+	vertical-align: top;
+	text-align: left;
+}
+
+.mainContent
+{
+}
+
+.mainTitle
+{
+	font-weight: bold;
+	font-size: 20px;
+	color: #333333;
+}
+
+.layoutFooter
+{
+	background-color: #f4cd80;
+	border-top: solid 1px #aaaaaa;
+	color: black;
+}
+
+
+.layoutFooter td { width: 33%; }
+.layoutFooter { padding-left: 20px; }
+
+
+.layoutLogin
+{
+	margin: 50px auto 0 auto;
+	width: 744px;
+	height: 353px;
+	color: black;
+    background: url(../../Images/login_bg.jpg);
+}
+
+.layoutLogin a { color: #d3ffd3; }
+.layoutLogin div.innerLogin
+{
+	padding: 0px 0 25px;
+	text-align: right;
+}
+.layoutLogin h1
+{
+	margin: 20px 0 20px 0;
+	padding-bottom: 20px;
+	text-align: center;
+}
+
+#LoginForm_HyperLink1
+{
+    display: block;
+    margin-top: 5px;
+    margin-left: 5px;
+    color: black;
+ 
+}   
+.layoutLogin div.formLogin
+{
+	width: 213px; 
+	margin-top: 25px;
+	margin-left: 466px;
+	background-color: white;
+	padding: 20px;
+	text-align: left;
+}
+.layoutLogin h1 span
+{
+	vertical-align: top;
+	font-size: 24px;
+	color: white;
+}
+.layoutLogin h2
+{
+	margin: 0px 0 15px 5px;
+	font-size: 18px;
+	text-align: left;
+	font-weight: bold;
+}
+.layoutLogin label
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 85px;
+	text-align: left;
+	margin: 5px;
+	font-weight: bold;
+}
+
+.layoutLogin input[type=text], .layoutLogin input[type=password]
+{
+	width: 280px;
+	padding: 4px;
+	margin: 4px;
+	border: 1px solid #aaaaaa;
+}
+.layoutLogin input[type=text]:hover, .layoutLogin input[type=text]:focus, .layoutLogin input[type=password]:hover, .layoutLogin input[type=password]:focus
+{
+	padding: 3px;
+	border: 2px solid #aaaaaa;
+}
+
+.confidential
+{
+    text-align: left; 
+    margin-left: 490px;
+    margin-top: 20px;
+}
+
+.layoutLogin input[type=submit]
+{
+	height: 30px;
+	width: 150px;
+	background: #a08858;
+	cursor: pointer;
+	margin-top: 20px;
+	margin-right: 24px;
+}
+.layoutLogin .error
+{
+	color: black;
+	font-weight: bold;
+}
+
+.layoutLogin .errorFailure
+{
+    display: inline-block;
+	color: black;
+	font-weight: bold;
+	padding-top: 2px;
+	margin-right: 10px;
+}
+
+.barContainer
+{
+	width: 770px;
+	padding: 1px;
+	font-weight: bold;
+	font-size: 8pt;
+	color: #FFFFFF;
+	position: relative;
+	vertical-align: middle;
+}
+
+.barContent
+{
+	/*width: auto; 	border-style: solid; 	border-color: #FFFFFF; 	border-width: 1px;*/
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 0px;
+	padding-top: 2px;
+	vertical-align: middle;
+}
+
+.topMenu tr td:hover
+{
+	background-color: #f0f0f0;
+}
+
+.topMenuSelected
+{
+	background-color: #f0f0f0;
+}
+
+.mainEntityInfo, mainEntityInfo span
+{
+	background-color: #333333;
+	font-style: italic;
+	font-weight: bold;
+	color: White;
+}
+
+/* LINKOVI */
+.gvLinkTextBold
+{
+	color: #000000;
+	font-weight: bold;
+}
+a.gvLinkTextBold:link
+{
+	color: #333333;
+	text-decoration: underline;
+}
+a.gvLinkTextBold:hover
+{
+	color: #333333;
+	text-decoration: underline;
+}
+a.gvLinkTextBold:active
+{
+	color: #333333;
+	text-decoration: underline;
+}
+a.gvLinkTextBold:visited
+{
+	color: #333333;
+	text-decoration: none;
+}
+.MaskedEditFocus
+{
+	background-color: #DDDDFF;
+	border: solid 1px blue;
+}
+.MaskedEditError
+{
+	background-color: #FF0000;
+	border: solid 1px #FF0000;
+}
+.negative
+{
+	background-color: #FF5555;
+}
+
+
+#excel_export { position: absolute; top: 132px; right: 15px; line-height: 20px; }
+#excel_export input { vertical-align: middle; margin-left: 10px; margin-top: -3px; }

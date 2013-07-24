@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+    <title>READY!</title>
+    <link href="App_Themes/Default/ContextMenu.css" type="text/css" rel="stylesheet" />
+    <link href="App_Themes/Default/GridView.css" type="text/css" rel="stylesheet" />
+    <link href="App_Themes/Default/HtmlOverrides.css" type="text/css" rel="stylesheet" />
+    <link href="App_Themes/Default/LeftMenu.css" type="text/css" rel="stylesheet" />
+    <link href="App_Themes/Default/ModalPanels.css" type="text/css" rel="stylesheet" />
+    <link href="App_Themes/Default/SearcherDisplay.css" type="text/css" rel="stylesheet" />
+    <link href="App_Themes/Default/Site.css" type="text/css" rel="stylesheet" />
+    <link href="App_Themes/Default/TabMenu.css" type="text/css" rel="stylesheet" />
+    <link href="App_Themes/Default/TopMenu.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <form method="post" action="Default.aspx" id="form1">
+    <div>
+        <div class="layoutMain">
+            <!-- HEADER -->
+            <table cellpadding="0" cellspacing="0" class="layoutHeader">
+                <tr>
+                    <td class="layoutHeaderLeftRightCells">
+                        <a href="Default.aspx" id="linkLogo"><img id="imgHeadLogo" src="Images/logo_head.png" /></a>
+                    </td>
+                    <td class="layoutHeaderMiddleCell">
+                        <span id="lblHeader" class="mainTitle">Ready!</span>
+                    </td>
+                    <td class="layoutHeaderLeftRightCells" align="right">
+                        <div style="padding: 5px">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <!-- CONTENT -->
+            <table cellpadding="3" cellspacing="0" width="100%">
+                <tr>
+                    <td class="layoutContent">
+                        <br />
+                        <table cellpadding="10" cellspacing="0" width="100%">
+                            <tr>
+                                <td colspan="2">
+                                    <span id="lblHead" style="font-size: 12px; font-weight: bold;">Application is currently offline, please be patient and come back later.</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" colspan="2">
+                                    <input type="submit" name="btnBack" value="Back" id="btnBack" style="height: 30px; width: 350px;" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!-- FOOTER -->
+            <table cellpadding="5" cellspacing="0" width="100%" class="layoutFooter">
+                <tr>
+                    <td align="left">
+                        Copyright &copy; 2011. All rights reserved.
+                    </td>
+                    <td align="right">
+                        <span id="Label1" style="color: White;">v1.5 </span>
+                        <a id="HyperLink1" href="http://www.nanokinetik.com" target="_blank" style="font-weight: bold;">
+                        <span id="lblFooter" style="color: White;">Nanokinetik</span></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

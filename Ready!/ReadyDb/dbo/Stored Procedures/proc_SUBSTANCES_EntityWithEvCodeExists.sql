@@ -1,0 +1,12 @@
+﻿-- GetEntities
+CREATE PROCEDURE  [dbo].[proc_SUBSTANCES_EntityWithEvCodeExists]
+@EvCode NVARCHAR(500) = NULL
+	
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT COUNT(substance_PK)
+	FROM [dbo].[SUBSTANCES]
+	WHERE LTRIM(RTRIM(LOWER(ev_code))) = LTRIM(RTRIM(LOWER(@EvCode))) AND @EvCode IS NOT NULL
+END
