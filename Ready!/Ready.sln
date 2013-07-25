@@ -4,6 +4,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{5CC7F6F6-5170-42C3-8EFE-6D42AA4332E8}"
 	ProjectSection(SolutionItems) = preProject
 		Library\AjaxControlToolkit.dll = Library\AjaxControlToolkit.dll
+		Library\DocumentFormat.OpenXml.dll = Library\DocumentFormat.OpenXml.dll
 		Library\EPPlus.dll = Library\EPPlus.dll
 		Library\EPPlus.xml = Library\EPPlus.xml
 		Library\FileHelpers.dll = Library\FileHelpers.dll
@@ -14,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{5CC7
 		Library\Newtonsoft.Json.Net35.dll = Library\Newtonsoft.Json.Net35.dll
 		Library\PromptInstantiator.dll = Library\PromptInstantiator.dll
 		Library\Rtf.dll = Library\Rtf.dll
+		Library\SpreadsheetLight.dll = Library\SpreadsheetLight.dll
 		Library\YahooManaged.dll = Library\YahooManaged.dll
 	EndProjectSection
 EndProject

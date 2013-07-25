@@ -48,6 +48,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Library\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\Library\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="EPPlus">
       <HintPath>..\Library\EPPlus.dll</HintPath>
     </Reference>
@@ -73,6 +76,9 @@
     </Reference>
     <Reference Include="Rtf">
       <HintPath>..\Library\Rtf.dll</HintPath>
+    </Reference>
+    <Reference Include="SpreadsheetLight">
+      <HintPath>..\Library\SpreadsheetLight.dll</HintPath>
     </Reference>
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Runtime.Serialization" />
@@ -393,6 +399,7 @@
     <Content Include="Views\ActivityView\List.aspx" />
     <Content Include="Views\ActivityView\Preview.aspx" />
     <Content Include="Views\Business\PharmacovigilanceQualityReport.aspx" />
+    <Content Include="Views\Shared\UserControl\FileUploadCtrl.ascx" />
     <Content Include="Views\TestEDMS.aspx" />
     <Content Include="Views\AlerterView\Form.aspx" />
     <Content Include="Views\ApprovedSubstanceView\Form.aspx" />
@@ -536,6 +543,7 @@
     <Content Include="Views\PartialShared\Operational\TabMenu.ascx" />
     <Content Include="Views\PartialShared\Operational\TopMenu.ascx" />
     <Content Include="Views\PartialShared\Operational\ViewStateController.ascx" />
+    <None Include="Properties\PublishProfiles\VadljaPublish.pubxml" />
     <None Include="Service References\ReadyEDMS\EDMSService.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -612,6 +620,12 @@
     <Compile Include="LoginActiveDirectory.aspx.designer.cs">
       <DependentUpon>LoginActiveDirectory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model\XlsImport\XlsAuthorisedProduct.cs" />
+    <Compile Include="Model\XlsImport\XlsData.cs" />
+    <Compile Include="Model\XlsImport\XlsManufacturer.cs" />
+    <Compile Include="Model\XlsImport\XlsMFDocument.cs" />
+    <Compile Include="Model\XlsImport\XlsPackagingMaterial.cs" />
+    <Compile Include="Model\XlsImport\XlsProduct.cs" />
     <Compile Include="Service References\NanokinetikEDMS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -659,6 +673,7 @@
     <Compile Include="Support\StyleHelper.cs" />
     <Compile Include="Support\TypePkHelper.cs" />
     <Compile Include="Support\xEVPRMHelper.cs" />
+    <Compile Include="Support\XMLSerializationHelper.cs" />
     <Compile Include="TimeUnitGrid\Grid.cs" />
     <Compile Include="TimeUnitGrid\LinkHelper.cs" />
     <Compile Include="TimeUnitGrid\Pager.cs" />
@@ -836,6 +851,13 @@
     </Compile>
     <Compile Include="Views\Business\ShowSequenceFile.ashx.cs">
       <DependentUpon>ShowSequenceFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\FileUploadCtrl.ascx.cs">
+      <DependentUpon>FileUploadCtrl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\UserControl\FileUploadCtrl.ascx.designer.cs">
+      <DependentUpon>FileUploadCtrl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Views\TestEDMS.aspx.cs">
       <DependentUpon>TestEDMS.aspx</DependentUpon>
@@ -2143,6 +2165,13 @@
     <Compile Include="Views\XevprmView\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\XlsImport\XlsImport.aspx.cs">
+      <DependentUpon>XlsImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\XlsImport\XlsImport.aspx.designer.cs">
+      <DependentUpon>XlsImport.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterMain.Master" />
@@ -2150,8 +2179,6 @@
   <ItemGroup>
     <Folder Include="AttachTmpDir\" />
     <Folder Include="Documents\" />
-    <Folder Include="Model\" />
-    <Folder Include="Views\CV Import\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AspNetUIFramework\AspNetUIFramework.csproj">
@@ -2252,6 +2279,7 @@
     <Content Include="Views\TimeUnitNameView\List.aspx" />
     <Content Include="Views\TypeView\List.aspx" />
     <Content Include="Views\XevprmView\List.aspx" />
+    <Content Include="Views\XlsImport\XlsImport.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

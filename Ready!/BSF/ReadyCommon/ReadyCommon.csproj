@@ -86,6 +86,7 @@
     <Compile Include="Business\Xevprm_entity_details_mn_PK.cs" />
     <Compile Include="Business\Xevprm_entity_type_PK.cs" />
     <Compile Include="Business\Location_user_action_mn_PK.cs" />
+    <Compile Include="Business\XlsImport.cs" />
     <Compile Include="Operational\Org_in_type_for_manufacturer.cs" />
     <Compile Include="Operational\Org_in_type_for_partner.cs" />
     <Compile Include="Operational\Qppv_code_PK.cs" />
