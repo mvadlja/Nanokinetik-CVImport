@@ -399,6 +399,7 @@
     <Content Include="Views\ActivityView\List.aspx" />
     <Content Include="Views\ActivityView\Preview.aspx" />
     <Content Include="Views\Business\PharmacovigilanceQualityReport.aspx" />
+    <Content Include="Views\CVImport\CVImport.aspx" />
     <Content Include="Views\Shared\UserControl\FileUploadCtrl.ascx" />
     <Content Include="Views\TestEDMS.aspx" />
     <Content Include="Views\AlerterView\Form.aspx" />
@@ -851,6 +852,13 @@
     </Compile>
     <Compile Include="Views\Business\ShowSequenceFile.ashx.cs">
       <DependentUpon>ShowSequenceFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CVImport\CVImport.aspx.cs">
+      <DependentUpon>CVImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CVImport\CVImport.aspx.designer.cs">
+      <DependentUpon>CVImport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\UserControl\FileUploadCtrl.ascx.cs">
       <DependentUpon>FileUploadCtrl.ascx</DependentUpon>
