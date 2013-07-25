@@ -2151,6 +2151,7 @@
     <Folder Include="AttachTmpDir\" />
     <Folder Include="Documents\" />
     <Folder Include="Model\" />
+    <Folder Include="Views\CV Import\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AspNetUIFramework\AspNetUIFramework.csproj">
