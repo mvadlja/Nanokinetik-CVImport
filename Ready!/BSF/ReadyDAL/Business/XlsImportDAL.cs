@@ -51,7 +51,7 @@ namespace Ready.Model.Business
 
                 parameters.Add(new GEMDbParameter("Data", data, DbType.Xml, ParameterDirection.Input));
 
-                //validationMessage = (string)base.ExecuteProcedureReturnScalar(parameters);
+                validationMessage = (string)base.ExecuteProcedureReturnScalar(parameters);
 
 
                 // Logging operation if applicable

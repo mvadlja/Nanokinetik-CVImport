@@ -543,6 +543,7 @@
     <Content Include="Views\PartialShared\Operational\TabMenu.ascx" />
     <Content Include="Views\PartialShared\Operational\TopMenu.ascx" />
     <Content Include="Views\PartialShared\Operational\ViewStateController.ascx" />
+    <None Include="Properties\PublishProfiles\VadljaPublish.pubxml" />
     <None Include="Service References\ReadyEDMS\EDMSService.xsd">
       <SubType>Designer</SubType>
     </None>
