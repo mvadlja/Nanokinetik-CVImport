@@ -11,33 +11,29 @@
 
     <asp:Panel ID="pnlForm" runat="server" class="form">
 
-        <uc:DropDownList runat="server" ID="ddlCVType" Label="CV type" AutoPostback="true" OnSelectedIndexChanged="ddlCVType_SelectedIndexChanged"/>
+        <uc:DropDownList runat="server" ID="ddlCVType" Label="CV type"/>
 
 
-        <uc:FileUploadCtrl runat="server" ID="fileUpload" Label="Browse for file to import" Enabled="false" />
+        <uc:FileUploadCtrl runat="server" ID="fileUpload" Label="Browse for file to import" />
          <asp:Panel ID="pnlGrid" runat="server" Visible="True">
-            <uc:ColumnsPopup ID="ColumnsPopup" runat="server" />
-            <div class="entity-name">
-                <uc:LabelPreview ID="lblPrvParentEntity" runat="server" Label="Product:" Visible="False" />
-            </div>
-            <div class="subtabs" id="subtabs" runat="server">
-                <uc:TabMenu ID="tabMenu" runat="server" />
-            </div>
             <possGrid:PossGrid ID="APGrid" GridId="APGrid" GridVersion="1" runat="server" AllowPaging="True" PageSize="18"
-                AutoGenerateColumns="false" CellPadding="4" DataKeyNames="ap_PK"
+                AutoGenerateColumns="false" CellPadding="4" DataKeyNames="ID"
                 AllowSorting="true"
                 GridLines="None" GridHeight="250"
-                Width="100%" MainSortingColumn="AuthorisedProductName" DefaultSortingOrder="ASC">
+                Width="100%" MainSortingColumn="ID" DefaultSortingOrder="ASC">
                 <RowStyle BackColor="#EBEBEB" ForeColor="Black" />
                 <SettingsPager AlwaysShowPager="true" DefaultPageSize="15" Position="TopAndBottom" ItemsPerPagePosition="Bottom" ItemsPerPageMode="Custom" />
                 <Columns>
-                    <possGrid:PossTemplateField>
-                        
-                    </possGrid:PossTemplateField>
-                    <possGrid:PossBoundField Width="3%" Caption="ID" FieldName="ap_PK" Visible="false" FilterType="Text" />
-                   
-                    <possGrid:PossBoundField Width="5%" Caption="Client" FieldName="Client" FilterType="Text" />
-                    <possGrid:PossBoundField Width="5%" Caption="EVCODE" FieldName="evcode" FilterType="Text" />
+                    <possGrid:PossTemplateField Width="10%" FieldName="ID" Caption="ID">
+                        <ItemTemplate>
+                            <asp:CheckBox runat="server" ItemID='<%# Eval("ID") %>' OnCheckedChanged="chk_CheckedChanged" />
+                            <asp:Label runat="server" Text='<%# Eval("ID") %>'/>
+                        </ItemTemplate>
+                    </possGrid:PossTemplateField>               
+                    <possGrid:PossBoundField Width="25%" Caption="Current Value" FieldName="CurrentValue" FilterType="None" />
+                    <possGrid:PossBoundField Width="25%" Caption="EMA Value" FieldName="EmaValue" FilterType="None" />
+                    <possGrid:PossBoundField Width="10%" Caption="EV Code" FieldName="EVCode" FilterType="None" />
+                    <possGrid:PossBoundField Width="10%" Caption="Action" FieldName="Action" FilterType="Combo" />
                 
                 </Columns>
 

@@ -621,6 +621,7 @@
     <Compile Include="LoginActiveDirectory.aspx.designer.cs">
       <DependentUpon>LoginActiveDirectory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model\CVImport\CVImportData.cs" />
     <Compile Include="Model\XlsImport\XlsAuthorisedProduct.cs" />
     <Compile Include="Model\XlsImport\XlsData.cs" />
     <Compile Include="Model\XlsImport\XlsManufacturer.cs" />

@@ -56,6 +56,7 @@
     <Compile Include="Business\Alert_saved_search_PKDAL.cs" />
     <Compile Include="Business\As2_handler_log_PKDAL.cs" />
     <Compile Include="Business\As2_handler_log_PKTestDAL.cs" />
+    <Compile Include="Business\CVImportDAL.cs" />
     <Compile Include="Business\Location_PKDAL.cs" />
     <Compile Include="Business\Location_user_action_mn_PKDAL.cs" />
     <Compile Include="Business\ParentEntityDAL.cs" />

@@ -49,15 +49,6 @@ namespace AspNetUI.Views.CVImport {
         protected global::System.Web.UI.WebControls.Panel pnlGrid;
         
         /// <summary>
-        /// subtabs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl subtabs;
-        
-        /// <summary>
         /// APGrid control.
         /// </summary>
         /// <remarks>
