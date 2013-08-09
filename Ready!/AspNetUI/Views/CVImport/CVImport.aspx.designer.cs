@@ -22,6 +22,15 @@ namespace AspNetUI.Views.CVImport {
         protected global::System.Web.UI.WebControls.Panel pnlForm;
         
         /// <summary>
+        /// pnlImport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlImport;
+        
+        /// <summary>
         /// ddlCVType control.
         /// </summary>
         /// <remarks>
@@ -49,13 +58,58 @@ namespace AspNetUI.Views.CVImport {
         protected global::System.Web.UI.WebControls.Panel pnlGrid;
         
         /// <summary>
-        /// APGrid control.
+        /// h1CVTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::PossGrid.PossGrid APGrid;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl h1CVTitle;
+        
+        /// <summary>
+        /// grid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::PossGrid.PossGrid grid;
+        
+        /// <summary>
+        /// pnlSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlSummary;
+        
+        /// <summary>
+        /// lblInsert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AspNetUI.Views.Shared.UserControl.LabelPreview lblInsert;
+        
+        /// <summary>
+        /// lblUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AspNetUI.Views.Shared.UserControl.LabelPreview lblUpdate;
+        
+        /// <summary>
+        /// lblDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AspNetUI.Views.Shared.UserControl.LabelPreview lblDelete;
         
         /// <summary>
         /// pnlFooter control.
@@ -83,5 +137,23 @@ namespace AspNetUI.Views.CVImport {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnImport;
+        
+        /// <summary>
+        /// btnNext control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnNext;
+        
+        /// <summary>
+        /// btnApply control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnApply;
     }
 }

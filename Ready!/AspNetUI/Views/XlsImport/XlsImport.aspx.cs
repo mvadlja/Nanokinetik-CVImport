@@ -63,8 +63,9 @@ namespace AspNetUI.Views.XlsImport
                 }
                 else
                 {
+                    string message = String.Format("<div style=\"height: 300px; overflow: auto;\">{0}</div>", validationMessage.Replace(";", "<br/>"));
                     //show valididation message
-                    MasterPage.ModalPopup.ShowModalPopup("Import validation error!", validationMessage.Replace(";", "<br/>"));
+                    MasterPage.ModalPopup.ShowModalPopup("Import validation error!", message);
                 }
             }
         }
@@ -79,7 +80,7 @@ namespace AspNetUI.Views.XlsImport
 
             using (SLDocument doc = new SLDocument(stream))
             {
-                int rowIndex = 2;
+                int rowIndex = 5;
                 while (IsXlsRowAvailable(doc, rowIndex))
                 {
                     Dictionary<string, object> rowValues = GetXlsRowValues(doc, rowIndex);

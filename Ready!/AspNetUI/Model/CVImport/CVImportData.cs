@@ -7,7 +7,9 @@ namespace AspNetUI.Model.CVImport
 {
     public class CVImportData
     {
-        public string Value { get; set; }
         public string Code { get; set; }
+        public string Value_1 { get; set; }
+        public string Value_2 { get; set; }
+        public string Value_3 { get; set; }
     }
 }

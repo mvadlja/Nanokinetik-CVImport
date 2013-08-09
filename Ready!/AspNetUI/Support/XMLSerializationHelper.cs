@@ -93,6 +93,8 @@ namespace AspNetUI.Support
             //cellValue = cellValue.Replace(" ", "&#160;");
             cellValue = cellValue.Replace("&", "&amp;");
             cellValue = cellValue.Replace("\"", "&quot;");
+            cellValue = cellValue.Replace("<", "&lt;");
+            cellValue = cellValue.Replace(">", "&gt;");
 
             return cellValue;
         }
